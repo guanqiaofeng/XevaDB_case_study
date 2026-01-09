@@ -1,0 +1,713 @@
+Term,Adjusted P-value,Combined Score,library
+Artery Morphogenesis (GO:0048844),0.0134228089621706,460.3468031322656,GO_Biological_Process_2023
+Prostaglandin Metabolic Process (GO:0006693),0.0134228089621706,460.3468031322656,GO_Biological_Process_2023
+Pharyngeal Arch Artery Morphogenesis (GO:0061626),0.0134228089621706,1932.5756890799971,GO_Biological_Process_2023
+Positive Regulation Of Epithelial Cell Migration (GO:0010634),0.0134228089621706,176.14729500931637,GO_Biological_Process_2023
+Negative Regulation Of T Cell Apoptotic Process (GO:0070233),0.0147251520285234,1490.3240703269437,GO_Biological_Process_2023
+Regulation Of Angiogenesis (GO:0045765),0.0150916658865071,96.1133246688316,GO_Biological_Process_2023
+Negative Regulation Of Lymphocyte Apoptotic Process (GO:0070229),0.0179732705549464,1000.8064198202924,GO_Biological_Process_2023
+Epithelial Cell Differentiation (GO:0030855),0.023462878081493,107.94948397264235,GO_Biological_Process_2023
+Renal System Development (GO:0072001),0.023462878081493,179.97954590931704,GO_Biological_Process_2023
+Regulation Of T Cell Chemotaxis (GO:0010819),0.023462878081493,578.8354329773197,GO_Biological_Process_2023
+Regulation Of Cell Population Proliferation (GO:0042127),0.023462878081493,35.975311842308635,GO_Biological_Process_2023
+Epithelium Development (GO:0060429),0.023462878081493,85.32399643761593,GO_Biological_Process_2023
+Negative Regulation Of Epithelial Cell Proliferation (GO:0050680),0.023462878081493,137.19544727387992,GO_Biological_Process_2023
+Neutrophil Chemotaxis (GO:0030593),0.023462878081493,137.19544727387992,GO_Biological_Process_2023
+Positive Regulation Of Lymphocyte Migration (GO:2000403),0.023462878081493,429.45537567816734,GO_Biological_Process_2023
+Prostanoid Metabolic Process (GO:0006692),0.023462878081493,429.45537567816734,GO_Biological_Process_2023
+Pharyngeal System Development (GO:0060037),0.023462878081493,429.45537567816734,GO_Biological_Process_2023
+Kidney Development (GO:0001822),0.023462878081493,134.39810435842293,GO_Biological_Process_2023
+Granulocyte Chemotaxis (GO:0071621),0.023462878081493,129.07641173230985,GO_Biological_Process_2023
+Positive Regulation Of Cell Adhesion Mediated By Integrin (GO:0033630),0.023462878081493,393.96243373102385,GO_Biological_Process_2023
+Positive Regulation Of Monocyte Chemotaxis (GO:0090026),0.0236862939512302,363.2898548418271,GO_Biological_Process_2023
+Neutrophil Migration (GO:1990266),0.0236862939512302,119.41384383677423,GO_Biological_Process_2023
+Negative Regulation Of Blood Vessel Morphogenesis (GO:2000181),0.0236862939512302,119.41384383677423,GO_Biological_Process_2023
+Embryonic Digestive Tract Development (GO:0048566),0.0245058861671911,336.54673838088314,GO_Biological_Process_2023
+Limb Morphogenesis (GO:0035108),0.0260979178584413,313.0461870363529,GO_Biological_Process_2023
+Positive Regulation Of Endothelial Cell Migration (GO:0010595),0.0277869112013855,103.29323424451243,GO_Biological_Process_2023
+Negative Regulation Of Angiogenesis (GO:0016525),0.0277869112013855,101.52789088565108,GO_Biological_Process_2023
+Regulation Of Endothelial Cell Migration (GO:0010594),0.0286304211059173,98.14040765115747,GO_Biological_Process_2023
+Positive Regulation Of Neuron Apoptotic Process (GO:0043525),0.0288212153134898,257.15086234948103,GO_Biological_Process_2023
+Regulation Of T Cell Migration (GO:2000404),0.0288212153134898,257.15086234948103,GO_Biological_Process_2023
+Gliogenesis (GO:0042063),0.0303785842555723,242.22606459531664,GO_Biological_Process_2023
+Regulation Of Monocyte Chemotaxis (GO:0090025),0.0309695345426771,228.73040961874747,GO_Biological_Process_2023
+Positive Regulation Of T Cell Migration (GO:2000406),0.0309695345426771,228.73040961874747,GO_Biological_Process_2023
+Regulation Of Protein Secretion (GO:0050708),0.0359982320878905,78.78667603753651,GO_Biological_Process_2023
+Phospholipid Catabolic Process (GO:0009395),0.0366162115273464,195.08145262248803,GO_Biological_Process_2023
+Regulation Of Neuron Apoptotic Process (GO:0043523),0.0369246216952545,75.43233671724062,GO_Biological_Process_2023
+Tube Closure (GO:0060606),0.0371433955965864,185.6987673947897,GO_Biological_Process_2023
+Positive Regulation Of Mononuclear Cell Migration (GO:0071677),0.0402310386933462,169.08226656127547,GO_Biological_Process_2023
+Regulation Of Transmembrane Receptor Protein Serine/Threonine Kinase Signaling Pathway (GO:0090092),0.0402310386933462,169.08226656127547,GO_Biological_Process_2023
+Amide Transport (GO:0042886),0.0407547923099588,161.69650653172428,GO_Biological_Process_2023
+Neural Tube Closure (GO:0001843),0.0407547923099588,161.69650653172428,GO_Biological_Process_2023
+Positive Regulation Of Neuron Death (GO:1901216),0.0448549826271138,148.46413612460563,GO_Biological_Process_2023
+Retina Homeostasis (GO:0001895),0.0561054730132919,122.3074073504305,GO_Biological_Process_2023
+Digestive Tract Development (GO:0048565),0.0561054730132919,122.3074073504305,GO_Biological_Process_2023
+Modulation By Host Of Symbiont Process (GO:0051851),0.0634391299074025,110.1034239545967,GO_Biological_Process_2023
+Lymphocyte Chemotaxis (GO:0048247),0.0679701721621389,103.05327189846057,GO_Biological_Process_2023
+Positive Regulation Of Protein Kinase Activity (GO:0045860),0.0700140179989861,46.00377843983136,GO_Biological_Process_2023
+Skeletal System Development (GO:0001501),0.0725676828025296,44.08304801864367,GO_Biological_Process_2023
+Positive Regulation Of Epithelial To Mesenchymal Transition (GO:0010718),0.0725676828025296,93.79784429037068,GO_Biological_Process_2023
+Unsaturated Fatty Acid Metabolic Process (GO:0033559),0.0771206317304565,88.36726791367238,GO_Biological_Process_2023
+Positive Regulation Of Cell Population Proliferation (GO:0008284),0.0789265534121846,22.474065483961176,GO_Biological_Process_2023
+Regulation Of Peptide Hormone Secretion (GO:0090276),0.0832154041573202,81.14094572244915,GO_Biological_Process_2023
+Positive Regulation Of Leukocyte Chemotaxis (GO:0002690),0.0878310497852801,76.8479024006269,GO_Biological_Process_2023
+Positive Regulation Of Cellular Metabolic Process (GO:0031325),0.0924767361039234,72.91602120992282,GO_Biological_Process_2023
+Chemokine-Mediated Signaling Pathway (GO:0070098),0.0939477782301574,71.07225417227201,GO_Biological_Process_2023
+Muscle Organ Development (GO:0007517),0.0954139867140546,69.30366021141536,GO_Biological_Process_2023
+Cellular Response To Chemokine (GO:1990869),0.0964819183900232,67.6059670933825,GO_Biological_Process_2023
+Extracellular Matrix Organization (GO:0030198),0.0964819183900232,33.826907591287444,GO_Biological_Process_2023
+Cellular Response To Virus (GO:0098586),0.1066329235831259,60.051760195429935,GO_Biological_Process_2023
+Positive Regulation Of Cell Cycle (GO:0045787),0.1066329235831259,58.70537343689256,GO_Biological_Process_2023
+Positive Regulation Of Gap Junction Assembly (GO:1903598),0.1066329235831259,446.4379351400606,GO_Biological_Process_2023
+Glycolipid Transport (GO:0046836),0.1066329235831259,446.4379351400606,GO_Biological_Process_2023
+Nephron Tubule Development (GO:0072080),0.1066329235831259,446.4379351400606,GO_Biological_Process_2023
+Ketone Body Biosynthetic Process (GO:0046951),0.1066329235831259,446.4379351400606,GO_Biological_Process_2023
+Regulation Of Heart Contraction (GO:0008016),0.1066329235831259,53.77976800231812,GO_Biological_Process_2023
+Positive Regulation Of Phosphatidylinositol 3-Kinase Signaling (GO:0014068),0.1066329235831259,53.77976800231812,GO_Biological_Process_2023
+Sulfur Compound Biosynthetic Process (GO:0044272),0.1066329235831259,52.65237170003471,GO_Biological_Process_2023
+Negative Regulation Of Cell Population Proliferation (GO:0008285),0.1066329235831259,19.14495667998926,GO_Biological_Process_2023
+Gland Morphogenesis (GO:0022612),0.1066329235831259,342.3895623444841,GO_Biological_Process_2023
+Hindlimb Morphogenesis (GO:0035137),0.1066329235831259,342.3895623444841,GO_Biological_Process_2023
+Regulation Of Natural Killer Cell Chemotaxis (GO:2000501),0.1066329235831259,342.3895623444841,GO_Biological_Process_2023
+Ketone Body Metabolic Process (GO:1902224),0.1066329235831259,342.3895623444841,GO_Biological_Process_2023
+Regulation Of Systemic Arterial Blood Pressure By Renin-Angiotensin (GO:0003081),0.1066329235831259,342.3895623444841,GO_Biological_Process_2023
+Regulation Of Transforming Growth Factor Beta2 Production (GO:0032909),0.1066329235831259,342.3895623444841,GO_Biological_Process_2023
+Monoacylglycerol Biosynthetic Process (GO:0006640),0.1066329235831259,342.3895623444841,GO_Biological_Process_2023
+Positive Regulation Of Activation Of Janus Kinase Activity (GO:0010536),0.1066329235831259,342.3895623444841,GO_Biological_Process_2023
+Positive Regulation Of Blood Circulation (GO:1903524),0.1066329235831259,342.3895623444841,GO_Biological_Process_2023
+Embryonic Organ Development (GO:0048568),0.1066329235831259,45.72434655376785,GO_Biological_Process_2023
+Positive Regulation Of Cellular Process (GO:0048522),0.1066329235831259,15.096093978474457,GO_Biological_Process_2023
+Long-Chain Fatty Acid Metabolic Process (GO:0001676),0.1066329235831259,44.85464558420347,GO_Biological_Process_2023
+Organonitrogen Compound Catabolic Process (GO:1901565),0.1066329235831259,44.85464558420347,GO_Biological_Process_2023
+Positive Regulation Of Immune Response (GO:0050778),0.1066329235831259,43.19273030214829,GO_Biological_Process_2023
+Folic Acid Transport (GO:0015884),0.1066329235831259,274.9362107684438,GO_Biological_Process_2023
+Regulation Of Epithelial To Mesenchymal Transition Involved In Endocardial Cushion Formation (GO:1905005),0.1066329235831259,274.9362107684438,GO_Biological_Process_2023
+Ventricular Trabecula Myocardium Morphogenesis (GO:0003222),0.1066329235831259,274.9362107684438,GO_Biological_Process_2023
+Positive Regulation Of Vascular Endothelial Growth Factor Signaling Pathway (GO:1900748),0.1066329235831259,274.9362107684438,GO_Biological_Process_2023
+Cell Migration Involved In Heart Development (GO:0060973),0.1066329235831259,274.9362107684438,GO_Biological_Process_2023
+Peptidyl-Proline Hydroxylation To 4-hydroxy-L-proline (GO:0018401),0.1066329235831259,274.9362107684438,GO_Biological_Process_2023
+Platelet Activating Factor Metabolic Process (GO:0046469),0.1066329235831259,274.9362107684438,GO_Biological_Process_2023
+Regulation Of Vascular Wound Healing (GO:0061043),0.1066329235831259,274.9362107684438,GO_Biological_Process_2023
+Regulation Of Golgi To Plasma Membrane Protein Transport (GO:0042996),0.1066329235831259,274.9362107684438,GO_Biological_Process_2023
+Collecting Duct Development (GO:0072044),0.1066329235831259,274.9362107684438,GO_Biological_Process_2023
+Positive Regulation Of Cardiac Epithelial To Mesenchymal Transition (GO:0062043),0.1066329235831259,274.9362107684438,GO_Biological_Process_2023
+Regulation Of Activation Of Janus Kinase Activity (GO:0010533),0.1066329235831259,274.9362107684438,GO_Biological_Process_2023
+Regulation Of Epithelial To Mesenchymal Transition (GO:0010717),0.1080326270114897,40.877971632620635,GO_Biological_Process_2023
+Epidermis Development (GO:0008544),0.1080326270114897,39.44264488506008,GO_Biological_Process_2023
+Regulation Of Gap Junction Assembly (GO:1903596),0.1080326270114897,227.9549801512961,GO_Biological_Process_2023
+Regulation Of Morphogenesis Of An Epithelium (GO:1905330),0.1080326270114897,227.9549801512961,GO_Biological_Process_2023
+Cardioblast Differentiation (GO:0010002),0.1080326270114897,227.9549801512961,GO_Biological_Process_2023
+Regulation Of Cell Killing (GO:0031341),0.1080326270114897,227.9549801512961,GO_Biological_Process_2023
+Regulation Of Insulin Secretion (GO:0050796),0.1080326270114897,38.08585452607372,GO_Biological_Process_2023
+Positive Regulation Of Cell Adhesion (GO:0045785),0.1080326270114897,37.43504172973695,GO_Biological_Process_2023
+Regulation Of Phosphatidylinositol 3-Kinase Signaling (GO:0014066),0.1080326270114897,36.18515879365064,GO_Biological_Process_2023
+Regulation Of Epithelial Cell Proliferation (GO:0050678),0.1080326270114897,35.5848177883064,GO_Biological_Process_2023
+Regulation Of Complement-Dependent Cytotoxicity (GO:1903659),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+Ether Lipid Biosynthetic Process (GO:0008611),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+Forelimb Morphogenesis (GO:0035136),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+Positive Regulation Of Platelet Activation (GO:0010572),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+Negative Regulation Of Toll-Like Receptor 4 Signaling Pathway (GO:0034144),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+Aminoglycan Metabolic Process (GO:0006022),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+Neuron Projection Regeneration (GO:0031102),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+Axon Regeneration (GO:0031103),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+Phosphatidylcholine Catabolic Process (GO:0034638),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+Cellular Response To Prostaglandin Stimulus (GO:0071379),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+Positive Regulation Of T Cell Apoptotic Process (GO:0070234),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+Chondroitin Sulfate Proteoglycan Metabolic Process (GO:0050654),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+Myelin Assembly (GO:0032288),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+Positive Regulation Of Cardiocyte Differentiation (GO:1905209),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+Regulation Of Cell-Cell Adhesion Mediated By Integrin (GO:0033632),0.1080326270114897,193.52086993316271,GO_Biological_Process_2023
+T Cell Chemotaxis (GO:0010818),0.1150554231254669,167.3010120823387,GO_Biological_Process_2023
+Atrial Septum Morphogenesis (GO:0060413),0.1150554231254669,167.3010120823387,GO_Biological_Process_2023
+Peptidyl-Proline Hydroxylation (GO:0019511),0.1150554231254669,167.3010120823387,GO_Biological_Process_2023
+Positive Regulation Of Chondrocyte Differentiation (GO:0032332),0.1150554231254669,167.3010120823387,GO_Biological_Process_2023
+Embryonic Appendage Morphogenesis (GO:0035113),0.1150554231254669,167.3010120823387,GO_Biological_Process_2023
+Positive Regulation Of Myelination (GO:0031643),0.119651938801997,146.73452100035948,GO_Biological_Process_2023
+Regulation Of Homotypic Cell-Cell Adhesion (GO:0034110),0.119651938801997,146.73452100035948,GO_Biological_Process_2023
+Regulation Of Muscle System Process (GO:0090257),0.119651938801997,146.73452100035948,GO_Biological_Process_2023
+Macrophage Chemotaxis (GO:0048246),0.119651938801997,146.73452100035948,GO_Biological_Process_2023
+Catecholamine Biosynthetic Process (GO:0042423),0.119651938801997,146.73452100035948,GO_Biological_Process_2023
+Phosphatidylinositol-3-Phosphate Biosynthetic Process (GO:0036092),0.119651938801997,146.73452100035948,GO_Biological_Process_2023
+Regulation Of T Cell Apoptotic Process (GO:0070232),0.119651938801997,146.73452100035948,GO_Biological_Process_2023
+Negative Regulation Of Signal Transduction (GO:0009968),0.1207785950623285,16.83597323857966,GO_Biological_Process_2023
+Granulocyte Activation (GO:0036230),0.1207785950623285,130.2147194065139,GO_Biological_Process_2023
+Low-Density Lipoprotein Particle Remodeling (GO:0034374),0.1207785950623285,130.2147194065139,GO_Biological_Process_2023
+Organophosphate Catabolic Process (GO:0046434),0.1207785950623285,130.2147194065139,GO_Biological_Process_2023
+Macrophage Migration (GO:1905517),0.1207785950623285,130.2147194065139,GO_Biological_Process_2023
+Cardiac Right Ventricle Morphogenesis (GO:0003215),0.1207785950623285,130.2147194065139,GO_Biological_Process_2023
+Phosphatidylcholine Acyl-Chain Remodeling (GO:0036151),0.1207785950623285,130.2147194065139,GO_Biological_Process_2023
+Positive Regulation Of T Cell Chemotaxis (GO:0010820),0.1207785950623285,130.2147194065139,GO_Biological_Process_2023
+Myelination In Peripheral Nervous System (GO:0022011),0.1207785950623285,130.2147194065139,GO_Biological_Process_2023
+Negative Regulation By Host Of Viral Transcription (GO:0043922),0.1207785950623285,130.2147194065139,GO_Biological_Process_2023
+Extracellular Structure Organization (GO:0043062),0.1207785950623285,26.987409356009476,GO_Biological_Process_2023
+External Encapsulating Structure Organization (GO:0045229),0.1207785950623285,26.607752397672005,GO_Biological_Process_2023
+Regulation Of Transforming Growth Factor Beta Receptor Signaling Pathway (GO:0017015),0.1207785950623285,26.23633758944092,GO_Biological_Process_2023
+Positive Regulation Of Macrophage Chemotaxis (GO:0010759),0.1207785950623285,116.6847899929619,GO_Biological_Process_2023
+Regulation Of Macrophage Cytokine Production (GO:0010935),0.1207785950623285,116.6847899929619,GO_Biological_Process_2023
+Atrial Septum Development (GO:0003283),0.1207785950623285,116.6847899929619,GO_Biological_Process_2023
+Atrioventricular Valve Development (GO:0003171),0.1207785950623285,116.6847899929619,GO_Biological_Process_2023
+Cardiocyte Differentiation (GO:0035051),0.1207785950623285,116.6847899929619,GO_Biological_Process_2023
+Protein Hydroxylation (GO:0018126),0.1207785950623285,116.6847899929619,GO_Biological_Process_2023
+Monoacylglycerol Metabolic Process (GO:0046462),0.1207785950623285,116.6847899929619,GO_Biological_Process_2023
+Response To Progesterone (GO:0032570),0.1207785950623285,116.6847899929619,GO_Biological_Process_2023
+Secondary Palate Development (GO:0062009),0.1207785950623285,116.6847899929619,GO_Biological_Process_2023
+Positive Regulation Of Cell Differentiation (GO:0045597),0.1234554725218363,15.198847512968078,GO_Biological_Process_2023
+Striated Muscle Cell Development (GO:0055002),0.1234554725218363,105.4223689491126,GO_Biological_Process_2023
+Regulation Of Endothelial Cell Chemotaxis (GO:2001026),0.1234554725218363,105.4223689491126,GO_Biological_Process_2023
+Aorta Development (GO:0035904),0.1234554725218363,105.4223689491126,GO_Biological_Process_2023
+Prostanoid Biosynthetic Process (GO:0046457),0.1234554725218363,105.4223689491126,GO_Biological_Process_2023
+Pathway-Restricted SMAD Protein Phosphorylation (GO:0060389),0.1234554725218363,105.4223689491126,GO_Biological_Process_2023
+Ceramide Transport (GO:0035627),0.1234554725218363,105.4223689491126,GO_Biological_Process_2023
+Positive Regulation Of Endothelial Cell Chemotaxis (GO:2001028),0.1234554725218363,105.4223689491126,GO_Biological_Process_2023
+Sympathetic Nervous System Development (GO:0048485),0.1264676637045074,95.91771596133704,GO_Biological_Process_2023
+High-Density Lipoprotein Particle Remodeling (GO:0034375),0.1264676637045074,95.91771596133704,GO_Biological_Process_2023
+Positive Regulation Of Cell Activation (GO:0050867),0.1264676637045074,95.91771596133704,GO_Biological_Process_2023
+Dendritic Cell Chemotaxis (GO:0002407),0.1264676637045074,95.91771596133704,GO_Biological_Process_2023
+Positive Regulation Of Macromolecule Biosynthetic Process (GO:0010557),0.1264676637045074,22.63022834568748,GO_Biological_Process_2023
+Organonitrogen Compound Biosynthetic Process (GO:1901566),0.1264676637045074,22.34084340876857,GO_Biological_Process_2023
+Cellular Response To Lipopolysaccharide (GO:0071222),0.1264676637045074,22.05711333941876,GO_Biological_Process_2023
+Positive Regulation Of Defense Response (GO:0031349),0.1264676637045074,22.05711333941876,GO_Biological_Process_2023
+Positive Regulation Of Homotypic Cell-Cell Adhesion (GO:0034112),0.1264676637045074,87.80133530116419,GO_Biological_Process_2023
+Negative Regulation Of Phosphatase Activity (GO:0010923),0.1264676637045074,87.80133530116419,GO_Biological_Process_2023
+acetyl-CoA Metabolic Process (GO:0006084),0.1264676637045074,87.80133530116419,GO_Biological_Process_2023
+Positive Regulation Of Smooth Muscle Cell Migration (GO:0014911),0.1264676637045074,87.80133530116419,GO_Biological_Process_2023
+Autonomic Nervous System Development (GO:0048483),0.1264676637045074,87.80133530116419,GO_Biological_Process_2023
+Cellular Response To Fatty Acid (GO:0071398),0.1264676637045074,87.80133530116419,GO_Biological_Process_2023
+Regulation Of Transforming Growth Factor Beta Production (GO:0071634),0.1264676637045074,87.80133530116419,GO_Biological_Process_2023
+Negative Regulation Of Cytokine Production Involved In Immune Response (GO:0002719),0.1264676637045074,87.80133530116419,GO_Biological_Process_2023
+Positive Regulation Of Lymphocyte Chemotaxis (GO:0140131),0.1264676637045074,80.79916728086499,GO_Biological_Process_2023
+T Cell Migration (GO:0072678),0.1264676637045074,80.79916728086499,GO_Biological_Process_2023
+Positive Regulation Of Stem Cell Differentiation (GO:2000738),0.1264676637045074,80.79916728086499,GO_Biological_Process_2023
+Aorta Morphogenesis (GO:0035909),0.1264676637045074,80.79916728086499,GO_Biological_Process_2023
+Prostaglandin Biosynthetic Process (GO:0001516),0.1264676637045074,80.79916728086499,GO_Biological_Process_2023
+Carbohydrate Derivative Transport (GO:1901264),0.1264676637045074,80.79916728086499,GO_Biological_Process_2023
+Positive Regulation Of Cartilage Development (GO:0061036),0.1264676637045074,80.79916728086499,GO_Biological_Process_2023
+Embryo Development Ending In Birth Or Egg Hatching (GO:0009792),0.1264676637045074,80.79916728086499,GO_Biological_Process_2023
+Positive Regulation Of Intracellular Signal Transduction (GO:1902533),0.1264676637045074,10.29033654964329,GO_Biological_Process_2023
+Positive Regulation Of Peptidyl-Tyrosine Phosphorylation (GO:0050731),0.1264676637045074,20.46530163526616,GO_Biological_Process_2023
+Positive Regulation Of Macrophage Migration (GO:1905523),0.1264676637045074,74.70385911458476,GO_Biological_Process_2023
+Glycerolipid Catabolic Process (GO:0046503),0.1264676637045074,74.70385911458476,GO_Biological_Process_2023
+Positive Regulation Of Nervous System Process (GO:0031646),0.1264676637045074,74.70385911458476,GO_Biological_Process_2023
+Positive Regulation Of Neuroblast Proliferation (GO:0002052),0.1264676637045074,74.70385911458476,GO_Biological_Process_2023
+Heart Trabecula Morphogenesis (GO:0061384),0.1264676637045074,74.70385911458476,GO_Biological_Process_2023
+Icosanoid Biosynthetic Process (GO:0046456),0.1264676637045074,74.70385911458476,GO_Biological_Process_2023
+Positive Regulation Of Stress-Activated Protein Kinase Signaling Cascade (GO:0070304),0.1264676637045074,74.70385911458476,GO_Biological_Process_2023
+Neutrophil Activation (GO:0042119),0.1264676637045074,74.70385911458476,GO_Biological_Process_2023
+Cardiac Atrium Morphogenesis (GO:0003209),0.1264676637045074,74.70385911458476,GO_Biological_Process_2023
+Mesenchyme Morphogenesis (GO:0072132),0.1264676637045074,74.70385911458476,GO_Biological_Process_2023
+Pulmonary Valve Morphogenesis (GO:0003184),0.1264676637045074,74.70385911458476,GO_Biological_Process_2023
+Response To Axon Injury (GO:0048678),0.1264676637045074,74.70385911458476,GO_Biological_Process_2023
+Dendritic Cell Migration (GO:0036336),0.1264676637045074,74.70385911458476,GO_Biological_Process_2023
+Supramolecular Fiber Organization (GO:0097435),0.1264676637045074,12.47118019542631,GO_Biological_Process_2023
+Regulation Of Cellular Response To Growth Factor Stimulus (GO:0090287),0.1264676637045074,69.35578082800635,GO_Biological_Process_2023
+Regulation Of Fibroblast Growth Factor Receptor Signaling Pathway (GO:0040036),0.1264676637045074,69.35578082800635,GO_Biological_Process_2023
+Regulation Of Granulocyte Chemotaxis (GO:0071622),0.1264676637045074,69.35578082800635,GO_Biological_Process_2023
+Atrioventricular Valve Morphogenesis (GO:0003181),0.1264676637045074,69.35578082800635,GO_Biological_Process_2023
+Leukotriene Biosynthetic Process (GO:0019370),0.1264676637045074,69.35578082800635,GO_Biological_Process_2023
+Linoleic Acid Metabolic Process (GO:0043651),0.1264676637045074,69.35578082800635,GO_Biological_Process_2023
+Cardiac Epithelial To Mesenchymal Transition (GO:0060317),0.1264676637045074,69.35578082800635,GO_Biological_Process_2023
+Regulation Of Smooth Muscle Cell Migration (GO:0014910),0.1264676637045074,69.35578082800635,GO_Biological_Process_2023
+Regulation Of Vascular Endothelial Growth Factor Signaling Pathway (GO:1900746),0.1264676637045074,69.35578082800635,GO_Biological_Process_2023
+Chondroitin Sulfate Proteoglycan Biosynthetic Process (GO:0050650),0.1264676637045074,69.35578082800635,GO_Biological_Process_2023
+Dopamine Metabolic Process (GO:0042417),0.1264676637045074,69.35578082800635,GO_Biological_Process_2023
+Negative Regulation Of Protein Localization To Plasma Membrane (GO:1903077),0.126972618646982,64.63014669364038,GO_Biological_Process_2023
+Positive Regulation Of Phospholipase Activity (GO:0010518),0.126972618646982,64.63014669364038,GO_Biological_Process_2023
+Negative Regulation Of Small GTPase Mediated Signal Transduction (GO:0051058),0.126972618646982,64.63014669364038,GO_Biological_Process_2023
+Regulation Of Macrophage Chemotaxis (GO:0010758),0.126972618646982,64.63014669364038,GO_Biological_Process_2023
+Leukotriene Metabolic Process (GO:0006691),0.126972618646982,64.63014669364038,GO_Biological_Process_2023
+Lipopolysaccharide-Mediated Signaling Pathway (GO:0031663),0.126972618646982,64.63014669364038,GO_Biological_Process_2023
+Phosphatidylglycerol Metabolic Process (GO:0046471),0.126972618646982,64.63014669364038,GO_Biological_Process_2023
+Pulmonary Valve Development (GO:0003177),0.126972618646982,64.63014669364038,GO_Biological_Process_2023
+Response To Fibroblast Growth Factor (GO:0071774),0.126972618646982,64.63014669364038,GO_Biological_Process_2023
+Response To Ketone (GO:1901654),0.126972618646982,64.63014669364038,GO_Biological_Process_2023
+Proteolysis (GO:0006508),0.1278212304792774,11.520969052606691,GO_Biological_Process_2023
+Positive Regulation Of Heart Contraction (GO:0045823),0.1285274852164495,60.42807445408675,GO_Biological_Process_2023
+Innate Immune Response In Mucosa (GO:0002227),0.1285274852164495,60.42807445408675,GO_Biological_Process_2023
+Aminoglycan Biosynthetic Process (GO:0006023),0.1285274852164495,60.42807445408675,GO_Biological_Process_2023
+Positive Regulation Of Translational Initiation (GO:0045948),0.1285274852164495,60.42807445408675,GO_Biological_Process_2023
+Peptide Catabolic Process (GO:0043171),0.1285274852164495,60.42807445408675,GO_Biological_Process_2023
+Regulation Of Cardiac Conduction (GO:1903779),0.1285274852164495,60.42807445408675,GO_Biological_Process_2023
+Endocardial Cushion Morphogenesis (GO:0003203),0.1285274852164495,60.42807445408675,GO_Biological_Process_2023
+Acylglycerol Biosynthetic Process (GO:0046463),0.1316227812415745,56.67024999786951,GO_Biological_Process_2023
+Regulation Of Mononuclear Cell Migration (GO:0071675),0.1316227812415745,56.67024999786951,GO_Biological_Process_2023
+Modulation By Host Of Viral Process (GO:0044788),0.1316227812415745,56.67024999786951,GO_Biological_Process_2023
+Negative Regulation Of G Protein-Coupled Receptor Signaling Pathway (GO:0045744),0.1316227812415745,56.67024999786951,GO_Biological_Process_2023
+Positive Regulation Of Cholesterol Efflux (GO:0010875),0.1316227812415745,56.67024999786951,GO_Biological_Process_2023
+Cellular Response To Organic Cyclic Compound (GO:0071407),0.132913684770397,15.907585158720506,GO_Biological_Process_2023
+Regulation Of Cellular Response To Transforming Growth Factor Beta Stimulus (GO:1903844),0.132913684770397,53.29235549319145,GO_Biological_Process_2023
+Regulation Of Extracellular Matrix Organization (GO:1903053),0.132913684770397,53.29235549319145,GO_Biological_Process_2023
+Positive Regulation Of Oxidoreductase Activity (GO:0051353),0.132913684770397,53.29235549319145,GO_Biological_Process_2023
+Heparan Sulfate Proteoglycan Biosynthetic Process (GO:0015012),0.132913684770397,53.29235549319145,GO_Biological_Process_2023
+Cellular Lipid Catabolic Process (GO:0044242),0.132913684770397,53.29235549319145,GO_Biological_Process_2023
+Regulation Of Toll-Like Receptor 4 Signaling Pathway (GO:0034143),0.132913684770397,53.29235549319145,GO_Biological_Process_2023
+Endocardial Cushion Development (GO:0003197),0.132913684770397,53.29235549319145,GO_Biological_Process_2023
+Positive Regulation Of Response To External Stimulus (GO:0032103),0.1341089445757241,15.407110195493528,GO_Biological_Process_2023
+Regulation Of Neuroblast Proliferation (GO:1902692),0.1341089445757241,50.24171555062859,GO_Biological_Process_2023
+Outflow Tract Septum Morphogenesis (GO:0003148),0.1341089445757241,50.24171555062859,GO_Biological_Process_2023
+Protein Kinase B Signaling (GO:0043491),0.1341089445757241,50.24171555062859,GO_Biological_Process_2023
+Positive Regulation Of ERBB Signaling Pathway (GO:1901186),0.1341089445757241,50.24171555062859,GO_Biological_Process_2023
+Dicarboxylic Acid Transport (GO:0006835),0.1341089445757241,50.24171555062859,GO_Biological_Process_2023
+Eosinophil Chemotaxis (GO:0048245),0.1341089445757241,50.24171555062859,GO_Biological_Process_2023
+Eosinophil Migration (GO:0072677),0.1341089445757241,50.24171555062859,GO_Biological_Process_2023
+Regulation Of Chondrocyte Differentiation (GO:0032330),0.1368020340177703,47.47480020477031,GO_Biological_Process_2023
+Negative Regulation Of Protein Transport (GO:0051224),0.1368020340177703,47.47480020477031,GO_Biological_Process_2023
+Regulation Of Myelination (GO:0031641),0.1368020340177703,47.47480020477031,GO_Biological_Process_2023
+Organophosphate Ester Transport (GO:0015748),0.1368020340177703,47.47480020477031,GO_Biological_Process_2023
+Proteoglycan Metabolic Process (GO:0006029),0.1368020340177703,47.47480020477031,GO_Biological_Process_2023
+Cardiac Muscle Cell Development (GO:0055013),0.1409998461181516,44.95534064809558,GO_Biological_Process_2023
+Regulation Of Vasoconstriction (GO:0019229),0.1409998461181516,44.95534064809558,GO_Biological_Process_2023
+Positive Regulation Of Immune System Process (GO:0002684),0.1434649119899871,42.652889831563165,GO_Biological_Process_2023
+Positive Regulation Of Mitotic Cell Cycle (GO:0045931),0.1434649119899871,42.652889831563165,GO_Biological_Process_2023
+Glycerophospholipid Catabolic Process (GO:0046475),0.1434649119899871,42.652889831563165,GO_Biological_Process_2023
+Ventricular Septum Morphogenesis (GO:0060412),0.1434649119899871,42.652889831563165,GO_Biological_Process_2023
+Peptide Cross-Linking (GO:0018149),0.1434649119899871,42.652889831563165,GO_Biological_Process_2023
+Fatty Acid Derivative Biosynthetic Process (GO:1901570),0.1458256096176844,40.54171043527237,GO_Biological_Process_2023
+Glycosaminoglycan Metabolic Process (GO:0030203),0.1458256096176844,40.54171043527237,GO_Biological_Process_2023
+Regulation Of Platelet Activation (GO:0010543),0.1458256096176844,40.54171043527237,GO_Biological_Process_2023
+Primary Neural Tube Formation (GO:0014020),0.1458256096176844,40.54171043527237,GO_Biological_Process_2023
+Mucosal Immune Response (GO:0002385),0.1458256096176844,40.54171043527237,GO_Biological_Process_2023
+Positive Regulation Of Neural Precursor Cell Proliferation (GO:2000179),0.1474455122995389,38.5999069065122,GO_Biological_Process_2023
+Regulation Of Muscle Contraction (GO:0006937),0.1474455122995389,38.5999069065122,GO_Biological_Process_2023
+Positive Regulation Of Viral Genome Replication (GO:0045070),0.1474455122995389,38.5999069065122,GO_Biological_Process_2023
+Modified Amino Acid Transport (GO:0072337),0.1474455122995389,38.5999069065122,GO_Biological_Process_2023
+Positive Regulation Of Calcium Ion Transport (GO:0051928),0.1474455122995389,38.5999069065122,GO_Biological_Process_2023
+Response To Steroid Hormone (GO:0048545),0.1474455122995389,38.5999069065122,GO_Biological_Process_2023
+Positive Regulation Of Cellular Biosynthetic Process (GO:0031328),0.1474455122995389,12.722350612514177,GO_Biological_Process_2023
+Positive Regulation Of Phosphate Metabolic Process (GO:0045937),0.1507989827223957,36.80874147674154,GO_Biological_Process_2023
+Regulation Of Macrophage Derived Foam Cell Differentiation (GO:0010743),0.1507989827223957,36.80874147674154,GO_Biological_Process_2023
+acyl-CoA Metabolic Process (GO:0006637),0.1528772958209792,35.15209038871121,GO_Biological_Process_2023
+Leukocyte Cell-Cell Adhesion (GO:0007159),0.1528772958209792,35.15209038871121,GO_Biological_Process_2023
+Positive Regulation Of G1/S Transition Of Mitotic Cell Cycle (GO:1900087),0.1528772958209792,35.15209038871121,GO_Biological_Process_2023
+Positive Regulation Of Cholesterol Transport (GO:0032376),0.1528772958209792,35.15209038871121,GO_Biological_Process_2023
+Regulation Of Cell Morphogenesis (GO:0022604),0.1528772958209792,35.15209038871121,GO_Biological_Process_2023
+Regulation Of Cholesterol Efflux (GO:0010874),0.1559585557358122,33.61600807740255,GO_Biological_Process_2023
+Phosphatidylinositol 3-Kinase Signaling (GO:0014065),0.1559585557358122,33.61600807740255,GO_Biological_Process_2023
+Proteoglycan Biosynthetic Process (GO:0030166),0.1559585557358122,33.61600807740255,GO_Biological_Process_2023
+Ventricular Cardiac Muscle Tissue Morphogenesis (GO:0055010),0.1573254261591948,32.18837516559274,GO_Biological_Process_2023
+Positive Regulation Of Release Of Sequestered Calcium Ion Into Cytosol (GO:0051281),0.1573254261591948,32.18837516559274,GO_Biological_Process_2023
+Carboxylic Acid Metabolic Process (GO:0019752),0.1573254261591948,32.18837516559274,GO_Biological_Process_2023
+Positive Regulation Of Notch Signaling Pathway (GO:0045747),0.1573254261591948,32.18837516559274,GO_Biological_Process_2023
+Regulation Of Cell Adhesion Mediated By Integrin (GO:0033628),0.1573254261591948,32.18837516559274,GO_Biological_Process_2023
+Positive Regulation Of Epidermal Growth Factor Receptor Signaling Pathway (GO:0045742),0.1573254261591948,32.18837516559274,GO_Biological_Process_2023
+Glial Cell Differentiation (GO:0010001),0.1586260510936238,30.85861216573232,GO_Biological_Process_2023
+Regulation Of DNA Biosynthetic Process (GO:2000278),0.1586260510936238,30.85861216573232,GO_Biological_Process_2023
+Negative Regulation Of Ras Protein Signal Transduction (GO:0046580),0.1586260510936238,30.85861216573232,GO_Biological_Process_2023
+Regulation Of Blood Circulation (GO:1903522),0.1586260510936238,30.85861216573232,GO_Biological_Process_2023
+Embryonic Limb Morphogenesis (GO:0030326),0.1586260510936238,30.85861216573232,GO_Biological_Process_2023
+Embryonic Skeletal System Development (GO:0048706),0.1586260510936238,30.85861216573232,GO_Biological_Process_2023
+Platelet Aggregation (GO:0070527),0.1625466803807601,29.61744503578088,GO_Biological_Process_2023
+Regulation Of Programmed Cell Death (GO:0043067),0.1649624715421391,10.490301477724982,GO_Biological_Process_2023
+Neural Crest Cell Migration (GO:0001755),0.165324344116862,28.456712045041098,GO_Biological_Process_2023
+Blood Vessel Diameter Maintenance (GO:0097746),0.165324344116862,28.456712045041098,GO_Biological_Process_2023
+Negative Regulation Of Endothelial Cell Proliferation (GO:0001937),0.167485558992408,27.36920368672352,GO_Biological_Process_2023
+Ventricular Septum Development (GO:0003281),0.167485558992408,27.36920368672352,GO_Biological_Process_2023
+Positive Regulation Of Receptor Signaling Pathway Via JAK-STAT (GO:0046427),0.167485558992408,27.36920368672352,GO_Biological_Process_2023
+Positive Regulation Of Receptor Signaling Pathway Via STAT (GO:1904894),0.167485558992408,27.36920368672352,GO_Biological_Process_2023
+Organic Substance Transport (GO:0071702),0.1690332977299615,9.958028586222367,GO_Biological_Process_2023
+Heart Looping (GO:0001947),0.1690332977299615,26.34852930034076,GO_Biological_Process_2023
+Positive Regulation Of Protein Tyrosine Kinase Activity (GO:0061098),0.1690332977299615,26.34852930034076,GO_Biological_Process_2023
+Membrane Assembly (GO:0071709),0.1690332977299615,26.34852930034076,GO_Biological_Process_2023
+Positive Regulation Of Bone Mineralization (GO:0030501),0.1690332977299615,26.34852930034076,GO_Biological_Process_2023
+RNA Transport (GO:0050658),0.17106469994773,25.38900533231373,GO_Biological_Process_2023
+Vitamin Transport (GO:0051180),0.17106469994773,25.38900533231373,GO_Biological_Process_2023
+Odontogenesis (GO:0042476),0.17106469994773,25.38900533231373,GO_Biological_Process_2023
+Regulation Of Protein Tyrosine Kinase Activity (GO:0061097),0.17106469994773,25.38900533231373,GO_Biological_Process_2023
+Positive Regulation Of Monoatomic Ion Transport (GO:0043270),0.172565790372407,24.485561288951835,GO_Biological_Process_2023
+Notch Signaling Pathway (GO:0007219),0.172565790372407,24.485561288951835,GO_Biological_Process_2023
+Positive Regulation Of Wound Healing (GO:0090303),0.172565790372407,24.485561288951835,GO_Biological_Process_2023
+Positive Regulation Of Cell Cycle G1/S Phase Transition (GO:1902808),0.172565790372407,24.485561288951835,GO_Biological_Process_2023
+Stem Cell Differentiation (GO:0048863),0.172565790372407,23.633660200289185,GO_Biological_Process_2023
+Positive Regulation Of Ossification (GO:0045778),0.172565790372407,23.633660200289185,GO_Biological_Process_2023
+Visual System Development (GO:0150063),0.172565790372407,23.633660200289185,GO_Biological_Process_2023
+Positive Regulation Of Response To Biotic Stimulus (GO:0002833),0.172565790372407,23.633660200289185,GO_Biological_Process_2023
+Positive Regulation Of Viral Process (GO:0048524),0.172565790372407,23.633660200289185,GO_Biological_Process_2023
+Lymphocyte Migration (GO:0072676),0.172565790372407,23.633660200289185,GO_Biological_Process_2023
+Detection Of Chemical Stimulus Involved In Sensory Perception Of Bitter Taste (GO:0001580),0.172565790372407,23.633660200289185,GO_Biological_Process_2023
+Regulation Of Apoptotic Process (GO:0042981),0.172565790372407,5.522161729827095,GO_Biological_Process_2023
+Keratinocyte Differentiation (GO:0030216),0.172565790372407,22.829231064333683,GO_Biological_Process_2023
+Cardiac Ventricle Morphogenesis (GO:0003208),0.172565790372407,22.829231064333683,GO_Biological_Process_2023
+Monocyte Chemotaxis (GO:0002548),0.172565790372407,22.829231064333683,GO_Biological_Process_2023
+Collagen Fibril Organization (GO:0030199),0.172565790372407,22.829231064333683,GO_Biological_Process_2023
+Positive Regulation Of Calcium Ion Transmembrane Transport (GO:1904427),0.172565790372407,22.829231064333683,GO_Biological_Process_2023
+Determination Of Heart Left/Right Asymmetry (GO:0061371),0.172565790372407,22.829231064333683,GO_Biological_Process_2023
+Sensory Perception Of Bitter Taste (GO:0050913),0.172565790372407,22.829231064333683,GO_Biological_Process_2023
+Embryonic Heart Tube Morphogenesis (GO:0003143),0.172565790372407,22.829231064333683,GO_Biological_Process_2023
+Positive Regulation Of miRNA Transcription (GO:1902895),0.1754110469024493,22.068611238785657,GO_Biological_Process_2023
+Positive Regulation Of Biomineral Tissue Development (GO:0070169),0.1754110469024493,22.068611238785657,GO_Biological_Process_2023
+Negative Regulation Of Immune System Process (GO:0002683),0.1766453222937734,21.34849709415977,GO_Biological_Process_2023
+Phosphatidylinositol Phosphate Biosynthetic Process (GO:0046854),0.1766453222937734,21.34849709415977,GO_Biological_Process_2023
+Cellular Response To Ketone (GO:1901655),0.1766453222937734,21.34849709415977,GO_Biological_Process_2023
+Positive Regulation Of Biosynthetic Process (GO:0009891),0.1766453222937734,21.34849709415977,GO_Biological_Process_2023
+Positive Regulation Of Chemotaxis (GO:0050921),0.1766453222937734,21.34849709415977,GO_Biological_Process_2023
+Positive Regulation Of Innate Immune Response (GO:0045089),0.1788686369262886,20.665901611884028,GO_Biological_Process_2023
+Hexose Metabolic Process (GO:0019318),0.1788686369262886,20.665901611884028,GO_Biological_Process_2023
+Detection Of Chemical Stimulus Involved In Sensory Perception Of Taste (GO:0050912),0.1788686369262886,20.665901611884028,GO_Biological_Process_2023
+Regulation Of Epidermal Growth Factor Receptor Signaling Pathway (GO:0042058),0.1789811624340268,20.01811780873028,GO_Biological_Process_2023
+Homotypic Cell-Cell Adhesion (GO:0034109),0.1789811624340268,20.01811780873028,GO_Biological_Process_2023
+Antiviral Innate Immune Response (GO:0140374),0.1789811624340268,20.01811780873028,GO_Biological_Process_2023
+Male Gonad Development (GO:0008584),0.1789811624340268,20.01811780873028,GO_Biological_Process_2023
+Myofibril Assembly (GO:0030239),0.1789811624340268,20.01811780873028,GO_Biological_Process_2023
+Positive Regulation Of Cell-Cell Adhesion (GO:0022409),0.1789811624340268,20.01811780873028,GO_Biological_Process_2023
+Development Of Primary Male Sexual Characteristics (GO:0046546),0.1789811624340268,20.01811780873028,GO_Biological_Process_2023
+Regulation Of Cell Growth (GO:0001558),0.1808666121603906,8.0514767388936,GO_Biological_Process_2023
+Epithelial To Mesenchymal Transition (GO:0001837),0.1811039358621729,19.4026870705364,GO_Biological_Process_2023
+Positive Regulation Of Smooth Muscle Cell Proliferation (GO:0048661),0.1811039358621729,19.4026870705364,GO_Biological_Process_2023
+Positive Regulation Of Reactive Oxygen Species Metabolic Process (GO:2000379),0.1836967262946597,18.81737166641443,GO_Biological_Process_2023
+Cellular Response To Mechanical Stimulus (GO:0071260),0.1836967262946597,18.81737166641443,GO_Biological_Process_2023
+Positive Regulation Of miRNA Metabolic Process (GO:2000630),0.1857329232195901,18.260130793597916,GO_Biological_Process_2023
+Positive Regulation Of Pathway-Restricted SMAD Protein Phosphorylation (GO:0010862),0.1857329232195901,18.260130793597916,GO_Biological_Process_2023
+Neurogenesis (GO:0022008),0.1857329232195901,18.260130793597916,GO_Biological_Process_2023
+Inflammatory Response (GO:0006954),0.1872095192956796,7.51326082513572,GO_Biological_Process_2023
+"G Protein-Coupled Receptor Signaling Pathway, Coupled To Cyclic Nucleotide Second Messenger (GO:0007187)",0.1872095192956796,17.7290996615035,GO_Biological_Process_2023
+Regulation Of Epithelial Cell Migration (GO:0010632),0.1872095192956796,17.7290996615035,GO_Biological_Process_2023
+Blood Circulation (GO:0008015),0.1872095192956796,17.7290996615035,GO_Biological_Process_2023
+SMAD Protein Signal Transduction (GO:0060395),0.1881327455109955,17.22257115519733,GO_Biological_Process_2023
+Regulation Of Release Of Sequestered Calcium Ion Into Cytosol (GO:0051279),0.1881327455109955,17.22257115519733,GO_Biological_Process_2023
+Regulation Of Stress-Activated MAPK Cascade (GO:0032872),0.1881327455109955,17.22257115519733,GO_Biological_Process_2023
+Negative Regulation Of MAP Kinase Activity (GO:0043407),0.1881327455109955,17.22257115519733,GO_Biological_Process_2023
+Sensory Perception (GO:0007600),0.1881327455109955,17.22257115519733,GO_Biological_Process_2023
+Regulation Of Inflammatory Response (GO:0050727),0.1890912754661521,7.290441318878535,GO_Biological_Process_2023
+Icosanoid Metabolic Process (GO:0006690),0.1900418100335408,16.738979733033663,GO_Biological_Process_2023
+Arachidonic Acid Metabolic Process (GO:0019369),0.1900418100335408,16.738979733033663,GO_Biological_Process_2023
+Gonad Development (GO:0008406),0.1914001241726052,16.276887238960814,GO_Biological_Process_2023
+Negative Regulation Of Viral Genome Replication (GO:0045071),0.1914001241726052,16.276887238960814,GO_Biological_Process_2023
+Regulation Of Receptor Signaling Pathway Via JAK-STAT (GO:0046425),0.1914001241726052,16.276887238960814,GO_Biological_Process_2023
+Cellular Response To Alcohol (GO:0097306),0.1914001241726052,16.276887238960814,GO_Biological_Process_2023
+Epidermal Cell Differentiation (GO:0009913),0.192214376283379,15.834970375184442,GO_Biological_Process_2023
+Nucleosome Assembly (GO:0006334),0.192214376283379,15.834970375184442,GO_Biological_Process_2023
+Peptidyl-Tyrosine Modification (GO:0018212),0.192214376283379,15.834970375184442,GO_Biological_Process_2023
+Mesenchymal Cell Differentiation (GO:0048762),0.192214376283379,15.834970375184442,GO_Biological_Process_2023
+Regulation Of Smooth Muscle Cell Proliferation (GO:0048660),0.192214376283379,15.834970375184442,GO_Biological_Process_2023
+Positive Regulation Of Tyrosine Phosphorylation Of STAT Protein (GO:0042531),0.1940072279981958,15.412009607623004,GO_Biological_Process_2023
+Phosphatidylcholine Metabolic Process (GO:0046470),0.1940072279981958,15.412009607623004,GO_Biological_Process_2023
+Cellular Response To Fibroblast Growth Factor Stimulus (GO:0044344),0.1940072279981958,15.412009607623004,GO_Biological_Process_2023
+Peptide Metabolic Process (GO:0006518),0.1962726494362387,15.00687933540933,GO_Biological_Process_2023
+Regulation Of Reactive Oxygen Species Metabolic Process (GO:2000377),0.1962726494362387,15.00687933540933,GO_Biological_Process_2023
+Regulation Of Calcium Ion Transport (GO:0051924),0.1986669019182503,14.618539131965724,GO_Biological_Process_2023
+Cytokine-Mediated Signaling Pathway (GO:0019221),0.1986669019182503,6.441019938721841,GO_Biological_Process_2023
+Eye Development (GO:0001654),0.1986669019182503,14.246025949065045,GO_Biological_Process_2023
+Glycosaminoglycan Biosynthetic Process (GO:0006024),0.1986669019182503,14.246025949065045,GO_Biological_Process_2023
+Regulation Of Neuron Death (GO:1901214),0.1986669019182503,14.246025949065045,GO_Biological_Process_2023
+mRNA Transport (GO:0051028),0.1986669019182503,14.246025949065045,GO_Biological_Process_2023
+Response To Organic Cyclic Compound (GO:0014070),0.1986669019182503,14.246025949065045,GO_Biological_Process_2023
+Regulation Of Bone Mineralization (GO:0030500),0.1986669019182503,14.246025949065045,GO_Biological_Process_2023
+Glucose Metabolic Process (GO:0006006),0.1988146066494041,13.8884471557023,GO_Biological_Process_2023
+Heart Morphogenesis (GO:0003007),0.1988146066494041,13.8884471557023,GO_Biological_Process_2023
+Regulation Of miRNA Transcription (GO:1902893),0.1988146066494041,13.8884471557023,GO_Biological_Process_2023
+Phospholipid Transport (GO:0015914),0.1988146066494041,13.8884471557023,GO_Biological_Process_2023
+protein-DNA Complex Assembly (GO:0065004),0.1988146066494041,13.8884471557023,GO_Biological_Process_2023
+Chordate Embryonic Development (GO:0043009),0.1988146066494041,13.8884471557023,GO_Biological_Process_2023
+Regulation Of Extrinsic Apoptotic Signaling Pathway (GO:2001236),0.2014372245045881,13.544974303558986,GO_Biological_Process_2023
+BMP Signaling Pathway (GO:0030509),0.2025239730247759,13.214837540593155,GO_Biological_Process_2023
+Negative Regulation Of Viral Process (GO:0048525),0.2025239730247759,13.214837540593155,GO_Biological_Process_2023
+Regulation Of Pathway-Restricted SMAD Protein Phosphorylation (GO:0060393),0.2025239730247759,13.214837540593155,GO_Biological_Process_2023
+Positive Regulation Of Cell Junction Assembly (GO:1901890),0.2025239730247759,13.214837540593155,GO_Biological_Process_2023
+Positive Regulation Of Signal Transduction (GO:0009967),0.2025888325437405,6.047046555927847,GO_Biological_Process_2023
+Fat Cell Differentiation (GO:0045444),0.2025888325437405,12.897320592663672,GO_Biological_Process_2023
+Glycerophospholipid Metabolic Process (GO:0006650),0.2025888325437405,12.897320592663672,GO_Biological_Process_2023
+Cell Junction Organization (GO:0034330),0.2025888325437405,12.897320592663672,GO_Biological_Process_2023
+Phosphatidylinositol-Mediated Signaling (GO:0048015),0.2025888325437405,12.897320592663672,GO_Biological_Process_2023
+Regulation Of T Cell Activation (GO:0050863),0.2025888325437405,12.897320592663672,GO_Biological_Process_2023
+Positive Regulation Of Mitotic Cell Cycle Phase Transition (GO:1901992),0.2048163250618785,12.591756250239603,GO_Biological_Process_2023
+Positive Regulation Of Apoptotic Process (GO:0043065),0.2048163250618785,5.882753328645588,GO_Biological_Process_2023
+Positive Regulation Of Cell Migration (GO:0030335),0.2067323855770944,5.802942042827867,GO_Biological_Process_2023
+Antimicrobial Humoral Immune Response Mediated By Antimicrobial Peptide (GO:0061844),0.2071711324963647,12.01403781811508,GO_Biological_Process_2023
+Regulation Of Translational Initiation (GO:0006446),0.2071711324963647,12.01403781811508,GO_Biological_Process_2023
+Positive Regulation Of DNA Biosynthetic Process (GO:2000573),0.2071711324963647,12.01403781811508,GO_Biological_Process_2023
+Regulation Of Tyrosine Phosphorylation Of STAT Protein (GO:0042509),0.2071711324963647,12.01403781811508,GO_Biological_Process_2023
+Positive Regulation Of T Cell Proliferation (GO:0042102),0.2071711324963647,12.01403781811508,GO_Biological_Process_2023
+Negative Regulation Of Cellular Process (GO:0048523),0.2071711324963647,4.396058686518376,GO_Biological_Process_2023
+Cellular Response To BMP Stimulus (GO:0071773),0.2090211939000869,11.740759916332207,GO_Biological_Process_2023
+Cellular Response To Type II Interferon (GO:0071346),0.2090211939000869,11.740759916332207,GO_Biological_Process_2023
+Extrinsic Apoptotic Signaling Pathway (GO:0097191),0.2099399380020354,11.477180657220888,GO_Biological_Process_2023
+Activation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process (GO:0006919),0.2099399380020354,11.477180657220888,GO_Biological_Process_2023
+Peptidyl-Tyrosine Phosphorylation (GO:0018108),0.2099399380020354,11.477180657220888,GO_Biological_Process_2023
+Regulation Of Viral Genome Replication (GO:0045069),0.2099399380020354,11.477180657220888,GO_Biological_Process_2023
+Intermediate Filament Organization (GO:0045109),0.2113271250456505,11.222824361971773,GO_Biological_Process_2023
+Cell-Cell Junction Organization (GO:0045216),0.2113271250456505,11.222824361971773,GO_Biological_Process_2023
+Skin Development (GO:0043588),0.2113271250456505,11.222824361971773,GO_Biological_Process_2023
+Phospholipid Metabolic Process (GO:0006644),0.2136795746023712,10.977245117600177,GO_Biological_Process_2023
+Positive Regulation Of Protein Transport (GO:0051222),0.2140231909230973,10.740024519792764,GO_Biological_Process_2023
+Regulation Of G Protein-Coupled Receptor Signaling Pathway (GO:0008277),0.2140231909230973,10.740024519792764,GO_Biological_Process_2023
+Regulation Of Notch Signaling Pathway (GO:0008593),0.2140231909230973,10.740024519792764,GO_Biological_Process_2023
+Sensory Organ Development (GO:0007423),0.2140231909230973,10.740024519792764,GO_Biological_Process_2023
+Regulation Of Cellular Biosynthetic Process (GO:0031326),0.2140231909230973,10.740024519792764,GO_Biological_Process_2023
+Negative Regulation Of Cellular Response To Growth Factor Stimulus (GO:0090288),0.2163232156411802,10.51076961698872,GO_Biological_Process_2023
+Transforming Growth Factor Beta Receptor Signaling Pathway (GO:0007179),0.2176076405026057,10.28911103101624,GO_Biological_Process_2023
+Cellular Response To Hypoxia (GO:0071456),0.2176076405026057,10.28911103101624,GO_Biological_Process_2023
+Plasma Membrane Organization (GO:0007009),0.2176076405026057,10.28911103101624,GO_Biological_Process_2023
+Positive Regulation Of Secretion By Cell (GO:1903532),0.2193652620092493,10.074701240888364,GO_Biological_Process_2023
+Cellular Response To Decreased Oxygen Levels (GO:0036294),0.2193652620092493,10.074701240888364,GO_Biological_Process_2023
+Positive Regulation Of Lymphocyte Proliferation (GO:0050671),0.2216016149296328,9.867213018330611,GO_Biological_Process_2023
+Positive Regulation Of Neurogenesis (GO:0050769),0.2228129378516757,9.666337985731484,GO_Biological_Process_2023
+Nucleosome Organization (GO:0034728),0.2228129378516757,9.666337985731484,GO_Biological_Process_2023
+Regulation Of BMP Signaling Pathway (GO:0030510),0.2228129378516757,9.666337985731484,GO_Biological_Process_2023
+Positive Regulation Of Protein Secretion (GO:0050714),0.2245036302802109,9.4717853003048,GO_Biological_Process_2023
+Regulation Of Ras Protein Signal Transduction (GO:0046578),0.2245036302802109,9.4717853003048,GO_Biological_Process_2023
+Regulation Of Immune Response (GO:0050776),0.2246681671533238,9.283280446293812,GO_Biological_Process_2023
+Actomyosin Structure Organization (GO:0031032),0.2246681671533238,9.283280446293812,GO_Biological_Process_2023
+Negative Regulation Of Transforming Growth Factor Beta Receptor Signaling Pathway (GO:0030512),0.2246681671533238,9.283280446293812,GO_Biological_Process_2023
+Positive Regulation Of Response To Stimulus (GO:0048584),0.2246681671533238,9.283280446293812,GO_Biological_Process_2023
+Regulation Of T Cell Proliferation (GO:0042129),0.2246681671533238,9.283280446293812,GO_Biological_Process_2023
+Regulation Of Innate Immune Response (GO:0045088),0.2263115328426353,9.10056411919043,GO_Biological_Process_2023
+Negative Regulation Of Protein Modification Process (GO:0031400),0.2263115328426353,9.10056411919043,GO_Biological_Process_2023
+Positive Regulation Of MAPK Cascade (GO:0043410),0.229034682976067,4.53446850958879,GO_Biological_Process_2023
+Glycoprotein Biosynthetic Process (GO:0009101),0.229034682976067,8.751529842637671,GO_Biological_Process_2023
+Negative Regulation Of Protein Serine/Threonine Kinase Activity (GO:0071901),0.229034682976067,8.751529842637671,GO_Biological_Process_2023
+Wound Healing (GO:0042060),0.229034682976067,8.751529842637671,GO_Biological_Process_2023
+Response To Type II Interferon (GO:0034341),0.229034682976067,8.751529842637671,GO_Biological_Process_2023
+Positive Regulation Of Growth (GO:0045927),0.2301147036074484,8.584760541358477,GO_Biological_Process_2023
+Activation Of Protein Kinase Activity (GO:0032147),0.2301147036074484,8.584760541358477,GO_Biological_Process_2023
+Cellular Response To Interleukin-1 (GO:0071347),0.2301147036074484,8.584760541358477,GO_Biological_Process_2023
+Regulation Of Phosphorylation (GO:0042325),0.2316737729839434,8.422875391899517,GO_Biological_Process_2023
+Cellular Response To Organic Substance (GO:0071310),0.2316737729839434,8.422875391899517,GO_Biological_Process_2023
+Phospholipase C-activating G Protein-Coupled Receptor Signaling Pathway (GO:0007200),0.2337157918236049,8.265677319811374,GO_Biological_Process_2023
+Integrin-Mediated Signaling Pathway (GO:0007229),0.2377548764897865,7.964604221414354,GO_Biological_Process_2023
+Response To Interleukin-1 (GO:0070555),0.2377548764897865,7.964604221414354,GO_Biological_Process_2023
+Exocytosis (GO:0006887),0.2397521647050145,7.820383303288144,GO_Biological_Process_2023
+Positive Regulation Of DNA-templated Transcription (GO:0045893),0.24384657210053,2.7216370980439812,GO_Biological_Process_2023
+Regulation Of Peptidyl-Tyrosine Phosphorylation (GO:0050730),0.248651350494697,7.281955543769811,GO_Biological_Process_2023
+Steroid Metabolic Process (GO:0008202),0.2530360692867111,7.03385741012878,GO_Biological_Process_2023
+Regulation Of Endothelial Cell Proliferation (GO:0001936),0.2544013256599984,6.914643337844717,GO_Biological_Process_2023
+Positive Regulation Of Protein Kinase B Signaling (GO:0051897),0.2544013256599984,6.914643337844717,GO_Biological_Process_2023
+Cellular Response To Hormone Stimulus (GO:0032870),0.2562897823122972,6.79849904676328,GO_Biological_Process_2023
+Positive Regulation Of Transmembrane Receptor Protein Serine/Threonine Kinase Signaling Pathway (GO:0090100),0.2581643109209602,6.685315939697291,GO_Biological_Process_2023
+Regulation Of Protein Metabolic Process (GO:0051246),0.2594787426719676,6.5749903239841245,GO_Biological_Process_2023
+Cellular Response To Transforming Growth Factor Beta Stimulus (GO:0071560),0.2594787426719676,6.5749903239841245,GO_Biological_Process_2023
+MAPK Cascade (GO:0000165),0.2637053468193479,6.362519703204576,GO_Biological_Process_2023
+Axon Development (GO:0061564),0.2655251773238338,6.26018948804807,GO_Biological_Process_2023
+Antimicrobial Humoral Response (GO:0019730),0.2667746416048796,6.1603458876211565,GO_Biological_Process_2023
+Protein Complex Oligomerization (GO:0051259),0.2667746416048796,6.1603458876211565,GO_Biological_Process_2023
+Hemopoiesis (GO:0030097),0.2685651493163726,6.062906014187368,GO_Biological_Process_2023
+Calcium Ion Homeostasis (GO:0055074),0.2703424647852603,5.967790506031058,GO_Biological_Process_2023
+Positive Regulation Of Inflammatory Response (GO:0050729),0.2738579014546146,5.78423168094792,GO_Biological_Process_2023
+Positive Regulation Of Vasculature Development (GO:1904018),0.2738579014546146,5.78423168094792,GO_Biological_Process_2023
+Positive Regulation Of Macromolecule Metabolic Process (GO:0010604),0.2739019727715872,3.3055882286347833,GO_Biological_Process_2023
+Positive Regulation Of Stress-Activated MAPK Cascade (GO:0032874),0.2739019727715872,5.6956456810845415,GO_Biological_Process_2023
+Cellular Response To Organonitrogen Compound (GO:0071417),0.2739019727715872,5.6956456810845415,GO_Biological_Process_2023
+Negative Regulation Of MAPK Cascade (GO:0043409),0.2739019727715872,5.6956456810845415,GO_Biological_Process_2023
+Regulation Of G1/S Transition Of Mitotic Cell Cycle (GO:2000045),0.2750578575023272,5.6090983677319475,GO_Biological_Process_2023
+Positive Regulation Of Cell Growth (GO:0030307),0.2750578575023272,5.6090983677319475,GO_Biological_Process_2023
+Positive Regulation Of T Cell Activation (GO:0050870),0.2762066508649254,5.524525481436682,GO_Biological_Process_2023
+Glycerophospholipid Biosynthetic Process (GO:0046474),0.2762066508649254,5.441865346754643,GO_Biological_Process_2023
+Positive Regulation Of Translation (GO:0045727),0.2762066508649254,5.441865346754643,GO_Biological_Process_2023
+Lipid Transport (GO:0006869),0.2762066508649254,5.441865346754643,GO_Biological_Process_2023
+Positive Regulation Of DNA Metabolic Process (GO:0051054),0.2762066508649254,5.441865346754643,GO_Biological_Process_2023
+Response To Tumor Necrosis Factor (GO:0034612),0.2762066508649254,5.441865346754643,GO_Biological_Process_2023
+Regulation Of Wnt Signaling Pathway (GO:0030111),0.2773182193732928,5.361058744932435,GO_Biological_Process_2023
+Positive Regulation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process (GO:0043280),0.2773182193732928,5.361058744932435,GO_Biological_Process_2023
+Adenylate Cyclase-Activating G Protein-Coupled Receptor Signaling Pathway (GO:0007189),0.2789733931551427,5.282048795926194,GO_Biological_Process_2023
+Positive Regulation Of Protein Phosphorylation (GO:0001934),0.2794985163586403,3.0783010013980068,GO_Biological_Process_2023
+Negative Regulation Of Transmembrane Receptor Protein Serine/Threonine Kinase Signaling Pathway (GO:0090101),0.2794985163586403,5.20478084558139,GO_Biological_Process_2023
+Cytoskeleton Organization (GO:0007010),0.2794985163586403,5.20478084558139,GO_Biological_Process_2023
+Calcium Ion Transport (GO:0006816),0.2811253993589149,5.129202360192396,GO_Biological_Process_2023
+Positive Regulation Of Cellular Component Organization (GO:0051130),0.282740459814817,5.055262825364014,GO_Biological_Process_2023
+Regulation Of MAP Kinase Activity (GO:0043405),0.284343780860482,4.982913653406146,GO_Biological_Process_2023
+Positive Regulation Of Multicellular Organismal Process (GO:0051240),0.287511137913611,2.9173855885075546,GO_Biological_Process_2023
+Cellular Response To Molecule Of Bacterial Origin (GO:0071219),0.2896543145752432,4.774949480472317,GO_Biological_Process_2023
+Cellular Response To Tumor Necrosis Factor (GO:0071356),0.2927611994492775,4.6434466139665425,GO_Biological_Process_2023
+Positive Regulation Of Angiogenesis (GO:0045766),0.2927611994492775,4.6434466139665425,GO_Biological_Process_2023
+Protein Modification Process (GO:0036211),0.2965947047574747,2.322536884507167,GO_Biological_Process_2023
+Receptor-Mediated Endocytosis (GO:0006898),0.2979189635411918,4.456111874258477,GO_Biological_Process_2023
+Regulation Of Cell Motility (GO:2000145),0.2994238568350038,4.396166676729281,GO_Biological_Process_2023
+Negative Regulation Of Growth (GO:0045926),0.3009177489040148,4.337414433160371,GO_Biological_Process_2023
+Regulation Of Mitotic Cell Cycle (GO:0007346),0.3016949099102001,4.279822783786303,GO_Biological_Process_2023
+Negative Regulation Of Cell Growth (GO:0030308),0.3016949099102001,4.279822783786303,GO_Biological_Process_2023
+Cellular Response To Oxygen-Containing Compound (GO:1901701),0.3016949099102001,2.640956712203399,GO_Biological_Process_2023
+Regulation Of Anatomical Structure Morphogenesis (GO:0022603),0.3047435922426719,4.167997377843627,GO_Biological_Process_2023
+Protein Homooligomerization (GO:0051260),0.3082248498245478,4.060453122404681,GO_Biological_Process_2023
+Transmembrane Receptor Protein Serine/Threonine Kinase Signaling Pathway (GO:0007178),0.3096543212531268,4.008216604624779,GO_Biological_Process_2023
+Circulatory System Development (GO:0072359),0.3130828291216387,3.906683206158155,GO_Biological_Process_2023
+Non-Membrane-Bounded Organelle Assembly (GO:0140694),0.3184692434437695,3.7613629045399737,GO_Biological_Process_2023
+Regulation Of Protein Kinase B Signaling (GO:0051896),0.3198412875834739,3.714691124222948,GO_Biological_Process_2023
+Intracellular Calcium Ion Homeostasis (GO:0006874),0.3251355484065377,3.579678317757992,GO_Biological_Process_2023
+Regulation Of Cell Migration (GO:0030334),0.3257555145284675,2.2928354774768103,GO_Biological_Process_2023
+Positive Regulation Of Transferase Activity (GO:0051347),0.3316738397760634,3.410594866305226,GO_Biological_Process_2023
+Regulation Of Cell Adhesion (GO:0030155),0.3329718547071871,3.370153465117457,GO_Biological_Process_2023
+Neuron Development (GO:0048666),0.3437901595641921,3.141596466170354,GO_Biological_Process_2023
+Positive Regulation Of NF-kappaB Transcription Factor Activity (GO:0051092),0.3469110190476756,3.0704182805545575,GO_Biological_Process_2023
+Regulation Of Cellular Component Organization (GO:0051128),0.3481306881227274,3.0357052873752,GO_Biological_Process_2023
+Cellular Response To Growth Factor Stimulus (GO:0071363),0.3512038181628993,2.9679671260643183,GO_Biological_Process_2023
+Response To Lipopolysaccharide (GO:0032496),0.3579333310793123,2.8389038953772054,GO_Biological_Process_2023
+Adenylate Cyclase-Modulating G Protein-Coupled Receptor Signaling Pathway (GO:0007188),0.364564940474358,2.717794694415788,GO_Biological_Process_2023
+Positive Regulation Of Gene Expression (GO:0010628),0.3662496199932031,1.8395218064731953,GO_Biological_Process_2023
+Regulation Of Cytokine Production (GO:0001817),0.3704049525458936,2.603988937414043,GO_Biological_Process_2023
+Heart Development (GO:0007507),0.3761307028942943,2.4969025061029213,GO_Biological_Process_2023
+Metal Ion Transport (GO:0030001),0.3761307028942943,2.4969025061029213,GO_Biological_Process_2023
+Generation Of Neurons (GO:0048699),0.3764918833573163,2.4711180018684864,GO_Biological_Process_2023
+Cell-Cell Adhesion Via Plasma-Membrane Adhesion Molecules (GO:0098742),0.3764918833573163,2.4711180018684864,GO_Biological_Process_2023
+Neuron Differentiation (GO:0030182),0.3775452143250402,2.4457126549922057,GO_Biological_Process_2023
+Protein Phosphorylation (GO:0006468),0.381023184814397,1.678236566248315,GO_Biological_Process_2023
+Positive Regulation Of Hydrolase Activity (GO:0051345),0.3813597108225493,2.3716975343886144,GO_Biological_Process_2023
+Positive Regulation Of ERK1 And ERK2 Cascade (GO:0070374),0.3858182409099861,2.300835957547096,GO_Biological_Process_2023
+Negative Regulation Of Macromolecule Metabolic Process (GO:0010605),0.3969827692628538,2.146776288649915,GO_Biological_Process_2023
+Defense Response To Virus (GO:0051607),0.4005341504158982,2.085205747179162,GO_Biological_Process_2023
+Endocytosis (GO:0006897),0.4005341504158982,2.085205747179162,GO_Biological_Process_2023
+Intracellular Monoatomic Cation Homeostasis (GO:0030003),0.4014586775255411,2.065236730473686,GO_Biological_Process_2023
+Regulation Of Cell Differentiation (GO:0045595),0.4056654507932708,2.006923755847897,GO_Biological_Process_2023
+Positive Regulation Of Protein Metabolic Process (GO:0051247),0.4098203601938054,1.9509036102620232,GO_Biological_Process_2023
+Regulation Of Canonical Wnt Signaling Pathway (GO:0060828),0.4266826074411363,1.7632653144438126,GO_Biological_Process_2023
+Positive Regulation Of Nucleic Acid-Templated Transcription (GO:1903508),0.4276587793013323,1.3066196499049707,GO_Biological_Process_2023
+Regulation Of GTPase Activity (GO:0043087),0.4360522378234476,1.656759537391559,GO_Biological_Process_2023
+Positive Regulation Of Transcription By RNA Polymerase II (GO:0045944),0.4370589983828318,1.1319188433640648,GO_Biological_Process_2023
+Positive Regulation Of Cell Motility (GO:2000147),0.4451668994418905,1.5589816483293069,GO_Biological_Process_2023
+Apoptotic Process (GO:0006915),0.4540324937926612,1.469003836799846,GO_Biological_Process_2023
+Cellular Response To Lipid (GO:0071396),0.4540324937926612,1.469003836799846,GO_Biological_Process_2023
+Positive Regulation Of Phosphorylation (GO:0042327),0.4576396076382925,1.4326260836369302,GO_Biological_Process_2023
+Positive Regulation Of GTPase Activity (GO:0043547),0.461201015692874,1.397474220429033,GO_Biological_Process_2023
+Regulation Of ERK1 And ERK2 Cascade (GO:0070372),0.4747252907183328,1.2884811006593149,GO_Biological_Process_2023
+Positive Regulation Of DNA-binding Transcription Factor Activity (GO:0051091),0.4766986395715518,1.2680853834334544,GO_Biological_Process_2023
+Chromatin Organization (GO:0006325),0.5059337801136305,1.0700627976731167,GO_Biological_Process_2023
+Regulation Of Cell Cycle (GO:0051726),0.5434257765359852,0.8615604955292901,GO_Biological_Process_2023
+Cellular Response To Cytokine Stimulus (GO:0071345),0.5546110382604933,0.8041429474685131,GO_Biological_Process_2023
+Positive Regulation Of Cytokine Production (GO:0001819),0.5677893190161688,0.7416947278731473,GO_Biological_Process_2023
+Negative Regulation Of Gene Expression (GO:0010629),0.584987535449888,0.6679170434332091,GO_Biological_Process_2023
+Protein Localization (GO:0008104),0.6003426823485496,0.6071670684764225,GO_Biological_Process_2023
+Negative Regulation Of Programmed Cell Death (GO:0043069),0.6302224342705639,0.5054679174936134,GO_Biological_Process_2023
+Vesicle-Mediated Transport (GO:0016192),0.6577644988187934,0.4244442803516938,GO_Biological_Process_2023
+Organelle Organization (GO:0006996),0.6629770439963633,0.4079395894764849,GO_Biological_Process_2023
+Phosphorylation (GO:0016310),0.6715825538836602,0.3835890211107702,GO_Biological_Process_2023
+Nervous System Development (GO:0007399),0.6738849287407023,0.3751846970919235,GO_Biological_Process_2023
+Negative Regulation Of Nucleic Acid-Templated Transcription (GO:1903507),0.6920205366859198,0.3310457390492557,GO_Biological_Process_2023
+Negative Regulation Of Apoptotic Process (GO:0043066),0.7113083274804697,0.2885801301950252,GO_Biological_Process_2023
+Regulation Of Gene Expression (GO:0010468),0.786517770555501,0.1722811792392218,GO_Biological_Process_2023
+Negative Regulation Of Transcription By RNA Polymerase II (GO:0000122),0.8618168324279749,0.0791022666104637,GO_Biological_Process_2023
+Regulation Of Transcription By RNA Polymerase II (GO:0006357),0.8973646320682219,0.0631486723710961,GO_Biological_Process_2023
+Negative Regulation Of DNA-templated Transcription (GO:0045892),0.9298056591719848,0.0281062148400667,GO_Biological_Process_2023
+Regulation Of DNA-templated Transcription (GO:0006355),0.9597622437767804,0.0160695849242701,GO_Biological_Process_2023
+Alcoholism,0.0009112920214252996,178.3182399664391,KEGG_2021_Human
+Systemic lupus erythematosus,0.0014576748775332,181.9889384254388,KEGG_2021_Human
+Neutrophil extracellular trap formation,0.0048267231366993,109.09793534153432,KEGG_2021_Human
+Vascular smooth muscle contraction,0.0114617029425736,106.72375145089606,KEGG_2021_Human
+Renin-angiotensin system,0.0370639509282644,257.15086234948103,KEGG_2021_Human
+Viral carcinogenesis,0.0370639509282644,55.30992679300502,KEGG_2021_Human
+Oxytocin signaling pathway,0.1298731791456499,41.85125407551329,KEGG_2021_Human
+Glutathione metabolism,0.1448706225114808,71.07225417227201,KEGG_2021_Human
+Pathways in cancer,0.1448706225114808,18.78763091040504,KEGG_2021_Human
+Cytosolic DNA-sensing pathway,0.1448706225114808,61.44906812714711,KEGG_2021_Human
+Renal cell carcinoma,0.1448706225114808,53.77976800231812,KEGG_2021_Human
+Renin secretion,0.1448706225114808,53.77976800231812,KEGG_2021_Human
+PPAR signaling pathway,0.1448706225114808,48.50256694786101,KEGG_2021_Human
+Hypertrophic cardiomyopathy,0.1448706225114808,36.18515879365064,KEGG_2021_Human
+GnRH signaling pathway,0.1448706225114808,34.43038199107018,KEGG_2021_Human
+Rheumatoid arthritis,0.1448706225114808,34.43038199107018,KEGG_2021_Human
+Shigellosis,0.1448706225114808,19.399981318373513,KEGG_2021_Human
+Dilated cardiomyopathy,0.1448706225114808,32.80628046281635,KEGG_2021_Human
+Phosphatidylinositol signaling system,0.1448706225114808,32.29161197321332,KEGG_2021_Human
+Synthesis and degradation of ketone bodies,0.1448706225114808,167.3010120823387,KEGG_2021_Human
+Aldosterone synthesis and secretion,0.1448706225114808,31.789531066243494,KEGG_2021_Human
+Inflammatory mediator regulation of TRP channels,0.1448706225114808,31.789531066243494,KEGG_2021_Human
+AGE-RAGE signaling pathway in diabetic complications,0.1448706225114808,30.82144266223132,KEGG_2021_Human
+Viral protein interaction with cytokine and cytokine receptor,0.1448706225114808,30.82144266223132,KEGG_2021_Human
+Chagas disease,0.1448706225114808,29.898816321570965,KEGG_2021_Human
+Toll-like receptor signaling pathway,0.1448706225114808,29.018720027145317,KEGG_2021_Human
+TNF signaling pathway,0.1598803881203601,25.872917364872013,KEGG_2021_Human
+Cytokine-cytokine receptor interaction,0.1804873681140659,14.116824995762398,KEGG_2021_Human
+Fluid shear stress and atherosclerosis,0.2201537144223502,18.3873330672393,KEGG_2021_Human
+Phospholipase D signaling pathway,0.2285029479704829,16.61387585032132,KEGG_2021_Human
+Terpenoid backbone biosynthesis,0.2285029479704829,56.67024999786951,KEGG_2021_Human
+Adrenergic signaling in cardiomyocytes,0.2285029479704829,16.25495026487543,KEGG_2021_Human
+Cellular senescence,0.2364719360755801,15.245533180091437,KEGG_2021_Human
+alpha-Linolenic acid metabolism,0.2364719360755801,47.47480020477031,KEGG_2021_Human
+cGMP-PKG signaling pathway,0.2364719360755801,13.62389694635344,KEGG_2021_Human
+Hepatocellular carcinoma,0.2364719360755801,13.48939691018369,KEGG_2021_Human
+Butanoate metabolism,0.2364719360755801,40.54171043527237,KEGG_2021_Human
+Phototransduction,0.2364719360755801,40.54171043527237,KEGG_2021_Human
+Influenza A,0.2364719360755801,12.970673059288286,KEGG_2021_Human
+Linoleic acid metabolism,0.2364719360755801,38.5999069065122,KEGG_2021_Human
+Tuberculosis,0.244135514760852,12.018216055401329,KEGG_2021_Human
+Axon guidance,0.244135514760852,11.79626923326343,KEGG_2021_Human
+Chemokine signaling pathway,0.2613737582329875,10.772140317863167,KEGG_2021_Human
+Diabetic cardiomyopathy,0.2808000673586986,9.789336578359592,KEGG_2021_Human
+Lipid and atherosclerosis,0.2981391276977266,8.859212024810814,KEGG_2021_Human
+cAMP signaling pathway,0.2981391276977266,8.78754780712842,KEGG_2021_Human
+Human cytomegalovirus infection,0.3002579671625802,8.178546402117632,KEGG_2021_Human
+"Valine, leucine and isoleucine degradation",0.3002579671625802,18.81737166641443,KEGG_2021_Human
+Ras signaling pathway,0.3002579671625802,7.745915171502187,KEGG_2021_Human
+Ether lipid metabolism,0.3002579671625802,18.260130793597916,KEGG_2021_Human
+Cholesterol metabolism,0.3002579671625802,17.7290996615035,KEGG_2021_Human
+Malaria,0.3002579671625802,17.7290996615035,KEGG_2021_Human
+Ovarian steroidogenesis,0.3002579671625802,17.22257115519733,KEGG_2021_Human
+Chemical carcinogenesis,0.3002579671625802,7.345255160108276,KEGG_2021_Human
+Glycosaminoglycan biosynthesis,0.3053294875134123,16.276887238960814,KEGG_2021_Human
+Salmonella infection,0.3095383974143949,6.822250896314676,KEGG_2021_Human
+VEGF signaling pathway,0.3119338081987166,13.8884471557023,KEGG_2021_Human
+Long-term depression,0.3119338081987166,13.544974303558986,KEGG_2021_Human
+Steroid hormone biosynthesis,0.3119338081987166,13.214837540593155,KEGG_2021_Human
+Arachidonic acid metabolism,0.3119338081987166,13.214837540593155,KEGG_2021_Human
+Cortisol synthesis and secretion,0.3119338081987166,12.01403781811508,KEGG_2021_Human
+Inflammatory bowel disease,0.3119338081987166,12.01403781811508,KEGG_2021_Human
+Long-term potentiation,0.3119338081987166,11.477180657220888,KEGG_2021_Human
+Fc epsilon RI signaling pathway,0.3119338081987166,11.222824361971773,KEGG_2021_Human
+Amphetamine addiction,0.3119338081987166,10.977245117600177,KEGG_2021_Human
+Epithelial cell signaling in Helicobacter pylori infection,0.3119338081987166,10.740024519792764,KEGG_2021_Human
+RIG-I-like receptor signaling pathway,0.3119338081987166,10.740024519792764,KEGG_2021_Human
+MAPK signaling pathway,0.3119338081987166,5.016557449841448,KEGG_2021_Human
+Inositol phosphate metabolism,0.3119338081987166,10.074701240888364,KEGG_2021_Human
+Glioma,0.3119338081987166,9.666337985731484,KEGG_2021_Human
+Chronic myeloid leukemia,0.3119338081987166,9.4717853003048,KEGG_2021_Human
+Gastric acid secretion,0.3119338081987166,9.4717853003048,KEGG_2021_Human
+Metabolism of xenobiotics by cytochrome P450,0.3119338081987166,9.4717853003048,KEGG_2021_Human
+Pancreatic cancer,0.3119338081987166,9.4717853003048,KEGG_2021_Human
+Pertussis,0.3119338081987166,9.4717853003048,KEGG_2021_Human
+Leishmaniasis,0.3119338081987166,9.283280446293812,KEGG_2021_Human
+Colorectal cancer,0.3402096653948467,7.820383303288144,KEGG_2021_Human
+Salivary secretion,0.3493595614783769,6.914643337844717,KEGG_2021_Human
+TGF-beta signaling pathway,0.3493595614783769,6.79849904676328,KEGG_2021_Human
+IL-17 signaling pathway,0.3493595614783769,6.79849904676328,KEGG_2021_Human
+Circadian entrainment,0.3493595614783769,6.46742313757927,KEGG_2021_Human
+Fc gamma R-mediated phagocytosis,0.3493595614783769,6.46742313757927,KEGG_2021_Human
+Choline metabolism in cancer,0.3493595614783769,6.362519703204576,KEGG_2021_Human
+Glycerophospholipid metabolism,0.3493595614783769,6.362519703204576,KEGG_2021_Human
+Hematopoietic cell lineage,0.3493595614783769,6.26018948804807,KEGG_2021_Human
+Melanogenesis,0.3499627610514761,6.062906014187368,KEGG_2021_Human
+Amoebiasis,0.3499627610514761,5.967790506031058,KEGG_2021_Human
+C-type lectin receptor signaling pathway,0.3499627610514761,5.78423168094792,KEGG_2021_Human
+Glucagon signaling pathway,0.3499627610514761,5.524525481436682,KEGG_2021_Human
+Drug metabolism,0.3499627610514761,5.441865346754643,KEGG_2021_Human
+Insulin resistance,0.3499627610514761,5.441865346754643,KEGG_2021_Human
+HIF-1 signaling pathway,0.3499627610514761,5.361058744932435,KEGG_2021_Human
+Toxoplasmosis,0.3499627610514761,5.129202360192396,KEGG_2021_Human
+Serotonergic synapse,0.3499627610514761,5.055262825364014,KEGG_2021_Human
+Glutamatergic synapse,0.3499627610514761,4.982913653406146,KEGG_2021_Human
+Leukocyte transendothelial migration,0.3499627610514761,4.982913653406146,KEGG_2021_Human
+Neurotrophin signaling pathway,0.3594326470038254,4.6434466139665425,KEGG_2021_Human
+Cell cycle,0.3648278049182911,4.337414433160371,KEGG_2021_Human
+Platelet activation,0.3648278049182911,4.337414433160371,KEGG_2021_Human
+Osteoclast differentiation,0.3686235532162442,4.167997377843627,KEGG_2021_Human
+Oocyte meiosis,0.3698139793094351,4.060453122404681,KEGG_2021_Human
+FoxO signaling pathway,0.3698139793094351,3.956968446025251,KEGG_2021_Human
+Dopaminergic synapse,0.3698139793094351,3.906683206158155,KEGG_2021_Human
+Apelin signaling pathway,0.3707948117542676,3.668866926816198,KEGG_2021_Human
+Estrogen signaling pathway,0.3707948117542676,3.668866926816198,KEGG_2021_Human
+Insulin signaling pathway,0.3707948117542676,3.668866926816198,KEGG_2021_Human
+Cell adhesion molecules,0.3903334362689532,3.215201203875706,KEGG_2021_Human
+Gastric cancer,0.3903334362689532,3.1780885451938787,KEGG_2021_Human
+Cushing syndrome,0.3995457871234548,2.9679671260643183,KEGG_2021_Human
+Hepatitis C,0.4000976364119125,2.902397750177957,KEGG_2021_Human
+Necroptosis,0.4006190897063174,2.8389038953772054,KEGG_2021_Human
+Hepatitis B,0.4015744240865692,2.747363087126053,KEGG_2021_Human
+Hippo signaling pathway,0.4015744240865692,2.717794694415788,KEGG_2021_Human
+Tight junction,0.4098679124762043,2.5496399471999527,KEGG_2021_Human
+NOD-like receptor signaling pathway,0.4292152284953062,2.2552581276159067,KEGG_2021_Human
+Transcriptional misregulation in cancer,0.4437388379894397,2.02610052252205,KEGG_2021_Human
+Kaposi sarcoma-associated herpesvirus infection,0.4437388379894397,2.006923755847897,KEGG_2021_Human
+Focal adhesion,0.4519868834026958,1.8623111638641865,KEGG_2021_Human
+Epstein-Barr virus infection,0.4519868834026958,1.8452720554356252,KEGG_2021_Human
+Proteoglycans in cancer,0.4533352720520855,1.7954446526222323,KEGG_2021_Human
+Rap1 signaling pathway,0.4574982983282205,1.716486090768287,KEGG_2021_Human
+Human immunodeficiency virus 1 infection,0.4574982983282205,1.6862551884518755,KEGG_2021_Human
+Regulation of actin cytoskeleton,0.4613307576274373,1.5998802666710514,KEGG_2021_Human
+Human T-cell leukemia virus 1 infection,0.4613307576274373,1.5860841457604238,KEGG_2021_Human
+Coronavirus disease,0.477789423879336,1.420775326637273,KEGG_2021_Human
+Calcium signaling pathway,0.4859818972939055,1.3306343458644796,KEGG_2021_Human
+Parkinson disease,0.4952523308442917,1.23830698299537,KEGG_2021_Human
+Endocytosis,0.495650601678847,1.2094704650298027,KEGG_2021_Human
+Prion disease,0.5205811248824711,1.0309569924227395,KEGG_2021_Human
+MicroRNAs in cancer,0.563391508007796,0.7932686422257892,KEGG_2021_Human
+Neuroactive ligand-receptor interaction,0.5948495254999245,0.6468289747027046,KEGG_2021_Human
+Alzheimer disease,0.6201203405686703,0.5433207667028247,KEGG_2021_Human
+Olfactory transduction,0.6817442379888725,0.3610195851598624,KEGG_2021_Human
+Pathways of neurodegeneration,0.7050260262224757,0.2993225726314739,KEGG_2021_Human
+Herpes simplex virus 1 infection,0.7170049272413213,0.2657364363252364,KEGG_2021_Human

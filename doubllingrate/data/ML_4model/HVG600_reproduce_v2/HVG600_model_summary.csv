@@ -1,0 +1,5 @@
+Model,Train_R2,Test_R2,Test_MAE,Test_Spearman
+ElasticNet,0.9939,0.2918,0.3285,0.6544
+LightGBM,0.8104,0.2554,0.3622,0.5147
+RandomForest,0.7877,0.1960,0.3674,0.4877
+LassoedForest,0.9749,0.4037,0.3101,0.6716

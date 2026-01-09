@@ -1,0 +1,20 @@
+{
+  "HVG": 600,
+  "C": 1000,
+  "rf_n_estimators": 1000,
+  "rf_max_depth": 4,
+  "rf_min_samples_leaf": 2,
+  "rf_min_samples_split": 2,
+  "rf_max_features": "sqrt",
+  "AUROC_mean": 0.6224489795918368,
+  "AUROC_std": 0.18202841034366873,
+  "AUPRC_mean": 0.6527655413369698,
+  "AUPRC_std": 0.2005887026545255,
+  "ACC_mean": 0.6197802197802197,
+  "ACC_std": 0.13246203257410255,
+  "BACC_mean": 0.6238095238095237,
+  "BACC_std": 0.13378961044844093,
+  "F1_mean": 0.5605128205128205,
+  "F1_std": 0.2234567941594432,
+  "n_splits": 5
+}

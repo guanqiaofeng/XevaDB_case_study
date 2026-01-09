@@ -1,0 +1,2 @@
+HVG,Train_R2,Test_R2,Test_MAE,Test_Spearman,n_estimators,max_depth,min_samples_leaf,min_samples_split,max_features,random_state,n_jobs,lasso_alpha
+600,0.9999295810053378,0.2548991312115019,0.3244709921260627,0.5931372549019609,500,6,2,2,sqrt,42,-1,0.003727593720314938
