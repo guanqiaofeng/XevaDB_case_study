@@ -1,0 +1,31 @@
+{
+    "features": [
+        "model_mRECIST_encoded",
+        "model_best.response",
+        "model_best.response.time",
+        "model_best.average.response",
+        "model_best.average.response.time",
+        "model_AUC",
+        "model_slope",
+        "batch_slope.control",
+        "batch_slope.treatment",
+        "batch_angle",
+        "batch_auc.control",
+        "batch_auc.treatment",
+        "batch_abc",
+        "batch_TGI"
+    ],
+    "mrecist_mapping": {
+        "CR": 0,
+        "PR": 1,
+        "SD": 2,
+        "PD": 3
+    },
+    "label_mapping": {
+        "0": "cat1",
+        "1": "cat2",
+        "2": "cat3",
+        "3": "cat4",
+        "4": "cat5"
+    }
+}
