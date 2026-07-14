@@ -1,0 +1,11 @@
+,0
+Total evaluable PDX models,96.0
+Models with >=2 mice,72.0
+Total retained mouse-level fits,632.0
+Median DT (days),14.64
+Mean DT (days),16.43
+Min DT (days),2.54
+Max DT (days),40.95
+Fast models (DT < 10 days),18.0
+Slow models (DT > 40 days),2.0
+Mean mouse-level fit R2,0.923
