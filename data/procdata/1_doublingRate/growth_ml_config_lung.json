@@ -1,4 +1,5 @@
 {
+  "cohort": "lung",
   "input_file": "/Users/guanqiaofeng/Documents/BHK/XevaDB/Manuscript_gitrepo/XevaDB_case_study/data/procdata/1_doublingRate/rna_doubling_time_merged_lung.csv",
   "target_col": "doubling_time_days",
   "target_transform": "log1p",
@@ -11,14 +12,18 @@
   "n_splits": 3,
   "n_repeats": 10,
   "random_state": 42,
-  "rf_params": {
-    "n_estimators": 500,
-    "max_depth": 3,
-    "min_samples_leaf": 2,
-    "max_features": "sqrt",
-    "random_state": 42,
-    "n_jobs": -1
-  },
+  "rf_n_estimators": 500,
+  "rf_max_features": "sqrt",
+  "rf_max_depth_grid": [
+    3,
+    6
+  ],
+  "rf_min_samples_leaf_grid": [
+    1,
+    2
+  ],
+  "rf_hyperparameter_selection": "nested per outer fold via inner_cv; RandomForest selects on its own raw AUROC, LassoedForest selects independently on its own post-lasso AUROC",
+  "lf_scoring_c": 1.0,
   "rf_shap": {
     "evaluation_samples": "held-out outer-CV extreme samples",
     "explainer": "TreeExplainer",
