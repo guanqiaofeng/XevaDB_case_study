@@ -1,4 +1,4 @@
-figure_id,rating_guanqiao,rating_mitchell,rating_samah,rating_merge
+figure_id,rating_expert1,rating_expert2,rating_expert3,rating_merge
 fig_000001,cat3,cat3,cat3,cat3
 fig_000002,cat1,cat3,cat1,cat1
 fig_000003,cat2,cat2,cat1,cat2
