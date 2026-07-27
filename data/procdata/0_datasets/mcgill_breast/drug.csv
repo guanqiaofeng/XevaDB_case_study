@@ -1,0 +1,7 @@
+"drug.id","standard.name","source_treatment_name","treatment.type","source.patient.count","source.model.count","annotationdb.match","submitted.identifier","identifier.type","compound.name","pubchem.cid","molecular.formula","smiles","inchikey"
+"untreated","untreated","Control","control",33,74,FALSE,"Control","source_treatment_name","",NA,"","",""
+"Carboplatin","Carboplatin","Carboplatin","drug",13,39,TRUE,"Carboplatin","source_treatment_name","Carboplatin",10339178,"C6H12N2O4Pt","C1CC(C1)(C(=O)[O-])C(=O)[O-].N.N.[Pt+2]","OLESAACUTLOWQZ-UHFFFAOYSA-L"
+"Cisplatin","Cisplatin","Cisplatin","drug",32,32,TRUE,"Cisplatin","source_treatment_name","Cisplatin",5460033,"Cl2H6N2Pt","N.N.Cl[Pt]Cl","LXZZYRPGZAFOLE-UHFFFAOYSA-L"
+"Doxorubicin","Doxorubicin","Doxorubicin","drug",28,28,TRUE,"Doxorubicin","source_treatment_name","Doxorubicin",31703,"C27H29NO11","C[C@H]1[C@H]([C@H](C[C@@H](O1)O[C@H]2C[C@@](CC3=C2C(=C4C(=C3O)C(=O)C5=C(C4=O)C(=CC=C5)OC)O)(C(=O)CO)O)N)O","AOJJSUZBOXZQNB-TZSSRYMLSA-N"
+"Gemcitabine","Gemcitabine","Gemcitabine","drug",32,36,TRUE,"Gemcitabine","source_treatment_name","Gemcitabine",60750,"C9H11F2N3O4","C1=CN(C(=O)N=C1N)[C@H]2C([C@@H]([C@H](O2)CO)O)(F)F","SDUQYLNIPVEERB-QPPQHZFASA-N"
+"Paclitaxel","Paclitaxel","Paclitaxel","drug",32,32,TRUE,"Paclitaxel","source_treatment_name","Paclitaxel",36314,"C47H51NO14","CC1=C2[C@H](C(=O)[C@@]3([C@H](C[C@@H]4[C@]([C@H]3[C@@H]([C@@](C2(C)C)(C[C@@H]1OC(=O)[C@@H]([C@H](C5=CC=CC=C5)NC(=O)C6=CC=CC=C6)O)O)OC(=O)C7=CC=CC=C7)(CO4)OC(=O)C)O)C)OC(=O)C","RCINICONZNJXQF-MZXODVADSA-N"

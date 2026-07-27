@@ -1,7 +1,9 @@
-### UHN Lung XevaSet
-# - read in xevaset of uhn lung located in ../data/rawdata/uhn_lung
+### UHN Breast XevaSet
+# - read in xevaset of uhn breast located in ../data/rawdata/uhn_breast
 # - extract experiment/expDesign/drug/models/omics/modToBiobaseMap
-# - output csv files under ../data/procdata/0_datasets/uhn_lung
+# - extract batch-level sensitivity table (slope, angle, AUC, abc)
+# - extract model-level sensitivity table (mRECIST, best.response, ...)
+# - output csv files under ../data/procdata/0_datasets/uhn_breast
 
 library(Xeva)
 library(Biobase)
@@ -76,6 +78,14 @@ for (mDataType in names(x.set@molecularProfiles)) {
   gene_anno <- fData(eset)
   write.csv(gene_anno, file.path(output_dir, paste0(mDataType, "_gene_annotation.csv")))
 }
+
+# ---- extract batch-level sensitivity table (slope, angle, AUC, abc) ----
+batch_sensitivity_df <- x.set@sensitivity$batch
+write.csv(batch_sensitivity_df, file.path(output_dir, "batch_sensitivity.csv"), row.names = FALSE)
+
+# ---- extract model-level sensitivity table (mRECIST, best.response, ...) ----
+model_sensitivity_df <- x.set@sensitivity$model
+write.csv(model_sensitivity_df, file.path(output_dir, "model_sensitivity.csv"), row.names = FALSE)
 
 ########
 # end  #
