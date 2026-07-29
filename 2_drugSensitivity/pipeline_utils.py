@@ -28,6 +28,7 @@ def make_case2_paths(project_dir=None):
         "project": project_dir,
         "data": project_dir / "data",
         "raw_pdxe": project_dir / "data" / "rawdata" / "pdxe",
+        "datasets": project_dir / "data" / "procdata" / "0_datasets" / "pdxe",
         "proc": project_dir / "data" / "procdata" / "2_drugSensitivity",
         "results": project_dir / "results" / "2_drugSensitivity",
         "figures": project_dir / "figures",
