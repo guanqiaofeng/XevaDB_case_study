@@ -1,0 +1,30 @@
+# Pinned package versions for the primary analysis pipeline (case studies
+# 1_doublingRate, 3_carboplatin, 4_paclitaxel, and the tabular-data notebooks
+# in 2_drugSensitivity). Verified against Python 3.9.6.
+#
+# The ResNet18 deep-learning notebook (2_drugSensitivity/3-ml_resnet18.ipynb)
+# runs under a SEPARATE environment with torch/torchvision and different
+# (newer) core package versions -- see requirements-resnet.txt. Installing
+# both sets into the same environment is not recommended, since scikit-learn,
+# numpy, pandas, and scipy differ between the two.
+
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.13.1
+scikit-learn==1.6.1
+matplotlib==3.7.3
+seaborn==0.13.2
+matplotlib-venn==1.1.2
+statannotations==0.7.1
+shap==0.49.1
+gseapy==1.1.11
+joblib==1.4.2
+Pillow==11.1.0
+tqdm==4.67.1
+
+# Notebook execution tooling
+jupyter_core==5.8.1
+nbconvert==7.16.6
+ipykernel==6.30.1
+notebook==7.4.5
+jupyterlab==4.4.7

@@ -14,19 +14,9 @@ import numpy as np
 import pandas as pd
 
 
-CONTINUOUS_RESPONSE_COLS = ["angle", "TGI"]
+CONTINUOUS_RESPONSE_COLS = ["angle"]
 CLASSIFICATION_RESPONSE_COLS = ["mRECIST", "response_binary", "response_binary_num"]
 RESPONSE_COLS = CONTINUOUS_RESPONSE_COLS + CLASSIFICATION_RESPONSE_COLS
-BINARY_RESPONSE_MAP = {
-    "PD": "Resistant",
-    "SD": "Resistant",
-    "PR": "Sensitive",
-    "CR": "Sensitive",
-}
-BINARY_RESPONSE_NUM_MAP = {
-    "Resistant": 0,
-    "Sensitive": 1,
-}
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PAX_GENE_PATH = PROJECT_ROOT / "data/procdata/4_paclitaxel/pax_gene_list.tsv"
 DEFAULT_NEST_GENE_PATH = PROJECT_ROOT / "data/rawdata/nest_vnn/gene2ind.txt"
@@ -49,26 +39,35 @@ def load_nest_genes(path: str | Path = DEFAULT_NEST_GENE_PATH) -> set[str]:
     return genes
 
 
-def add_binary_response(df: pd.DataFrame) -> pd.DataFrame:
-    """Add binary paclitaxel response labels from mRECIST.
+def add_binary_response(df: pd.DataFrame, angle_median: float | None = None) -> pd.DataFrame:
+    """Add binary paclitaxel response labels from a median split of `angle`.
 
-    Resistant = PD + SD; Sensitive = PR + CR.
+    Sensitive = angle >= threshold; Resistant = angle < threshold.
+
+    `angle_median` should be computed once from the full paclitaxel cohort's
+    metadata and passed explicitly to every call site, including omics
+    subsets of different sizes (rna_all vs. the paired 62-model cohort) --
+    computing the median independently per subset would silently shift the
+    cutoff depending on which models happen to be in that particular table.
+    If not provided, it falls back to the median of whatever rows are in
+    `df`, which is only correct when `df` already represents the full cohort.
+
+    mRECIST is intentionally not used to define the label (see case-study
+    notes): it disagrees with an angle-median split on ~24% of models, mostly
+    at the ambiguous SD boundary. The `mRECIST` column, where present, is
+    kept only as a reference/QC column, not as the response source.
     """
-    if "mRECIST" not in df.columns:
-        raise ValueError("Column 'mRECIST' is required to define binary response.")
+    if "angle" not in df.columns:
+        raise ValueError("Column 'angle' is required to define the angle-median-split response.")
 
     df = df.copy()
-    df["response_binary"] = df["mRECIST"].map(BINARY_RESPONSE_MAP)
-    df["response_binary_num"] = df["response_binary"].map(BINARY_RESPONSE_NUM_MAP)
-
-    if df["response_binary_num"].isna().any():
-        bad = df.loc[df["response_binary_num"].isna(), "mRECIST"].unique()
-        raise ValueError(f"Unexpected mRECIST labels: {bad}")
-
+    threshold = df["angle"].median() if angle_median is None else angle_median
+    df["response_binary"] = np.where(df["angle"] >= threshold, "Sensitive", "Resistant")
+    df["response_binary_num"] = (df["angle"] >= threshold).astype(int)
     return df
 
 
-def split_xy(df: pd.DataFrame, target: str = "TGI") -> tuple[pd.DataFrame, pd.Series]:
+def split_xy(df: pd.DataFrame, target: str = "angle") -> tuple[pd.DataFrame, pd.Series]:
     """Split a merged omics-response table into X and a single response."""
     if target not in df.columns:
         raise ValueError(f"Target column {target!r} is not present.")

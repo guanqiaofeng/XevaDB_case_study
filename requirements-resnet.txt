@@ -1,0 +1,14 @@
+# Pinned package versions for 2_drugSensitivity/3-ml_resnet18.ipynb (the
+# deep-learning ResNet18 notebook), as installed in the "pdx_env" / "PDX-ML"
+# Jupyter kernel. Core numeric packages differ from requirements.txt (used by
+# the rest of the repo's notebooks) -- keep this in a separate environment
+# rather than merging the two.
+
+torch==2.11.0
+torchvision==0.26.0
+scikit-learn==1.8.0
+numpy==2.4.4
+pandas==3.0.2
+scipy==1.17.1
+Pillow==12.2.0
+tqdm==4.67.3
