@@ -1,2 +1,0 @@
-n_hvg,max_depth,min_samples_leaf,n_completed_folds,n_expected_folds,mean_AUROC,sd_AUROC,mean_Spearman,sd_Spearman,mean_Pearson,sd_Pearson,mean_selected_trees,sd_selected_trees,median_selected_trees
-100,4,2,3,3,0.6456332027760598,0.10693342363242718,0.4136623610307821,0.14229119869919074,0.3430235612211989,0.16994220746765215,28.0,6.377042156569663,24.0
