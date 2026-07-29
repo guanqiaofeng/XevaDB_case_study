@@ -583,7 +583,7 @@ single_omics,rna_all,pax,random_forest,11,NOTCH10,0,Resistant,0,Resistant,0.4968
 single_omics,rna_all,pax,random_forest,11,S16720,0,Resistant,0,Resistant,0.47206938132984105
 single_omics,rna_all,pax,random_forest,11,REF014,0,Resistant,0,Resistant,0.4684403063215701
 single_omics,rna_all,pax,random_forest,11,S85277,1,Sensitive,1,Sensitive,0.6693642099088787
-single_omics,rna_all,pax,random_forest,11,REF037,0,Resistant,1,Sensitive,0.6338037712120118
+single_omics,rna_all,pax,random_forest,11,REF037,0,Resistant,1,Sensitive,0.6338037712120119
 single_omics,rna_all,pax,random_forest,11,S44205,1,Sensitive,1,Sensitive,0.564892492376897
 single_omics,rna_all,pax,random_forest,11,REF016,0,Resistant,0,Resistant,0.4419383954867905
 single_omics,rna_all,pax,random_forest,11,REF007,1,Sensitive,0,Resistant,0.37841137479232595
@@ -2817,7 +2817,7 @@ single_omics,cnv,pax,svm_rbf,5,S72877,1,Sensitive,0,Resistant,0.7026880962538099
 single_omics,cnv,pax,svm_rbf,5,S73263,1,Sensitive,0,Resistant,0.7174303632777165
 single_omics,cnv,pax,random_forest,5,INSB014,0,Resistant,1,Sensitive,0.5336791272305368
 single_omics,cnv,pax,random_forest,5,REF014,0,Resistant,0,Resistant,0.45691224119651586
-single_omics,cnv,pax,random_forest,5,REF016,0,Resistant,0,Resistant,0.4833789362668789
+single_omics,cnv,pax,random_forest,5,REF016,0,Resistant,0,Resistant,0.48337893626687894
 single_omics,cnv,pax,random_forest,5,REF023,1,Sensitive,0,Resistant,0.44379340297593844
 single_omics,cnv,pax,random_forest,5,REF041,1,Sensitive,0,Resistant,0.4253630933433554
 single_omics,cnv,pax,random_forest,5,REF043,1,Sensitive,0,Resistant,0.27371257248419767
@@ -2825,7 +2825,7 @@ single_omics,cnv,pax,random_forest,5,S108045,0,Resistant,0,Resistant,0.363739158
 single_omics,cnv,pax,random_forest,5,S18674,0,Resistant,1,Sensitive,0.5236914595512833
 single_omics,cnv,pax,random_forest,5,S241417,0,Resistant,1,Sensitive,0.621829186502598
 single_omics,cnv,pax,random_forest,5,S70620,1,Sensitive,1,Sensitive,0.784949467589151
-single_omics,cnv,pax,random_forest,5,S72877,1,Sensitive,0,Resistant,0.48089696487084876
+single_omics,cnv,pax,random_forest,5,S72877,1,Sensitive,0,Resistant,0.4808969648708487
 single_omics,cnv,pax,random_forest,5,S73263,1,Sensitive,1,Sensitive,0.5099262518485146
 single_omics,cnv,pax,logistic_l2,6,INSB019,0,Resistant,1,Sensitive,0.5241786818629968
 single_omics,cnv,pax,logistic_l2,6,REF007,1,Sensitive,0,Resistant,0.3057652098254606
@@ -4262,7 +4262,7 @@ single_omics,mutation,pax,random_forest,9,REF034,1,Sensitive,1,Sensitive,0.51824
 single_omics,mutation,pax,random_forest,9,REF036,1,Sensitive,0,Resistant,0.4185315325653169
 single_omics,mutation,pax,random_forest,9,REF037,0,Resistant,0,Resistant,0.49228683252926236
 single_omics,mutation,pax,random_forest,9,REF044,0,Resistant,1,Sensitive,0.5199608651470524
-single_omics,mutation,pax,random_forest,9,REF052,0,Resistant,0,Resistant,0.4565218371488939
+single_omics,mutation,pax,random_forest,9,REF052,0,Resistant,0,Resistant,0.4565218371488938
 single_omics,mutation,pax,random_forest,9,REF057,0,Resistant,0,Resistant,0.4460848669231971
 single_omics,mutation,pax,random_forest,9,REF063,1,Sensitive,0,Resistant,0.43057900421972045
 single_omics,mutation,pax,random_forest,9,S108045,0,Resistant,1,Sensitive,0.5684289423072325

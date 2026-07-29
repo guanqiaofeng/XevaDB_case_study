@@ -1089,7 +1089,7 @@ early_fusion,rna_cnv_mutation,pax,random_forest,22,REF025,1,Sensitive,1,Sensitiv
 early_fusion,rna_cnv_mutation,pax,random_forest,22,REF034,1,Sensitive,1,Sensitive,0.6356741465428553
 early_fusion,rna_cnv_mutation,pax,random_forest,22,REF035,0,Resistant,0,Resistant,0.3949484734222418
 early_fusion,rna_cnv_mutation,pax,random_forest,22,REF041,1,Sensitive,0,Resistant,0.48958055495634306
-early_fusion,rna_cnv_mutation,pax,random_forest,22,REF047,1,Sensitive,0,Resistant,0.46762338680912097
+early_fusion,rna_cnv_mutation,pax,random_forest,22,REF047,1,Sensitive,0,Resistant,0.4676233868091209
 early_fusion,rna_cnv_mutation,pax,random_forest,22,REF057,0,Resistant,0,Resistant,0.36858160834483716
 early_fusion,rna_cnv_mutation,pax,random_forest,22,S100804,0,Resistant,0,Resistant,0.3794624014410568
 early_fusion,rna_cnv_mutation,pax,random_forest,22,S108045,0,Resistant,0,Resistant,0.48496961625424595
