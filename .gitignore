@@ -1,2 +1,14 @@
 data/rawdata/images/*.png
-ml_models/
+
+# ml_models/nest_vnn: track code/model/results, exclude the venv and
+# regenerable intermediate activations, and the 7 pretrained drug
+# ensembles not used by any case study here (only cisplatin is used).
+ml_models/nest_vnn/nest_env/
+ml_models/nest_vnn/hidden/
+ml_models/nest_vnn/pretrained_models/CD437/
+ml_models/nest_vnn/pretrained_models/camptothecin/
+ml_models/nest_vnn/pretrained_models/etoposide/
+ml_models/nest_vnn/pretrained_models/gemcitabine/
+ml_models/nest_vnn/pretrained_models/nutlin-3A/
+ml_models/nest_vnn/pretrained_models/olaparib/
+ml_models/nest_vnn/pretrained_models/palbociclib/

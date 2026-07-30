@@ -1,0 +1,1 @@
+paste <(seq 1 25) fold1.txt fold2.txt fold3.txt fold4.txt fold5.txt final_prediction.txt > combined_predictions.txt
