@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 
 
-CONTINUOUS_RESPONSE_COLS = ["angle"]
+CONTINUOUS_RESPONSE_COLS = ["angle", "slope.treatment"]
 CLASSIFICATION_RESPONSE_COLS = ["mRECIST", "response_binary", "response_binary_num"]
 RESPONSE_COLS = CONTINUOUS_RESPONSE_COLS + CLASSIFICATION_RESPONSE_COLS
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -39,35 +39,39 @@ def load_nest_genes(path: str | Path = DEFAULT_NEST_GENE_PATH) -> set[str]:
     return genes
 
 
-def add_binary_response(df: pd.DataFrame, angle_median: float | None = None) -> pd.DataFrame:
-    """Add binary paclitaxel response labels from a median split of `angle`.
+def add_binary_response(df: pd.DataFrame) -> pd.DataFrame:
+    """Add binary paclitaxel response labels from a fixed slope.treatment cutoff.
 
-    Sensitive = angle >= threshold; Resistant = angle < threshold.
+    Sensitive = slope.treatment < 0 (net tumor regression); Resistant = slope.treatment
+    >= 0 (net growth). This is a fixed, cohort/subset-independent threshold -- it
+    matches case study 3's own convention exactly (same response quantity, same fixed
+    0 deg cutoff), rather than a distribution-derived cutoff (a median split, or the
+    empirical gap in the response distribution). Both alternatives were checked in
+    1-data_preprocessing.ipynb's "Response distribution" diagnostic -- the underlying
+    distribution is visibly bimodal, but neither the median nor the natural gap was
+    used as the actual cutoff, so this is deliberately not a data-driven choice.
 
-    `angle_median` should be computed once from the full paclitaxel cohort's
-    metadata and passed explicitly to every call site, including omics
-    subsets of different sizes (rna_all vs. the paired 62-model cohort) --
-    computing the median independently per subset would silently shift the
-    cutoff depending on which models happen to be in that particular table.
-    If not provided, it falls back to the median of whatever rows are in
-    `df`, which is only correct when `df` already represents the full cohort.
+    Because the threshold is a fixed constant (not derived from any particular
+    subset), it can be applied independently to every omics subset (rna_all vs. the
+    paired 62-model cohort, etc.) without the cutoff silently shifting depending on
+    which models happen to be in that particular table -- unlike a median-based
+    threshold, which needed the full-cohort value threaded through every call site.
 
-    mRECIST is intentionally not used to define the label (see case-study
-    notes): it disagrees with an angle-median split on ~24% of models, mostly
-    at the ambiguous SD boundary. The `mRECIST` column, where present, is
-    kept only as a reference/QC column, not as the response source.
+    mRECIST is intentionally not used to define the label (see case-study notes): it
+    disagreed with an angle-median split on ~24% of models, mostly at the ambiguous SD
+    boundary. The `mRECIST` column, where present, is kept only as a reference/QC
+    column, not as the response source.
     """
-    if "angle" not in df.columns:
-        raise ValueError("Column 'angle' is required to define the angle-median-split response.")
+    if "slope.treatment" not in df.columns:
+        raise ValueError("Column 'slope.treatment' is required to define the response.")
 
     df = df.copy()
-    threshold = df["angle"].median() if angle_median is None else angle_median
-    df["response_binary"] = np.where(df["angle"] >= threshold, "Sensitive", "Resistant")
-    df["response_binary_num"] = (df["angle"] >= threshold).astype(int)
+    df["response_binary"] = np.where(df["slope.treatment"] < 0, "Sensitive", "Resistant")
+    df["response_binary_num"] = (df["slope.treatment"] < 0).astype(int)
     return df
 
 
-def split_xy(df: pd.DataFrame, target: str = "angle") -> tuple[pd.DataFrame, pd.Series]:
+def split_xy(df: pd.DataFrame, target: str = "slope.treatment") -> tuple[pd.DataFrame, pd.Series]:
     """Split a merged omics-response table into X and a single response."""
     if target not in df.columns:
         raise ValueError(f"Target column {target!r} is not present.")

@@ -2,17 +2,30 @@
 # - read in xevaset of PDXE located in ../data/rawdata/pdxe
 # - restrict to control+treatment batches with a non-missing model-level mRECIST call
 # - stratified sample of n_figures batches (all eligible CR/PR retained, SD capped at
-#   half the remaining budget, PD filling the remainder, seed = 1 -- see Methods)
-# - merge in model-level and batch-level sensitivity metrics (mRECIST, best.response,
-#   AUC, slope, angle, TGI, ...) to build the figure/batch manifest
+#   half the remaining budget, PD filling the remainder, seed = 1 -- see
+#   Methods). This step deliberately uses the RDS's stored, full-duration
+#   mRECIST, so the identity of the sampled batches/images is unchanged from
+#   the checked-in version already scored by the three expert raters.
+# - recompute model- and batch-level sensitivity metrics (mRECIST, best.response,
+#   AUC, slope, angle, ...) for just the sampled batches using the same
+#   min.time = 10, max.time = 50 response window as the rendered images, so the
+#   metrics recorded in the manifest are consistent with what the images show
+#   (the stored/default sensitivity slot is instead computed over the full,
+#   uncapped treatment duration -- see the case-3 window-harmonization work for
+#   why this matters). TGI is dropped from this recomputation and from the
+#   manifest entirely: Xeva's TGI() divides by control/treatment volume at the
+#   first and last in-window time point, which errors ("replacement has length
+#   zero") for any batch with zero data points in [10, 50] on one arm --
+#   several such batches exist across the full 14,118-batch PDXE set.
 # - render one tumor-volume plot per sampled batch and convert PNG -> WebP
 # - output images and manifest.csv under ../data/procdata/0_datasets/pdxe
 #
 # Ported and path-adapted from the verified original at
-# drug_cat/code/final_stratefied_sampling.R (outside this repo); confirmed to
-# reproduce the manifest.csv/images checked into data/procdata/0_datasets/pdxe
-# byte-for-byte against the source-of-truth copy in the pdx-annotation-app used
-# for expert rating.
+# drug_cat/code/final_stratefied_sampling.R (outside this repo); the sampled
+# batches/images still reproduce that original byte-for-byte (and match the
+# source-of-truth copy in the pdx-annotation-app used for expert rating), but
+# manifest.csv's numeric metric columns no longer do, by design, since they are
+# now recomputed on the 10-50 day window instead of the full duration.
 
 library(Xeva)
 library(dplyr)
@@ -79,23 +92,37 @@ n_pd_to_take <- n_figures - (n_responders + nrow(sampled_SD))
 sampled_PD   <- final_PD_pool[sample(nrow(final_PD_pool), n_pd_to_take), ]
 
 balanced_metrics <- rbind(final_CR, final_PR, sampled_SD, sampled_PD)
-balanced_df <- merge(
-  balanced_metrics,
+balanced_ids <- merge(
+  balanced_metrics[, "model.id", drop = FALSE],
   valid_batches[, c("batch.id", "treatment")],
   by.x = "model.id", by.y = "treatment"
 )
 
-cat("Final sampling successful. Total images to generate:", nrow(balanced_df), "\n")
+cat("Final sampling successful. Total images to generate:",
+    nrow(balanced_ids), "\n")
 
-# ---- merge in batch-level sensitivity metrics ----
-batch_metrics <- methods::slot(x.set, "sensitivity")$batch
-batch_metrics_clean <- batch_metrics[, c(
+# ---- recompute model- and batch-level sensitivity metrics for just the
+# sampled batches, using the same 10-50 day response window as the rendered
+# images (min.time = 10, max.time = x_max), so the metrics recorded in the
+# manifest are consistent with what the images actually show. This does NOT
+# change which batches were sampled above (that used the stored, full-
+# duration mRECIST) -- only the metric VALUES recorded for them below. ----
+x.set.windowed <- setResponse(
+  x.set, res.measure = c("mRECIST", "slope", "AUC", "angle", "abc"),
+  min.time = 10, max.time = x_max, verbose = FALSE
+)
+model_metrics_windowed <- methods::slot(x.set.windowed, "sensitivity")$model
+batch_metrics_windowed <- methods::slot(x.set.windowed, "sensitivity")$batch
+batch_metrics_windowed_clean <- batch_metrics_windowed[, c(
   "batch.name", "slope.control", "slope.treatment", "angle",
-  "auc.control", "auc.treatment", "abc", "TGI"
+  "auc.control", "auc.treatment", "abc"
 )]
 
 balanced_df_rich <- merge(
-  balanced_df, batch_metrics_clean,
+  balanced_ids, model_metrics_windowed, by = "model.id", all.x = TRUE
+)
+balanced_df_rich <- merge(
+  balanced_df_rich, batch_metrics_windowed_clean,
   by.x = "batch.id", by.y = "batch.name", all.x = TRUE
 )
 
@@ -119,7 +146,6 @@ manifest <- data.frame(
   batch_auc.control     = balanced_df_rich$auc.control,
   batch_auc.treatment   = balanced_df_rich$auc.treatment,
   batch_abc             = balanced_df_rich$abc,
-  batch_TGI             = balanced_df_rich$TGI,
 
   image_file = paste0(sprintf("fig_%06d", seq_along(balanced_df_rich$batch.id)), ".png"),
   stringsAsFactors = FALSE
@@ -129,11 +155,20 @@ cat("mRECIST distribution in manifest:\n")
 print(table(manifest$model_mRECIST))
 
 # ---- render one tumor-volume plot per sampled batch ----
+# Skips batches whose webp already exists: the sample (batch_id set) and the
+# image-rendering call/parameters are unchanged by the manifest-metrics fix
+# above, so existing images are still correct and don't need regenerating.
 failed <- character(0)
+n_skipped <- 0
 
 for (i in seq_len(nrow(manifest))) {
   b <- manifest$batch_id[i]
   out_png <- file.path(output_dir, manifest$image_file[i])
+  out_webp_existing <- sub("\\.png$", ".webp", out_png)
+  if (file.exists(out_webp_existing)) {
+    n_skipped <- n_skipped + 1
+    next
+  }
   plot_buffer <- x_max + 5
   x_min_pad <- -5
   y_min_pad <- -2
@@ -187,6 +222,7 @@ for (i in seq_len(nrow(manifest))) {
   if (i %% 100 == 0) cat("Processed", i, "of", nrow(manifest), "\n")
 }
 
+cat("Skipped (webp already existed):", n_skipped, "\n")
 cat("Failed:", length(failed), "\n")
 cat("PNG written:", length(list.files(output_dir, pattern = "\\.png$", ignore.case = TRUE)), "\n")
 

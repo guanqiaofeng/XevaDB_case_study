@@ -12,8 +12,7 @@
     "batch_angle",
     "batch_auc.control",
     "batch_auc.treatment",
-    "batch_abc",
-    "batch_TGI"
+    "batch_abc"
   ],
   "mrecist_mapping": {
     "CR": 0,
@@ -30,10 +29,16 @@
   },
   "cv_best_params_per_fold": [
     {
+      "max_depth": null,
+      "max_features": "sqrt",
+      "min_samples_split": 10,
+      "n_estimators": 200
+    },
+    {
       "max_depth": 10,
       "max_features": "sqrt",
-      "min_samples_split": 5,
-      "n_estimators": 300
+      "min_samples_split": 2,
+      "n_estimators": 200
     },
     {
       "max_depth": null,
@@ -42,28 +47,22 @@
       "n_estimators": 100
     },
     {
+      "max_depth": null,
+      "max_features": "sqrt",
+      "min_samples_split": 5,
+      "n_estimators": 200
+    },
+    {
       "max_depth": 10,
       "max_features": "sqrt",
       "min_samples_split": 10,
       "n_estimators": 300
-    },
-    {
-      "max_depth": null,
-      "max_features": "sqrt",
-      "min_samples_split": 5,
-      "n_estimators": 300
-    },
-    {
-      "max_depth": null,
-      "max_features": "sqrt",
-      "min_samples_split": 10,
-      "n_estimators": 100
     }
   ],
   "final_model_best_params": {
     "max_depth": null,
     "max_features": "sqrt",
-    "min_samples_split": 2,
-    "n_estimators": 100
+    "min_samples_split": 10,
+    "n_estimators": 200
   }
 }
