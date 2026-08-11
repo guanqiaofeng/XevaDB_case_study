@@ -1,3 +1,1 @@
 Fold,Reason,n_train_extreme,n_test_extreme,n_train_slow,n_test_slow
-13,test_extremes_have_one_class,12,4,6,0
-22,test_extremes_have_one_class,12,3,6,0

@@ -571,7 +571,10 @@ def run_growth_ml_pipeline(
     skipped_folds_file = paths["proc"] / f"growth_ml_skipped_folds_{cohort}.csv"
     config_file = paths["proc"] / f"growth_ml_config_{cohort}.json"
 
-    df = pd.read_csv(input_file, index_col=0)
+    # Sorted so CV fold assignment (RepeatedKFold shuffles by row position)
+    # is independent of whatever column order the upstream omics extraction
+    # happens to produce.
+    df = pd.read_csv(input_file, index_col=0).sort_index()
 
     target_col = "doubling_time_days"
     if target_col not in df.columns:
