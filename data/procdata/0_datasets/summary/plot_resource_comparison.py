@@ -15,7 +15,7 @@ from plot_dataset_summary import HERE, XLSX_PATH
 
 SHEET_NAME = "Sheet3"
 RESOURCE_COL = "PDX Resource"
-EXCLUDE_COLS = ["Primary focus", "Drug annotations"]
+EXCLUDE_COLS = ["Portal website", "Organization"]
 BOLD_RESOURCE = "XevaDB"
 
 DOT_COLOR = "black"
@@ -26,14 +26,33 @@ LABEL_WRAP_WIDTH = 11
 # Explicit line breaks for labels where generic wrapping doesn't give the
 # desired split.
 LABEL_OVERRIDES = {
-    "Longitudinal tumor volume": "Longitudinal\ntumor volume",
+    "Longitudinal tumour volume": "Longitudinal\ntumour volume",
+    "Analysis-ready dataset": "Analysis-ready\ndataset",
+}
+# Short forms for the figure's row-label subtitle -- distinct from the fuller
+# text in Sheet3's "Organization" column, which is too long to fit under a
+# resource name without repeating the header-collision problem long labels
+# already caused once. Keyed by exact "PDX Resource" cell text -- a row rename
+# needs a matching update here (same tradeoff as LABEL_OVERRIDES above).
+ORG_SHORT_LABELS = {
+    "PDX Finder / PDCM Finder (retired)": "EMBL-EBI / JAX",
+    "EurOPDX": "European consortium",
+    "PDMR": "NCI",
+    "PDXNet": "NCI",
+    "XevaDB": "PMCC",
+}
+# Line breaks for resource names too long to sit on one line -- same
+# rationale/tradeoff as LABEL_OVERRIDES above (keyed by exact "PDX Resource"
+# cell text; a rename needs a matching update here).
+RESOURCE_LABEL_OVERRIDES = {
+    "PDX Finder / PDCM Finder (retired)": "PDX Finder /\nPDCM Finder (retired)",
 }
 COLUMN_SHADE_COLORS = {
     "Model metadata": "#D6EAC4",
     "Molecular profiles": "#FCEEA6",
     "Drug response": "#CDE7F4",
-    "Longitudinal tumor volume": "#7FB8D9",
-    "ML-ready dataset": "#F5C6C6",
+    "Longitudinal tumour volume": "#7FB8D9",
+    "Analysis-ready dataset": "#F5C6C6",
 }
 
 sns.set_theme(style="white", context="talk")
@@ -56,7 +75,7 @@ def plot_resource_matrix(df, out_name="membership_pdx_resources", out_dir=HERE):
     n_rows = len(resources)
     n_cols = len(capabilities)
 
-    fig, ax = plt.subplots(figsize=(1.6 * n_cols + 2, 0.45 * n_rows + 2.2))
+    fig, ax = plt.subplots(figsize=(2.0 * n_cols + 2, 0.6 * n_rows + 2.2))
 
     ax.set_xticks(range(n_cols))
     ax.set_yticks(range(n_rows))
@@ -86,11 +105,33 @@ def plot_resource_matrix(df, out_name="membership_pdx_resources", out_dir=HERE):
     ]
     ax.set_xticklabels(wrapped_capabilities, rotation=0, ha="center")
     ax.xaxis.tick_top()
-    ax.set_yticklabels(resources)
 
-    for label, resource in zip(ax.get_yticklabels(), resources):
-        if resource == BOLD_RESOURCE:
-            label.set_fontweight("bold")
+    # Two-tier row labels (resource name + smaller/greyed organization
+    # subtitle) instead of plain yticklabels, since a single Text artist
+    # can't mix font sizes across its lines.
+    ax.set_yticklabels([])
+    for row_i, resource in enumerate(resources):
+        org = ORG_SHORT_LABELS.get(resource)
+        display_name = RESOURCE_LABEL_OVERRIDES.get(resource, resource)
+        two_line_name = "\n" in display_name
+        # The name's vertical CENTER always sits on row_i, exactly where its
+        # dots are -- that alignment takes priority. The org subtitle just
+        # hangs below it, pushed further down when the name itself is 2
+        # lines tall so it clears the name's bottom edge.
+        name_y = row_i
+        org_y = row_i + (0.43 if two_line_name else 0.30) if org else None
+        ax.text(
+            -0.6, name_y, display_name, transform=ax.transData, ha="right", va="center",
+            fontsize=plt.rcParams["ytick.labelsize"],
+            fontweight="bold" if resource == BOLD_RESOURCE else "normal",
+            clip_on=False,
+        )
+        if org:
+            ax.text(
+                -0.6, org_y, org, transform=ax.transData, ha="right", va="center",
+                fontsize=plt.rcParams["ytick.labelsize"] * 0.95, color="#666666",
+                clip_on=False,
+            )
 
     ax.tick_params(axis="both", length=0)
     for spine in ax.spines.values():
