@@ -1,0 +1,5 @@
+cohort,data_type,genes_covered,total_genes,pct_covered
+UHN Carboplatin,Mutation,670,718,93.3
+UHN Carboplatin,CNV,711,718,99.0
+McGill Cisplatin,Mutation,235,718,32.7
+McGill Cisplatin,CNV,717,718,99.9
