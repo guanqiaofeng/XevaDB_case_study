@@ -2,6 +2,6 @@
 rna_models_before_merge,30
 dt_models,36
 merged_models,27
-protein_coding_genes,17493
+protein_coding_genes,13119
 rna_models_without_dt,0
 dt_models_without_rna,9

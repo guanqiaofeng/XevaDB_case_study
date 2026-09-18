@@ -1,2 +1,2 @@
 analysis,omics,model,U_stat,p_value,n_resistant,n_sensitive
-early_fusion,rna_cnv_mutation,random_forest,7298.0,1.5857894647957098e-08,130,180
+early_fusion,rna_cnv_mutation,random_forest,7102.0,3.5543950941500932e-09,130,180
