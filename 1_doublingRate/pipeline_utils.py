@@ -10,7 +10,7 @@ from scipy.stats import linregress, pearsonr, spearmanr
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression, LogisticRegressionCV
 from sklearn.metrics import roc_auc_score
-from sklearn.model_selection import RepeatedKFold, StratifiedKFold
+from sklearn.model_selection import GridSearchCV, RepeatedKFold, StratifiedKFold
 from sklearn.preprocessing import StandardScaler
 
 # Doubling-time estimation parameters
@@ -125,15 +125,24 @@ def safe_pearson(a, b):
     return float(0.0 if np.isnan(r) else r)
 
 
-def safe_inner_cv(y, max_splits=4):
+def safe_inner_cv(y):
+    """Inner CV for hyperparameter selection: a flat 4-fold stratified split.
+
+    min(4, minimum per-class training count) was checked directly against the
+    actual data (breast: always 20 per class; lung: always 6) and always
+    resolves to 4, so the adaptive cap is stated flatly here instead. The
+    degenerate-fold guard is kept (not just inlined away) so fold-exclusion
+    criterion (iv) -- too few training-extreme samples per class for a valid
+    inner split -- stays a real, reachable check rather than dead code, in
+    case a future data revision ever drops a fold's per-class count below 4.
+    """
     class_counts = np.bincount(np.asarray(y, dtype=int))
     min_class_count = class_counts[class_counts > 0].min()
-    n_splits = min(max_splits, int(min_class_count))
-    if n_splits < 2:
+    if min_class_count < 4:
         return None
 
     return StratifiedKFold(
-        n_splits=n_splits,
+        n_splits=4,
         shuffle=True,
         random_state=RANDOM_STATE,
     )
@@ -438,25 +447,31 @@ def build_rf_param_grid(max_depth_grid, min_samples_leaf_grid, *, n_estimators, 
 
 def select_random_forest_hyperparameters(X_train, y_train, inner_cv, param_grid):
     """Nested selection: pick the RF hyperparameter combination with the best
-    mean inner-CV AUROC on `X_train`/`y_train`, using only inner_cv's own
-    splits -- never the outer test fold. Falls back to the first grid entry
-    if no inner split has both classes represented in its validation fold.
+    mean inner-CV AUROC on `X_train`/`y_train`, using sklearn's GridSearchCV
+    over inner_cv's own splits -- never the outer test fold. Matches case
+    study 4's grid-search implementation (previously hand-rolled here);
+    verified to select identical hyperparameters on real data before
+    switching, and inner_cv's folds are never degenerate in practice (checked
+    directly), so GridSearchCV's default error handling is never exercised.
+
+    `param_grid` is the list-of-full-parameter-dicts produced by
+    `build_rf_param_grid` (only max_depth/min_samples_leaf actually vary
+    across entries); the shared base kwargs (n_estimators, max_features,
+    random_state, n_jobs) are read from the first entry to build the base
+    estimator GridSearchCV tunes on top of.
     """
-    best_params, best_score = param_grid[0], -np.inf
-    for rf_params in param_grid:
-        scores = []
-        for inner_train_idx, inner_val_idx in inner_cv.split(X_train, y_train):
-            y_val = y_train[inner_val_idx]
-            if len(np.unique(y_val)) < 2:
-                continue
-            model = RandomForestClassifier(**rf_params)
-            model.fit(X_train[inner_train_idx], y_train[inner_train_idx])
-            proba = model.predict_proba(X_train[inner_val_idx])[:, 1]
-            scores.append(roc_auc_score(y_val, proba))
-        if scores and np.mean(scores) > best_score:
-            best_score = float(np.mean(scores))
-            best_params = rf_params
-    return best_params, best_score
+    base_kwargs = {k: v for k, v in param_grid[0].items() if k not in ("max_depth", "min_samples_leaf")}
+    base_estimator = RandomForestClassifier(**base_kwargs)
+    sklearn_grid = {
+        "max_depth": sorted({p["max_depth"] for p in param_grid}),
+        "min_samples_leaf": sorted({p["min_samples_leaf"] for p in param_grid}),
+    }
+
+    search = GridSearchCV(base_estimator, param_grid=sklearn_grid, scoring="roc_auc", cv=inner_cv, n_jobs=-1)
+    search.fit(X_train, y_train)
+
+    best_params = {**base_kwargs, **search.best_params_}
+    return best_params, search.best_score_
 
 
 def select_lassoed_forest_hyperparameters(
@@ -683,7 +698,7 @@ def run_growth_ml_pipeline(
         elif len(np.unique(y_test_ext)) < 2:
             skip_reason = "test_extremes_have_one_class"
 
-        inner_cv = None if skip_reason else safe_inner_cv(y_train_ext, max_splits=4)
+        inner_cv = None if skip_reason else safe_inner_cv(y_train_ext)
         if skip_reason is None and inner_cv is None:
             skip_reason = "too_few_training_samples_for_inner_cv"
 
@@ -971,7 +986,7 @@ def compare_hvg_across_models(
 
             if X_train_ext_df.shape[0] < 4 or len(np.unique(y_train_ext)) < 2 or len(np.unique(y_test_ext)) < 2:
                 continue
-            inner_cv = safe_inner_cv(y_train_ext, max_splits=4)
+            inner_cv = safe_inner_cv(y_train_ext)
             if inner_cv is None:
                 continue
 
