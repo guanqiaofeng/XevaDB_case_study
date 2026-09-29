@@ -7,7 +7,6 @@ AZD4547,uhn_lung
 BGJ398,"uhn_lung,pdxe"
 binimetinib,pdxe
 BKM120,"uhn_lung,pdxe"
-BMN-673,uhn_breast
 BYL719,pdxe
 Carboplatin,"mcgill_breast,uhn_breast"
 cetuximab,"uhn_lung,pdxe"
@@ -23,11 +22,11 @@ DIPYRIDAMOLE,uhn_breast
 docetaxel,uhn_lung
 Doxorubicin,mcgill_breast
 encorafenib,pdxe
-ERIBULIN,uhn_breast
 erlotinib,"uhn_lung,pdxe"
-Everolimus,"uhn_breast,pdxe"
+Everolimus,pdxe
 figitumumab,pdxe
 FLUVASTATIN,uhn_breast
+TERBINIFINE,uhn_breast
 FROST,uhn_breast
 G9A,uhn_breast
 gefitinib,uhn_lung
@@ -57,11 +56,9 @@ PF384,uhn_lung
 PF502,uhn_lung
 RG7388,uhn_lung
 RO599,uhn_lung
-SACITUZAMAB-GOVITECAN,uhn_breast
 sleumetinib,uhn_lung
 tamoxifen,pdxe
 TAS266,pdxe
-TERBINIFINE,uhn_breast
 TOPOTECAN,uhn_breast
 trametinib,pdxe
 trastuzumab,pdxe
