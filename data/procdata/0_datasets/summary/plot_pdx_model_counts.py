@@ -49,9 +49,16 @@ def count_by_patient(models_csv):
 
 
 def count_by_first_dot(models_csv):
-    """UHN breast: model.id is "<base>.<drug>.<mouse>" -- base before the first dot."""
+    """UHN breast: model.id is "<base>.<drug>.<mouse>" -- base is everything before
+    the last two dot-separated segments (drug, mouse), not just before the first dot.
+    One subline's own base name happens to contain a "." itself
+    (BXTO.64_P7_ORG_P2_ERIBLD_210603_RES.H2O.m1 -- base is
+    "BXTO.64_P7_ORG_P2_ERIBLD_210603_RES", a resistant line), which a naive
+    first-dot split would truncate to "BXTO" and silently drop the "_RES"
+    marker, miscounting it as parental.
+    """
     df = pd.read_csv(models_csv)
-    return _split_count(df["model.id"].str.split(".", n=1).str[0])
+    return _split_count(df["model.id"].str.rsplit(".", n=2).str[0])
 
 
 def count_by_middle_segment(models_csv):
