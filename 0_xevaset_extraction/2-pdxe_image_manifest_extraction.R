@@ -1,5 +1,5 @@
 ### PDXE pan-cancer XevaSet -- image manifest for case study 4
-# - read in xevaset of PDXE located in ../data/rawdata/pdxe
+# - read in xevaset of PDXE located in ../rawdata/pdxe
 # - restrict to control+treatment batches with a non-missing model-level mRECIST call
 # - stratified sample of n_figures batches: all eligible CR/PR retained, SD capped
 #   at half the remaining budget, PD filling the remainder (seed = 1; see Methods).
@@ -10,7 +10,7 @@
 # - TGI is dropped: Xeva's TGI() errors on any batch with no data points in
 #   [10, 50] on one arm, which occurs for several batches in the full PDXE set.
 # - render one tumor-volume plot per sampled batch and convert PNG -> WebP
-# - output images and manifest.csv under ../data/procdata/0_datasets/pdxe
+# - output images and manifest.csv under ../procdata/pdxe
 # - Requires the cwebp CLI (https://developers.google.com/speed/webp/docs/cwebp)
 #   on PATH for the PNG -> WebP conversion step.
 
@@ -19,8 +19,8 @@ library(dplyr)
 library(ggplot2)
 
 # ---- paths ----
-xset_path  <- "../data/rawdata/pdxe/Xeva_PDXE.rds"
-output_dir <- "../data/procdata/0_datasets/pdxe"
+xset_path  <- "../rawdata/pdxe/Xeva_PDXE.rds"
+output_dir <- "../procdata/pdxe"
 n_figures  <- 1300
 
 # Plotting limits

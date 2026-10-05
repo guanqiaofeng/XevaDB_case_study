@@ -30,7 +30,7 @@
 # days there). 49 is the data's own inflection point, not a value chosen to
 # maximize downstream classification performance.
 #
-# Output (data/procdata/4_paclitaxel/), paclitaxel batches/models only (the
+# Output (results/4_paclitaxel/), paclitaxel batches/models only (the
 # 80 batches selected by the same PACLITAXEL/non-"-"/non-RES filter used in
 # 1-data_preprocessing.ipynb):
 #   paclitaxel_batch_sensitivity_min10_max49.csv:
@@ -44,8 +44,8 @@ RES_MEASURE <- c("slope", "angle", "mRECIST")
 MIN_TIME <- 10
 MAX_TIME <- 49
 
-raw_path <- "../data/rawdata/uhn_breast/UHN_Breast_XevaSet_v2025.rds"
-output_dir <- "../data/procdata/4_paclitaxel"
+raw_path <- "../rawdata/uhn_breast/UHN_Breast_XevaSet_v2025.rds"
+output_dir <- "../results/4_paclitaxel"
 if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
 
 x.set <- readRDS(raw_path)

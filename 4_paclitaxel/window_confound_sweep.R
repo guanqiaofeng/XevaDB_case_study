@@ -17,7 +17,7 @@
 # methodology: the deepest point (most extreme median response) in the sweep
 # is the chosen cutoff, not a downstream-performance-maximizing choice.
 #
-# Output (data/procdata/4_paclitaxel/):
+# Output (results/4_paclitaxel/):
 #   paclitaxel_angle_full_duration.csv: batch.name, slope.control, slope.treatment, angle (max.time=NULL)
 #   paclitaxel_angle_sweep.csv: batch.name, slope.control, slope.treatment, angle, max_time (14..56 by 7)
 
@@ -26,8 +26,8 @@ library(Xeva)
 MIN_TIME <- 10
 CANDIDATE_MAX_TIME <- seq(14, 56, by = 7)
 
-raw_path <- "../data/rawdata/uhn_breast/UHN_Breast_XevaSet_v2025.rds"
-output_dir <- "../data/procdata/4_paclitaxel"
+raw_path <- "../rawdata/uhn_breast/UHN_Breast_XevaSet_v2025.rds"
+output_dir <- "../results/4_paclitaxel"
 if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
 
 x.set <- readRDS(raw_path)

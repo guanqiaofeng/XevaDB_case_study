@@ -1,14 +1,14 @@
 ### UHN Lung XevaSet
-# - read in xevaset of uhn lung located in ../data/rawdata/uhn_lung
+# - read in xevaset of uhn lung located in ../rawdata/uhn_lung
 # - extract experiment/expDesign/drug/models/omics/modToBiobaseMap
-# - output csv files under ../data/procdata/0_datasets/uhn_lung
+# - output csv files under ../procdata/uhn_lung
 
 library(Xeva)
 library(Biobase)
 
 # ---- paths ----
-raw_path   <- "../data/rawdata/uhn_lung/UHN_Tsao_Lung_DrugResponse_2022_v1.rds"
-output_dir <- "../data/procdata/0_datasets/uhn_lung"
+raw_path   <- "../rawdata/uhn_lung/UHN_Tsao_Lung_DrugResponse_2022_v1.rds"
+output_dir <- "../procdata/uhn_lung"
 
 if (!dir.exists(output_dir)) {
   dir.create(output_dir, recursive = TRUE)

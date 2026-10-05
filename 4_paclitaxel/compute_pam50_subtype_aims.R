@@ -28,7 +28,7 @@ suppressMessages({
   library(AnnotationDbi)
 })
 
-rna_path <- "../data/procdata/4_paclitaxel/rna_logtpm.csv"
+rna_path <- "../results/4_paclitaxel/rna_logtpm.csv"
 output_dir <- "../results/4_paclitaxel"
 if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
 output_path <- file.path(output_dir, "uhn_breast_pam50_aims_subtype.csv")

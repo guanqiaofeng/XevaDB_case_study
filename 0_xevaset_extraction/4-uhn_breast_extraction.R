@@ -1,16 +1,16 @@
 ### UHN Breast XevaSet
-# - read in xevaset of uhn breast located in ../data/rawdata/uhn_breast
+# - read in xevaset of uhn breast located in ../rawdata/uhn_breast
 # - extract experiment/expDesign/drug/models/omics/modToBiobaseMap
 # - extract batch-level sensitivity table (slope, angle, AUC, abc)
 # - extract model-level sensitivity table (mRECIST, best.response, ...)
-# - output csv files under ../data/procdata/0_datasets/uhn_breast
+# - output csv files under ../procdata/uhn_breast
 
 library(Xeva)
 library(Biobase)
 
 # ---- paths ----
-raw_path   <- "../data/rawdata/uhn_breast/UHN_Cescon_Breast_DrugResponse_2025_v1.rds"
-output_dir <- "../data/procdata/0_datasets/uhn_breast"
+raw_path   <- "../rawdata/uhn_breast/UHN_Cescon_Breast_DrugResponse_2025_v1.rds"
+output_dir <- "../procdata/uhn_breast"
 
 if (!dir.exists(output_dir)) {
   dir.create(output_dir, recursive = TRUE)

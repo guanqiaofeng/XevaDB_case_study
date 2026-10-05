@@ -7,7 +7,7 @@ from sklearn.model_selection import StratifiedKFold
 CAT_MAP = {f"cat{i}": i - 1 for i in range(1, 6)}
 
 
-def find_project_root(start=None, marker_dirs=("data", "2_drugSensitivity")):
+def find_project_root(start=None, marker_dirs=("rawdata", "procdata")):
     start = Path.cwd() if start is None else Path(start)
     start = start.resolve()
 
@@ -26,12 +26,11 @@ def make_case2_paths(project_dir=None):
 
     paths = {
         "project": project_dir,
-        "data": project_dir / "data",
-        "raw_pdxe": project_dir / "data" / "rawdata" / "pdxe",
-        "datasets": project_dir / "data" / "procdata" / "0_datasets" / "pdxe",
-        "proc": project_dir / "data" / "procdata" / "2_drugSensitivity",
+        "raw_pdxe": project_dir / "rawdata" / "pdxe",
+        "datasets": project_dir / "procdata" / "pdxe",
+        "proc": project_dir / "results" / "2_drugSensitivity",
         "results": project_dir / "results" / "2_drugSensitivity",
-        "figures": project_dir / "figures",
+        "figures": project_dir / "figures_tables" / "figures_main",
     }
 
     paths["proc"].mkdir(parents=True, exist_ok=True)

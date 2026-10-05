@@ -16,7 +16,7 @@ FUNCTIONAL_WHITELIST = {
 }
 
 
-def find_project_root(start=None, marker_dirs=("data", "3_carboplatin")):
+def find_project_root(start=None, marker_dirs=("rawdata", "procdata")):
     start = Path.cwd() if start is None else Path(start)
     start = start.resolve()
 
@@ -35,12 +35,11 @@ def make_case3_paths(project_dir=None):
 
     paths = {
         "project": project_dir,
-        "data": project_dir / "data",
-        "raw": project_dir / "data" / "rawdata",
-        "datasets": project_dir / "data" / "procdata" / "0_datasets",
-        "proc": project_dir / "data" / "procdata" / "3_carboplatin",
+        "raw": project_dir / "rawdata",
+        "datasets": project_dir / "procdata",
+        "proc": project_dir / "results" / "3_carboplatin",
         "results": project_dir / "results" / "3_carboplatin",
-        "figures": project_dir / "figures",
+        "figures": project_dir / "figures_tables" / "figures_main",
     }
 
     paths["proc"].mkdir(parents=True, exist_ok=True)

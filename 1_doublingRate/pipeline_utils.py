@@ -22,7 +22,7 @@ MIN_R2 = 0.8       # minimum log-linear fit quality
 RANDOM_STATE = 42
 
 
-def find_project_root(start=None, marker_dirs=("data", "1_doublingRate")):
+def find_project_root(start=None, marker_dirs=("rawdata", "procdata")):
     start = Path.cwd() if start is None else Path(start)
     start = start.resolve()
 
@@ -41,11 +41,10 @@ def make_case1_paths(project_dir=None):
 
     paths = {
         "project": project_dir,
-        "data": project_dir / "data",
-        "raw_uhn": project_dir / "data" / "procdata" / "0_datasets",
-        "proc": project_dir / "data" / "procdata" / "1_doublingRate",
+        "raw_uhn": project_dir / "procdata",
+        "proc": project_dir / "results" / "1_doublingRate",
         "results": project_dir / "results" / "1_doublingRate",
-        "figures": project_dir / "figures",
+        "figures": project_dir / "figures_tables" / "figures_main",
     }
 
     paths["proc"].mkdir(parents=True, exist_ok=True)

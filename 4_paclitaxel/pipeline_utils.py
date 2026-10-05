@@ -34,7 +34,7 @@ def binarize_mutation_inclusive(val):
     return 0
 
 
-def find_project_root(start=None, marker_dirs=("data", "4_paclitaxel")):
+def find_project_root(start=None, marker_dirs=("rawdata", "procdata")):
     start = Path.cwd() if start is None else Path(start)
     start = start.resolve()
 
@@ -53,12 +53,11 @@ def make_case4_paths(project_dir=None):
 
     paths = {
         "project": project_dir,
-        "data": project_dir / "data",
-        "raw": project_dir / "data" / "rawdata" / "uhn_breast",
-        "proc": project_dir / "data" / "procdata" / "4_paclitaxel",
-        "datasets": project_dir / "data" / "procdata" / "0_datasets",
+        "raw": project_dir / "rawdata" / "uhn_breast",
+        "proc": project_dir / "results" / "4_paclitaxel",
+        "datasets": project_dir / "procdata",
         "results": project_dir / "results" / "4_paclitaxel",
-        "figures": project_dir / "results" / "4_paclitaxel" / "figures",
+        "figures": project_dir / "figures_tables" / "figures_main",
     }
 
     paths["proc"].mkdir(parents=True, exist_ok=True)

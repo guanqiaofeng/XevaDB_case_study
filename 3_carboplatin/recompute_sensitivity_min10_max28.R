@@ -32,7 +32,7 @@
 # rather than editing 0_xevaset_extraction_summary/, whose UHN output is also used
 # unmodified by case study 4 (paclitaxel) -- keeps this a case-3-local choice.
 #
-# Output (data/procdata/3_carboplatin/), all batches/drugs and all models --
+# Output (results/3_carboplatin/), all batches/drugs and all models --
 # case-specific filtering to cisplatin/carboplatin happens downstream, same
 # as it already does for the raw 0_xevaset_extraction_summary outputs:
 #   {Cohort}_batch_sensitivity_10_28day.csv:
@@ -46,7 +46,7 @@ RES_MEASURE <- c("slope", "angle", "mRECIST")
 MIN_TIME <- 10
 MAX_TIME <- 28
 
-output_dir <- "../data/procdata/3_carboplatin"
+output_dir <- "../results/3_carboplatin"
 if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
 
 recompute_and_save <- function(rds_path, cohort_name) {
@@ -68,5 +68,5 @@ recompute_and_save <- function(rds_path, cohort_name) {
   cat("Saved:", model_out, "(", nrow(model_df), "models )\n")
 }
 
-recompute_and_save("../data/rawdata/mcgill_breast/Xeva_McGill.rds", "McGill")
-recompute_and_save("../data/rawdata/uhn_breast/UHN_Breast_XevaSet_v2025.rds", "UHN")
+recompute_and_save("../rawdata/mcgill_breast/Xeva_McGill.rds", "McGill")
+recompute_and_save("../rawdata/uhn_breast/UHN_Breast_XevaSet_v2025.rds", "UHN")

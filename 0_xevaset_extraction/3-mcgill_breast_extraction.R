@@ -1,16 +1,16 @@
 ### McGill Breast XevaSet
-# - read in xevaset of mcgill breast located in ../data/rawdata/mcgill_breast
+# - read in xevaset of mcgill breast located in ../rawdata/mcgill_breast
 # - extract experiment/expDesign/drug/models/omics/modToBiobaseMap
 # - extract batch-level sensitivity table (slope, angle, AUC, TGI, mRECIST, ...)
 # - extract model-level sensitivity table (mRECIST, best.response, ...)
-# - output csv files under ../data/procdata/0_datasets/mcgill_breast
+# - output csv files under ../procdata/mcgill_breast
 
 library(Xeva)
 library(Biobase)
 
 # ---- paths ----
-raw_path   <- "../data/rawdata/mcgill_breast/Xeva_McGill.rds"
-output_dir <- "../data/procdata/0_datasets/mcgill_breast"
+raw_path   <- "../rawdata/mcgill_breast/Xeva_McGill.rds"
+output_dir <- "../procdata/mcgill_breast"
 
 if (!dir.exists(output_dir)) {
   dir.create(output_dir, recursive = TRUE)

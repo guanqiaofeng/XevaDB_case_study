@@ -9,7 +9,7 @@ from pathlib import Path
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
-DATASETS_DIR = HERE.parent / "data" / "procdata" / "0_datasets"
+DATASETS_DIR = HERE.parent / "procdata"
 SUMMARY_DIR = DATASETS_DIR / "summary"
 XLSX_PATH = SUMMARY_DIR / "dataset_summary.xlsx"
 OVERLAP_CSV_PATH = SUMMARY_DIR / "drug_dataset_overlap.csv"

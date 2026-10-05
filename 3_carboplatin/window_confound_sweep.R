@@ -5,7 +5,7 @@
 # does the retained median slope drift as the window widens) rather than
 # picking whichever window maximizes a downstream performance metric.
 #
-# Output (data/procdata/3_carboplatin/):
+# Output (results/3_carboplatin/):
 #   {Cohort}_slope_full_duration.csv: batch.name, slope.treatment (max.time=NULL)
 #   {Cohort}_slope_sweep.csv: batch.name, slope.treatment, max_time (14..56 by 7)
 
@@ -14,7 +14,7 @@ library(Xeva)
 MIN_TIME <- 10
 CANDIDATE_MAX_TIME <- seq(14, 56, by = 7)
 
-output_dir <- "../data/procdata/3_carboplatin"
+output_dir <- "../results/3_carboplatin"
 
 run_cohort <- function(rds_path, cohort_name, batch_names) {
   x.set <- readRDS(rds_path)
@@ -41,5 +41,5 @@ run_cohort <- function(rds_path, cohort_name, batch_names) {
 mcgill_batches <- read.delim(file.path(output_dir, "McGill_cisplatin_models.tsv"))$batch.name
 uhn_batches <- read.delim(file.path(output_dir, "UHN_carboplatin_models.tsv"))$batch.name
 
-run_cohort("../data/rawdata/mcgill_breast/Xeva_McGill.rds", "McGill", mcgill_batches)
-run_cohort("../data/rawdata/uhn_breast/UHN_Breast_XevaSet_v2025.rds", "UHN", uhn_batches)
+run_cohort("../rawdata/mcgill_breast/Xeva_McGill.rds", "McGill", mcgill_batches)
+run_cohort("../rawdata/uhn_breast/UHN_Breast_XevaSet_v2025.rds", "UHN", uhn_batches)

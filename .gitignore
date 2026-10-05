@@ -1,4 +1,4 @@
-data/rawdata/images/*.png
+rawdata/images/*.png
 
 # OS / editor cruft
 .DS_Store
@@ -13,18 +13,18 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 
-# ml_models/nest_vnn: track code/model/results, exclude the venv and
+# pretrained_models/nest_vnn: track code/model/results, exclude the venv and
 # regenerable intermediate activations, and the 7 pretrained drug
 # ensembles not used by any case study here (only cisplatin is used).
-ml_models/nest_vnn/nest_env/
-ml_models/nest_vnn/hidden/
-ml_models/nest_vnn/pretrained_models/CD437/
-ml_models/nest_vnn/pretrained_models/camptothecin/
-ml_models/nest_vnn/pretrained_models/etoposide/
-ml_models/nest_vnn/pretrained_models/gemcitabine/
-ml_models/nest_vnn/pretrained_models/nutlin-3A/
-ml_models/nest_vnn/pretrained_models/olaparib/
-ml_models/nest_vnn/pretrained_models/palbociclib/
+pretrained_models/nest_vnn/nest_env/
+pretrained_models/nest_vnn/hidden/
+pretrained_models/nest_vnn/pretrained_models/CD437/
+pretrained_models/nest_vnn/pretrained_models/camptothecin/
+pretrained_models/nest_vnn/pretrained_models/etoposide/
+pretrained_models/nest_vnn/pretrained_models/gemcitabine/
+pretrained_models/nest_vnn/pretrained_models/nutlin-3A/
+pretrained_models/nest_vnn/pretrained_models/olaparib/
+pretrained_models/nest_vnn/pretrained_models/palbociclib/
 
 # MS Office lock files
 ~$*

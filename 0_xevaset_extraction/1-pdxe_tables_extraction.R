@@ -1,13 +1,13 @@
 ### PDXE pan-cancer XevaSet -- core tables
-# - read in xevaset of PDXE located in ../data/rawdata/pdxe
+# - read in xevaset of PDXE located in ../rawdata/pdxe
 # - extract models/expDesign/modToBiobaseMap/experiment/drug
-# - output csv files under ../data/procdata/0_datasets/pdxe/csv
+# - output csv files under ../procdata/pdxe/csv
 
 library(Xeva)
 
 # ---- paths ----
-raw_path   <- "../data/rawdata/pdxe/Xeva_PDXE.rds"
-output_dir <- "../data/procdata/0_datasets/pdxe/csv"
+raw_path   <- "../rawdata/pdxe/Xeva_PDXE.rds"
+output_dir <- "../procdata/pdxe/csv"
 
 if (!dir.exists(output_dir)) {
   dir.create(output_dir, recursive = TRUE)
