@@ -26,10 +26,10 @@ LF_CS = (0.001, 0.01, 0.1, 1.0, 10.0, 100)
 paths = make_case1_paths()
 
 run_growth_ml_pipeline(
-    cohort="breast",
+    cohort="lung",
     paths=paths,
-    n_splits=5,
-    n_hvg=100,
+    n_splits=3,
+    n_hvg=600,
     rf_max_depth_grid=RF_MAX_DEPTH_GRID,
     rf_min_samples_leaf_grid=RF_MIN_SAMPLES_LEAF_GRID,
     en_l1_ratios=EN_L1_RATIOS,

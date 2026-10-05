@@ -5,7 +5,6 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import shap
 from scipy.stats import linregress, pearsonr, spearmanr
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression, LogisticRegressionCV
@@ -45,10 +44,14 @@ def make_case1_paths(project_dir=None):
         "proc": project_dir / "results" / "1_doublingRate",
         "results": project_dir / "results" / "1_doublingRate",
         "figures": project_dir / "figures_tables" / "figures_main",
+        "figures_supp": project_dir / "figures_tables" / "figures_supp",
+        "tables": project_dir / "figures_tables" / "tables",
     }
 
     paths["proc"].mkdir(parents=True, exist_ok=True)
     paths["results"].mkdir(parents=True, exist_ok=True)
+    paths["figures_supp"].mkdir(parents=True, exist_ok=True)
+    paths["tables"].mkdir(parents=True, exist_ok=True)
 
     return paths
 
@@ -127,13 +130,9 @@ def safe_pearson(a, b):
 def safe_inner_cv(y):
     """Inner CV for hyperparameter selection: a flat 4-fold stratified split.
 
-    min(4, minimum per-class training count) was checked directly against the
-    actual data (breast: always 20 per class; lung: always 6) and always
-    resolves to 4, so the adaptive cap is stated flatly here instead. The
-    degenerate-fold guard is kept (not just inlined away) so fold-exclusion
-    criterion (iv) -- too few training-extreme samples per class for a valid
-    inner split -- stays a real, reachable check rather than dead code, in
-    case a future data revision ever drops a fold's per-class count below 4.
+    Returns None if either class has fewer than 4 training-extreme samples,
+    so a fold too small for a valid inner split is skipped rather than
+    silently passed to StratifiedKFold.
     """
     class_counts = np.bincount(np.asarray(y, dtype=int))
     min_class_count = class_counts[class_counts > 0].min()
@@ -266,169 +265,6 @@ def summarize_metric(values):
     return values.mean(), values.std(ddof=0)
 
 
-def compute_rf_shap(rf_model, X_train, X_test):
-    """Explain held-out slow-class probabilities with interventional TreeSHAP."""
-    explainer = shap.TreeExplainer(
-        rf_model,
-        data=X_train,
-        feature_perturbation="interventional",
-        model_output="probability",
-    )
-    shap_values = explainer.shap_values(X_test, check_additivity=False)
-
-    if isinstance(shap_values, list):
-        shap_slow = np.asarray(shap_values[1], dtype=float)
-    else:
-        shap_values = np.asarray(shap_values, dtype=float)
-        if shap_values.ndim == 3:
-            shap_slow = shap_values[:, :, 1]
-        elif shap_values.ndim == 2:
-            shap_slow = shap_values
-        else:
-            raise ValueError(f"Unexpected SHAP array shape: {shap_values.shape}")
-
-    expected_values = np.asarray(explainer.expected_value, dtype=float).reshape(-1)
-    expected_slow = float(expected_values[1] if expected_values.size > 1 else expected_values[0])
-    return shap_slow, expected_slow
-
-
-def make_rf_shap_records(
-    fold_idx,
-    repeat_idx,
-    model_ids,
-    genes,
-    X_test,
-    y_test,
-    y_test_raw,
-    probabilities,
-    shap_slow,
-    expected_slow,
-):
-    """Return a long table with one held-out sample-gene attribution per row."""
-    n_samples, n_genes = X_test.shape
-    if shap_slow.shape != (n_samples, n_genes):
-        raise ValueError(
-            f"SHAP shape {shap_slow.shape} does not match test matrix {(n_samples, n_genes)}"
-        )
-
-    return pd.DataFrame(
-        {
-            "Fold": fold_idx,
-            "Repeat": repeat_idx,
-            "ModelID": np.repeat(model_ids, n_genes),
-            "Gene": np.tile(np.asarray(genes), n_samples),
-            "SHAP_Slow": shap_slow.reshape(-1),
-            "log2_expression": np.asarray(X_test, dtype=float).reshape(-1),
-            "True_Label": np.repeat(np.asarray(y_test, dtype=int), n_genes),
-            "Prob_Slow": np.repeat(np.asarray(probabilities, dtype=float), n_genes),
-            "Expected_Prob_Slow": expected_slow,
-            "log1p_doubling_time_days": np.repeat(
-                np.asarray(y_test_raw, dtype=float), n_genes
-            ),
-        }
-    )
-
-
-def build_rf_shap_summary(shap_df, feature_df):
-    """Summarize SHAP magnitude, direction, and fold-level feature stability."""
-    shap_work = shap_df.assign(abs_SHAP=shap_df["SHAP_Slow"].abs())
-    shap_summary = (
-        shap_work.groupby("Gene", as_index=False)
-        .agg(
-            n_test_attributions=("SHAP_Slow", "size"),
-            mean_abs_shap_when_selected=("abs_SHAP", "mean"),
-            median_abs_shap_when_selected=("abs_SHAP", "median"),
-            mean_shap_when_selected=("SHAP_Slow", "mean"),
-            mean_log2_expression_when_selected=("log2_expression", "mean"),
-            sum_abs_shap=("abs_SHAP", "sum"),
-            sum_shap=("SHAP_Slow", "sum"),
-        )
-    )
-
-    feature_summary = (
-        feature_df.groupby("Gene", as_index=False)
-        .agg(
-            n_selected_folds=("Fold", "nunique"),
-            mean_gini_importance_when_selected=("Gini_Importance", "mean"),
-            median_gini_importance_when_selected=("Gini_Importance", "median"),
-        )
-    )
-
-    n_completed_folds = int(feature_df["Fold"].nunique())
-    n_total_test_predictions = int(shap_df[["Fold", "ModelID"]].drop_duplicates().shape[0])
-    summary = shap_summary.merge(feature_summary, on="Gene", how="outer")
-    summary["selection_frequency"] = summary["n_selected_folds"] / n_completed_folds
-    summary["mean_abs_shap_all_test_predictions"] = (
-        summary["sum_abs_shap"] / n_total_test_predictions
-    )
-    summary["mean_shap_all_test_predictions"] = (
-        summary["sum_shap"] / n_total_test_predictions
-    )
-    summary["n_completed_folds"] = n_completed_folds
-    summary["n_total_test_predictions"] = n_total_test_predictions
-    return (
-        summary.drop(columns=["sum_abs_shap", "sum_shap"])
-        .sort_values("mean_abs_shap_all_test_predictions", ascending=False)
-        .reset_index(drop=True)
-    )
-
-
-def build_elasticnet_coefficient_summary(coefficient_df, all_genes, completed_folds):
-    """Summarize standardized coefficients across completed outer-CV folds."""
-    coefficient_matrix = (
-        coefficient_df.pivot(
-            index="Fold",
-            columns="Gene",
-            values="Standardized_Coefficient",
-        )
-        .reindex(index=completed_folds, columns=all_genes)
-        .fillna(0.0)
-    )
-    selected_matrix = (
-        coefficient_df.assign(HVG_Selected=1)
-        .pivot(index="Fold", columns="Gene", values="HVG_Selected")
-        .reindex(index=completed_folds, columns=all_genes)
-        .fillna(0.0)
-    )
-
-    mean_coefficient = coefficient_matrix.mean(axis=0)
-    nonzero_matrix = coefficient_matrix.abs() > 1e-12
-    nonzero_count = nonzero_matrix.sum(axis=0)
-    direction_matches = coefficient_matrix.apply(
-        lambda column: np.sum(
-            (np.sign(column) == np.sign(mean_coefficient[column.name]))
-            & (column != 0)
-        )
-    )
-
-    summary = pd.DataFrame(
-        {
-            "Gene": all_genes,
-            "mean_standardized_coefficient": mean_coefficient.to_numpy(),
-            "mean_abs_standardized_coefficient": (
-                coefficient_matrix.abs().mean(axis=0).to_numpy()
-            ),
-            "hvg_selection_frequency": selected_matrix.mean(axis=0).to_numpy(),
-            "nonzero_frequency": nonzero_matrix.mean(axis=0).to_numpy(),
-            "direction_consistency_when_nonzero": np.divide(
-                direction_matches.to_numpy(),
-                nonzero_count.to_numpy(),
-                out=np.zeros(len(all_genes), dtype=float),
-                where=nonzero_count.to_numpy() > 0,
-            ),
-            "n_completed_folds": len(completed_folds),
-        }
-    )
-    summary["abs_mean_standardized_coefficient"] = summary[
-        "mean_standardized_coefficient"
-    ].abs()
-    return (
-        summary.loc[summary["hvg_selection_frequency"] > 0]
-        .sort_values("abs_mean_standardized_coefficient", ascending=False)
-        .reset_index(drop=True)
-    )
-
-
 def build_rf_param_grid(max_depth_grid, min_samples_leaf_grid, *, n_estimators, max_features, random_state):
     return [
         dict(
@@ -447,11 +283,7 @@ def build_rf_param_grid(max_depth_grid, min_samples_leaf_grid, *, n_estimators, 
 def select_random_forest_hyperparameters(X_train, y_train, inner_cv, param_grid):
     """Nested selection: pick the RF hyperparameter combination with the best
     mean inner-CV AUROC on `X_train`/`y_train`, using sklearn's GridSearchCV
-    over inner_cv's own splits -- never the outer test fold. Matches case
-    study 4's grid-search implementation (previously hand-rolled here);
-    verified to select identical hyperparameters on real data before
-    switching, and inner_cv's folds are never degenerate in practice (checked
-    directly), so GridSearchCV's default error handling is never exercised.
+    over inner_cv's own splits -- never the outer test fold.
 
     `param_grid` is the list-of-full-parameter-dicts produced by
     `build_rf_param_grid` (only max_depth/min_samples_leaf actually vary
@@ -569,19 +401,6 @@ def run_growth_ml_pipeline(
     input_file = paths["proc"] / f"rna_doubling_time_merged_{cohort}.csv"
     fold_results_file = paths["proc"] / f"growth_ml_fold_results_{cohort}.csv"
     predictions_file = paths["proc"] / f"growth_ml_predictions_{cohort}.csv"
-    rf_importance_file = paths["proc"] / f"growth_rf_gene_importance_{cohort}.csv"
-    rf_fold_features_file = paths["proc"] / f"growth_rf_fold_features_{cohort}.csv"
-    rf_hyperparameter_selection_file = paths["proc"] / f"growth_rf_hyperparameter_selection_{cohort}.csv"
-    rf_shap_values_file = paths["proc"] / f"growth_rf_shap_values_{cohort}.csv"
-    rf_shap_summary_file = paths["proc"] / f"growth_rf_shap_summary_{cohort}.csv"
-    elasticnet_fold_coefficients_file = (
-        paths["proc"] / f"growth_elasticnet_fold_coefficients_{cohort}.csv"
-    )
-    elasticnet_coefficient_summary_file = (
-        paths["proc"] / f"growth_elasticnet_coefficient_summary_{cohort}.csv"
-    )
-    elasticnet_fold_models_file = paths["proc"] / f"growth_elasticnet_fold_models_{cohort}.csv"
-    lassoed_forest_tree_file = paths["proc"] / f"growth_lassoed_forest_tree_summary_{cohort}.csv"
     skipped_folds_file = paths["proc"] / f"growth_ml_skipped_folds_{cohort}.csv"
     config_file = paths["proc"] / f"growth_ml_config_{cohort}.json"
 
@@ -621,19 +440,6 @@ def run_growth_ml_pipeline(
             "raw AUROC, LassoedForest selects independently on its own post-lasso AUROC"
         ),
         "lf_scoring_c": lf_scoring_c,
-        "rf_shap": {
-            "evaluation_samples": "held-out outer-CV extreme samples",
-            "explainer": "TreeExplainer",
-            "feature_perturbation": "interventional",
-            "model_output": "probability",
-            "explained_class": positive_class_label,
-            "background": "corresponding outer-fold training extremes",
-        },
-        "elasticnet_coefficients": {
-            "scale": "standardized within each outer-fold training set",
-            "absent_feature_contribution": 0,
-            "summary_scope": "completed outer-CV folds",
-        },
         "elasticnet_l1_ratios": list(en_l1_ratios),
         "elasticnet_cs": list(en_cs),
         "lassoed_forest_cs": list(lf_cs),
@@ -660,13 +466,6 @@ def run_growth_ml_pipeline(
     fold_records = []
     prediction_records = []
     skipped_fold_records = []
-    rf_importances = []
-    rf_fold_feature_records = []
-    rf_shap_records = []
-    elasticnet_coefficient_records = []
-    elasticnet_model_records = []
-    lassoed_forest_tree_records = []
-    rf_hyperparameter_records = []
 
     print(f"\n[{cohort}] Running {n_splits * n_repeats}-fold repeated CV...")
 
@@ -723,58 +522,10 @@ def run_growth_ml_pipeline(
             X_train, y_train_ext, inner_cv, rf_param_grid,
         )
         p_rf, rf = fit_predict_random_forest(X_train, y_train_ext, X_test, rf_selected_params)
-        rf_importances.append(pd.Series(rf.feature_importances_, index=hvg, name=f"Fold_{fold_idx}"))
-        rf_fold_feature_records.append(
-            pd.DataFrame(
-                {
-                    "Fold": fold_idx,
-                    "Repeat": repeat_idx,
-                    "Gene": hvg,
-                    "Gini_Importance": rf.feature_importances_,
-                }
-            )
-        )
-
-        shap_slow, expected_slow = compute_rf_shap(rf, X_train, X_test)
-        rf_shap_records.append(
-            make_rf_shap_records(
-                fold_idx=fold_idx,
-                repeat_idx=repeat_idx,
-                model_ids=test_ids_ext,
-                genes=hvg,
-                X_test=X_test,
-                y_test=y_test_ext,
-                y_test_raw=y_test_raw_ext,
-                probabilities=p_rf,
-                shap_slow=shap_slow,
-                expected_slow=expected_slow,
-            )
-        )
 
         p_en, en_model = fit_predict_elasticnet(
             X_train, y_train_ext, X_test, inner_cv,
             l1_ratios=en_l1_ratios, cs=en_cs, random_state=random_state, n_jobs=lr_n_jobs,
-        )
-        en_coefficients = en_model.coef_.ravel()
-        elasticnet_coefficient_records.append(
-            pd.DataFrame(
-                {
-                    "Fold": fold_idx,
-                    "Repeat": repeat_idx,
-                    "Gene": hvg,
-                    "Standardized_Coefficient": en_coefficients,
-                }
-            )
-        )
-        elasticnet_model_records.append(
-            {
-                "Fold": fold_idx,
-                "Repeat": repeat_idx,
-                "C": float(en_model.C_[0]),
-                "l1_ratio": float(np.ravel(en_model.l1_ratio_)[0]),
-                "n_hvg": len(hvg),
-                "n_nonzero": int(np.sum(np.abs(en_coefficients) > 1e-12)),
-            }
         )
         lf_selected_params, lf_inner_score = select_lassoed_forest_hyperparameters(
             X_train, y_train_ext, inner_cv, rf_param_grid,
@@ -783,31 +534,10 @@ def run_growth_ml_pipeline(
         )
         lf_rf = RandomForestClassifier(**lf_selected_params)
         lf_rf.fit(X_train, y_train_ext)
-        p_lf, lf_ridge, lf_lasso, selected_trees = fit_predict_lassoed_forest(
+        p_lf, *_ = fit_predict_lassoed_forest(
             lf_rf, X_train, y_train_ext, X_test, inner_cv,
             cs=lf_cs, random_state=random_state, n_jobs=lr_n_jobs,
             adaptive_lasso_gamma=adaptive_lasso_gamma, adaptive_lasso_eps=adaptive_lasso_eps,
-        )
-
-        rf_hyperparameter_records.append(
-            {
-                "Fold": fold_idx,
-                "Repeat": repeat_idx,
-                "Model": "RandomForest",
-                "selected_max_depth": rf_selected_params["max_depth"],
-                "selected_min_samples_leaf": rf_selected_params["min_samples_leaf"],
-                "inner_cv_auroc": rf_inner_score,
-            }
-        )
-        rf_hyperparameter_records.append(
-            {
-                "Fold": fold_idx,
-                "Repeat": repeat_idx,
-                "Model": "LassoedForest",
-                "selected_max_depth": lf_selected_params["max_depth"],
-                "selected_min_samples_leaf": lf_selected_params["min_samples_leaf"],
-                "inner_cv_auroc": lf_inner_score,
-            }
         )
 
         model_probabilities = {
@@ -861,18 +591,6 @@ def run_growth_ml_pipeline(
                     }
                 )
 
-        lassoed_forest_tree_records.append(
-            {
-                "Fold": fold_idx,
-                "n_trees_total": rf_n_estimators,
-                "n_trees_selected": selected_trees,
-                "selected_max_depth": lf_selected_params["max_depth"],
-                "selected_min_samples_leaf": lf_selected_params["min_samples_leaf"],
-                "ridge_C": float(lf_ridge.C_[0]),
-                "lasso_C": float(lf_lasso.C_[0]),
-            }
-        )
-
         if fold_idx % 5 == 0:
             print(f"[{cohort}]   Fold {fold_idx}/{n_splits * n_repeats} complete")
 
@@ -881,46 +599,10 @@ def run_growth_ml_pipeline(
     skipped_folds_df = pd.DataFrame(skipped_fold_records)
     if skipped_folds_df.empty:
         skipped_folds_df = pd.DataFrame(columns=GROWTH_ML_SKIPPED_FOLD_COLUMNS)
-    tree_summary_df = pd.DataFrame(lassoed_forest_tree_records)
-    rf_hyperparameter_df = pd.DataFrame(rf_hyperparameter_records)
-    rf_fold_features_df = pd.concat(rf_fold_feature_records, ignore_index=True)
-    rf_shap_values_df = pd.concat(rf_shap_records, ignore_index=True)
-    rf_shap_summary_df = build_rf_shap_summary(rf_shap_values_df, rf_fold_features_df)
-    elasticnet_fold_coefficients_df = pd.concat(
-        elasticnet_coefficient_records, ignore_index=True
-    )
-    elasticnet_fold_models_df = pd.DataFrame(elasticnet_model_records)
-    elasticnet_coefficient_summary_df = build_elasticnet_coefficient_summary(
-        coefficient_df=elasticnet_fold_coefficients_df,
-        all_genes=X_df_full.columns,
-        completed_folds=elasticnet_fold_models_df["Fold"].tolist(),
-    )
 
     results_df.to_csv(fold_results_file, index=False)
     predictions_df.to_csv(predictions_file, index=False)
     skipped_folds_df.to_csv(skipped_folds_file, index=False)
-    tree_summary_df.to_csv(lassoed_forest_tree_file, index=False)
-    rf_hyperparameter_df.to_csv(rf_hyperparameter_selection_file, index=False)
-    rf_fold_features_df.to_csv(rf_fold_features_file, index=False)
-    rf_shap_values_df.to_csv(rf_shap_values_file, index=False)
-    rf_shap_summary_df.to_csv(rf_shap_summary_file, index=False)
-    elasticnet_fold_coefficients_df.to_csv(
-        elasticnet_fold_coefficients_file, index=False
-    )
-    elasticnet_coefficient_summary_df.to_csv(
-        elasticnet_coefficient_summary_file, index=False
-    )
-    elasticnet_fold_models_df.to_csv(elasticnet_fold_models_file, index=False)
-
-    if rf_importances:
-        rf_importance_df = (
-            pd.concat(rf_importances, axis=1)
-            .mean(axis=1)
-            .sort_values(ascending=False)
-            .rename("mean_gini_importance")
-            .to_frame()
-        )
-        rf_importance_df.to_csv(rf_importance_file)
 
     print(f"\n[{cohort}] ===== Growth-classification CV results =====")
     for model_name in model_names:
@@ -938,15 +620,6 @@ def run_growth_ml_pipeline(
     print(f"\n[{cohort}] Saved fold-level results: {fold_results_file}")
     print(f"[{cohort}] Saved predictions: {predictions_file}")
     print(f"[{cohort}] Saved skipped-fold log: {skipped_folds_file}")
-    print(f"[{cohort}] Saved Lassoed Forest tree summary: {lassoed_forest_tree_file}")
-    print(f"[{cohort}] Saved RF/LassoedForest hyperparameter selection: {rf_hyperparameter_selection_file}")
-    print(f"[{cohort}] Saved RF gene importance: {rf_importance_file}")
-    print(f"[{cohort}] Saved RF fold-level selected features: {rf_fold_features_file}")
-    print(f"[{cohort}] Saved held-out RF SHAP values: {rf_shap_values_file}")
-    print(f"[{cohort}] Saved held-out RF SHAP summary: {rf_shap_summary_file}")
-    print(f"[{cohort}] Saved ElasticNet fold coefficients: {elasticnet_fold_coefficients_file}")
-    print(f"[{cohort}] Saved ElasticNet coefficient summary: {elasticnet_coefficient_summary_file}")
-    print(f"[{cohort}] Saved ElasticNet fold model settings: {elasticnet_fold_models_file}")
 
 
 def compare_hvg_across_models(
@@ -959,7 +632,7 @@ def compare_hvg_across_models(
     N_HVG preference -- originally found via LassoedForest's own grid search,
     saved as `growth_lassoedforest_sensitivity_summary_{cohort}.csv` -- generalizes
     to the other two models, or is specific to LassoedForest's tree-probability
-    architecture. See `supp/hvg_selection_justification.ipynb`.
+    architecture. See `supp/2-hvg_selection_justification.ipynb`.
     """
     y_raw = np.log1p(df["doubling_time_days"].astype(float).values)
     X_df_full = df.drop(columns=["doubling_time_days"])
@@ -1157,6 +830,7 @@ def plot_qc_threshold_sensitivity(sensitivity_df, out_path, cohort_label):
     fig.suptitle(f"{cohort_label}: DT-fit QC threshold sensitivity", y=1.03)
     plt.tight_layout()
     plt.savefig(out_path, dpi=300, bbox_inches="tight")
+    plt.savefig(out_path.with_suffix(".pdf"), bbox_inches="tight")
     return fig
 
 
@@ -1272,4 +946,5 @@ def plot_followup_censoring(censoring_df, drift_df, max_day, out_path, cohort_la
     fig.suptitle(f"{cohort_label}: follow-up duration is confounded with growth rate", y=1.04)
     plt.tight_layout()
     plt.savefig(out_path, dpi=300, bbox_inches="tight")
+    plt.savefig(out_path.with_suffix(".pdf"), bbox_inches="tight")
     return fig

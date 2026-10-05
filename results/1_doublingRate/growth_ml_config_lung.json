@@ -1,6 +1,6 @@
 {
   "cohort": "lung",
-  "input_file": "/Users/guanqiaofeng/Documents/BHK/XevaDB/Manuscript_gitrepo/XevaDB_case_study/data/procdata/1_doublingRate/rna_doubling_time_merged_lung.csv",
+  "input_file": "/Users/guanqiaofeng/Documents/BHK/XevaDB/Manuscript_gitrepo/XevaDB_case_study/results/1_doublingRate/rna_doubling_time_merged_lung.csv",
   "target_col": "doubling_time_days",
   "target_transform": "log1p",
   "positive_class": "slow",
@@ -24,19 +24,6 @@
   ],
   "rf_hyperparameter_selection": "nested per outer fold via inner_cv; RandomForest selects on its own raw AUROC, LassoedForest selects independently on its own post-lasso AUROC",
   "lf_scoring_c": 1.0,
-  "rf_shap": {
-    "evaluation_samples": "held-out outer-CV extreme samples",
-    "explainer": "TreeExplainer",
-    "feature_perturbation": "interventional",
-    "model_output": "probability",
-    "explained_class": "slow",
-    "background": "corresponding outer-fold training extremes"
-  },
-  "elasticnet_coefficients": {
-    "scale": "standardized within each outer-fold training set",
-    "absent_feature_contribution": 0,
-    "summary_scope": "completed outer-CV folds"
-  },
   "elasticnet_l1_ratios": [
     0.1,
     0.5,

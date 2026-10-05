@@ -1,14 +1,5 @@
 ### Generic two-group limma moderated-t ranking statistic computation.
 #
-# Replaces the naive Welch's t-statistic previously used to rank genes for
-# GSEA (scipy.stats.ttest_ind(..., equal_var=False)) with limma's empirical-
-# Bayes moderated t-statistic: per-gene variance estimates are shrunk toward
-# a prior fitted across the whole population of genes measured on the same
-# samples, which is the more principled estimator when per-gene sample sizes
-# are small (as small as 9 per group for the lung cohort here) -- the raw
-# per-gene variance alone is a noisy estimate of that gene's true variance,
-# and limma borrows strength across genes to stabilize it.
-#
 # Input: a samples x genes CSV (first column = sample id) with one additional
 # grouping column (already computed by the caller, exactly two levels).
 # Output: Gene, ranking_statistic (limma's moderated t for contrast_level
