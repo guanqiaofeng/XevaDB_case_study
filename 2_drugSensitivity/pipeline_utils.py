@@ -27,6 +27,7 @@ def make_case2_paths(project_dir=None):
     paths = {
         "project": project_dir,
         "raw_pdxe": project_dir / "rawdata" / "pdxe",
+        "raw_expert_rating": project_dir / "rawdata" / "expert_rating",
         "datasets": project_dir / "procdata" / "pdxe",
         "proc": project_dir / "results" / "2_drugSensitivity",
         "results": project_dir / "results" / "2_drugSensitivity",

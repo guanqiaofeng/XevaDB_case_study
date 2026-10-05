@@ -19,7 +19,7 @@ CLASSIFICATION_RESPONSE_COLS = ["mRECIST", "response_binary", "response_binary_n
 RESPONSE_COLS = CONTINUOUS_RESPONSE_COLS + CLASSIFICATION_RESPONSE_COLS
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PAX_GENE_PATH = PROJECT_ROOT / "results/4_paclitaxel/pax_gene_list.tsv"
-DEFAULT_NEST_GENE_PATH = PROJECT_ROOT / "rawdata/nest_vnn/gene2ind.txt"
+DEFAULT_NEST_GENE_PATH = PROJECT_ROOT / "rawdata/nestvnn_gene_list/gene2ind.txt"
 
 
 def load_pax_genes(path: str | Path = DEFAULT_PAX_GENE_PATH) -> set[str]:
