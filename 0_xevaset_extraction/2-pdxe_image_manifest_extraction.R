@@ -1,31 +1,18 @@
-### PDXE pan-cancer XevaSet
+### PDXE pan-cancer XevaSet -- image manifest for case study 4
 # - read in xevaset of PDXE located in ../data/rawdata/pdxe
 # - restrict to control+treatment batches with a non-missing model-level mRECIST call
-# - stratified sample of n_figures batches (all eligible CR/PR retained, SD capped at
-#   half the remaining budget, PD filling the remainder, seed = 1 -- see
-#   Methods). This step deliberately uses the RDS's stored, full-duration
-#   mRECIST, so the identity of the sampled batches/images is unchanged from
-#   the checked-in version already scored by the three expert raters.
-# - recompute model- and batch-level sensitivity metrics (mRECIST, best.response,
-#   AUC, slope, angle, ...) for just the sampled batches using the same
-#   min.time = 10, max.time = 50 response window as the rendered images, so the
-#   metrics recorded in the manifest are consistent with what the images show
-#   (the stored/default sensitivity slot is instead computed over the full,
-#   uncapped treatment duration -- see the case-3 window-harmonization work for
-#   why this matters). TGI is dropped from this recomputation and from the
-#   manifest entirely: Xeva's TGI() divides by control/treatment volume at the
-#   first and last in-window time point, which errors ("replacement has length
-#   zero") for any batch with zero data points in [10, 50] on one arm --
-#   several such batches exist across the full 14,118-batch PDXE set.
+# - stratified sample of n_figures batches: all eligible CR/PR retained, SD capped
+#   at half the remaining budget, PD filling the remainder (seed = 1; see Methods).
+#   Sampling uses the RDS's stored, full-duration mRECIST.
+# - recompute model- and batch-level sensitivity metrics for the sampled batches
+#   using a min.time = 10, max.time = 50 day window to match the rendered images
+#   (the stored sensitivity slot instead covers the full treatment duration).
+# - TGI is dropped: Xeva's TGI() errors on any batch with no data points in
+#   [10, 50] on one arm, which occurs for several batches in the full PDXE set.
 # - render one tumor-volume plot per sampled batch and convert PNG -> WebP
 # - output images and manifest.csv under ../data/procdata/0_datasets/pdxe
-#
-# Ported and path-adapted from the verified original at
-# drug_cat/code/final_stratefied_sampling.R (outside this repo); the sampled
-# batches/images still reproduce that original byte-for-byte (and match the
-# source-of-truth copy in the pdx-annotation-app used for expert rating), but
-# manifest.csv's numeric metric columns no longer do, by design, since they are
-# now recomputed on the 10-50 day window instead of the full duration.
+# - Requires the cwebp CLI (https://developers.google.com/speed/webp/docs/cwebp)
+#   on PATH for the PNG -> WebP conversion step.
 
 library(Xeva)
 library(dplyr)
@@ -101,12 +88,8 @@ balanced_ids <- merge(
 cat("Final sampling successful. Total images to generate:",
     nrow(balanced_ids), "\n")
 
-# ---- recompute model- and batch-level sensitivity metrics for just the
-# sampled batches, using the same 10-50 day response window as the rendered
-# images (min.time = 10, max.time = x_max), so the metrics recorded in the
-# manifest are consistent with what the images actually show. This does NOT
-# change which batches were sampled above (that used the stored, full-
-# duration mRECIST) -- only the metric VALUES recorded for them below. ----
+# ---- recompute model- and batch-level sensitivity metrics for the sampled
+# batches, using the same 10-50 day response window as the rendered images ----
 x.set.windowed <- setResponse(
   x.set, res.measure = c("mRECIST", "slope", "AUC", "angle", "abc"),
   min.time = 10, max.time = x_max, verbose = FALSE
@@ -154,10 +137,8 @@ manifest <- data.frame(
 cat("mRECIST distribution in manifest:\n")
 print(table(manifest$model_mRECIST))
 
-# ---- render one tumor-volume plot per sampled batch ----
-# Skips batches whose webp already exists: the sample (batch_id set) and the
-# image-rendering call/parameters are unchanged by the manifest-metrics fix
-# above, so existing images are still correct and don't need regenerating.
+# ---- render one tumor-volume plot per sampled batch (skips any batch whose
+# webp already exists) ----
 failed <- character(0)
 n_skipped <- 0
 

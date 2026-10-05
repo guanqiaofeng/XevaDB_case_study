@@ -2,13 +2,6 @@
 # - read in xevaset of PDXE located in ../data/rawdata/pdxe
 # - extract models/expDesign/modToBiobaseMap/experiment/drug
 # - output csv files under ../data/procdata/0_datasets/pdxe/csv
-#
-# (Separate from PDXE_XevaSet_extraction.R, which builds the stratified
-# image-sampling manifest for case study 4 and writes to
-# ../data/procdata/0_datasets/pdxe directly -- this script only extracts the
-# three core tables, following the same pattern as the other datasets'
-# extraction scripts, into their own "csv" subfolder so they don't mix with
-# the manifest/webp outputs already there.)
 
 library(Xeva)
 
@@ -71,7 +64,3 @@ experiment_df <- do.call(rbind, experiment_list)
 experiment_df <- experiment_df[, c("model.id", "drug.id", setdiff(colnames(experiment_df), c("model.id", "drug.id")))]
 
 write.csv(experiment_df, file.path(output_dir, "experiment.csv"), row.names = FALSE)
-
-########
-# end  #
-########

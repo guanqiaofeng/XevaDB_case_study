@@ -86,7 +86,3 @@ write.csv(batch_sensitivity_df, file.path(output_dir, "batch_sensitivity.csv"), 
 # ---- extract model-level sensitivity table (mRECIST, best.response, ...) ----
 model_sensitivity_df <- x.set@sensitivity$model
 write.csv(model_sensitivity_df, file.path(output_dir, "model_sensitivity.csv"), row.names = FALSE)
-
-########
-# end  #
-########

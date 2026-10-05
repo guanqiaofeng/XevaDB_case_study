@@ -76,7 +76,3 @@ for (mDataType in names(x.set@molecularProfiles)) {
   gene_anno <- fData(eset)
   write.csv(gene_anno, file.path(output_dir, paste0(mDataType, "_gene_annotation.csv")))
 }
-
-########
-# end  #
-########
