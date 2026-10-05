@@ -1,7 +1,7 @@
 ### Intrinsic molecular subtype (PAM50-equivalent) for the UHN breast PDX
 # paclitaxel cohort, from RNA-seq alone -- there is no clinical ER/PR/HER2
 # IHC annotation anywhere in the UHN breast XevaSet (models.csv, the
-# modelInfo() slot, and 0_xevaset_extraction/ were all checked; none carry
+# modelInfo() slot, and 0_xevaset_extraction_summary/ were all checked; none carry
 # receptor status), so subtype has to come from expression.
 #
 # Uses AIMS (Absolute Intrinsic Molecular Subtyping, Paquet & Hallett 2015,

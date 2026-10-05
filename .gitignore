@@ -25,3 +25,6 @@ ml_models/nest_vnn/pretrained_models/gemcitabine/
 ml_models/nest_vnn/pretrained_models/nutlin-3A/
 ml_models/nest_vnn/pretrained_models/olaparib/
 ml_models/nest_vnn/pretrained_models/palbociclib/
+
+# MS Office lock files
+~$*

@@ -22,19 +22,19 @@
 # bottoms out (deepest, least regrowth-contaminated response) at max.time=28
 # and erodes back toward "non-responding" at wider windows -- 28 is the
 # data's own inflection point, not a value chosen to maximize downstream
-# AUROC. (McGill's original batch_sensitivity.csv from 0_xevaset_extraction/
+# AUROC. (McGill's original batch_sensitivity.csv from 0_xevaset_extraction_summary/
 # used max.time=30 instead, a value inherited from however that RDS was
 # originally built, not derived from this diagnostic.)
 #
 # UHN's original batch_sensitivity.csv reflects the full observed treatment
 # duration instead (median 40.5 days, up to 286 days), and shows little
 # preference either way across the max.time sweep. Recomputing both here --
-# rather than editing 0_xevaset_extraction/, whose UHN output is also used
+# rather than editing 0_xevaset_extraction_summary/, whose UHN output is also used
 # unmodified by case study 4 (paclitaxel) -- keeps this a case-3-local choice.
 #
 # Output (data/procdata/3_carboplatin/), all batches/drugs and all models --
 # case-specific filtering to cisplatin/carboplatin happens downstream, same
-# as it already does for the raw 0_xevaset_extraction outputs:
+# as it already does for the raw 0_xevaset_extraction_summary outputs:
 #   {Cohort}_batch_sensitivity_10_28day.csv:
 #     batch.name, slope.control, slope.treatment, angle
 #   {Cohort}_model_sensitivity_10_28day.csv:
