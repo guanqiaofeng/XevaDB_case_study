@@ -32,10 +32,14 @@ def make_case2_paths(project_dir=None):
         "proc": project_dir / "results" / "2_drugSensitivity",
         "results": project_dir / "results" / "2_drugSensitivity",
         "figures": project_dir / "figures_tables" / "figures_main",
+        "figures_supp": project_dir / "figures_tables" / "figures_supp",
+        "tables": project_dir / "figures_tables" / "tables",
     }
 
     paths["proc"].mkdir(parents=True, exist_ok=True)
     paths["results"].mkdir(parents=True, exist_ok=True)
+    paths["figures_supp"].mkdir(parents=True, exist_ok=True)
+    paths["tables"].mkdir(parents=True, exist_ok=True)
 
     return paths
 
