@@ -1,3 +1,0 @@
-PDX_pathway,PDX_NES,PDX_NES_range,PDX_direction,PDX_FDR,ISPY2_biomarker,biomarker,n,OR,OR_ci_lo,OR_ci_hi,p_value,gene_overlap_frac,ISPY2_direction,p_bh,ISPY2_significant,concordant,call
-Proliferation (E2F/G2M),1.8135354446348306,1.72 to 1.90,Sensitive,0.0017543225785731,Module11_Prolif_score,Module11_Prolif_score,179,1.5166177755695696,0.9778023598690927,2.3523460073071703,0.06292404768384986,0.475,Sensitive,0.12584809536769972,False,True,concordant (not significant)
-Interferon Alpha Response,-3.849261455397972,,Resistant,0.0,Module3_IFN_score,Module3_IFN_score,179,1.0215315303542152,0.6902725522498652,1.5117603388785599,0.9151692129128843,0.458,Sensitive,0.9151692129128843,False,False,null / inconclusive
