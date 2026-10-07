@@ -42,25 +42,14 @@ def load_nest_genes(path: str | Path = DEFAULT_NEST_GENE_PATH) -> set[str]:
 def add_binary_response(df: pd.DataFrame) -> pd.DataFrame:
     """Add binary paclitaxel response labels from a fixed slope.treatment cutoff.
 
-    Sensitive = slope.treatment < 0 (net tumor regression); Resistant = slope.treatment
-    >= 0 (net growth). This is a fixed, cohort/subset-independent threshold -- it
-    matches case study 3's own convention exactly (same response quantity, same fixed
-    0 deg cutoff), rather than a distribution-derived cutoff (a median split, or the
-    empirical gap in the response distribution). Both alternatives were checked in
-    1-data_preprocessing.ipynb's "Response distribution" diagnostic -- the underlying
-    distribution is visibly bimodal, but neither the median nor the natural gap was
-    used as the actual cutoff, so this is deliberately not a data-driven choice.
+    Sensitive = slope.treatment < 0 (net regression); Resistant = slope.treatment >= 0
+    (net growth) -- same fixed 0 deg cutoff as case study 3, not a median or
+    distribution-derived split, so it applies identically to every omics subset
+    without shifting depending on which models happen to be present.
 
-    Because the threshold is a fixed constant (not derived from any particular
-    subset), it can be applied independently to every omics subset (rna_all vs. the
-    paired 62-model cohort, etc.) without the cutoff silently shifting depending on
-    which models happen to be in that particular table -- unlike a median-based
-    threshold, which needed the full-cohort value threaded through every call site.
-
-    mRECIST is intentionally not used to define the label (see case-study notes): it
-    disagreed with an angle-median split on ~24% of models, mostly at the ambiguous SD
-    boundary. The `mRECIST` column, where present, is kept only as a reference/QC
-    column, not as the response source.
+    mRECIST is not used to define the label: it disagreed with this cutoff on ~24%
+    of models, mostly at the ambiguous SD boundary. Where present, `mRECIST` is kept
+    only as a reference/QC column.
     """
     if "slope.treatment" not in df.columns:
         raise ValueError("Column 'slope.treatment' is required to define the response.")

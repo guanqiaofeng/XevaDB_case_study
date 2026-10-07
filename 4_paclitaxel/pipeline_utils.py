@@ -58,10 +58,14 @@ def make_case4_paths(project_dir=None):
         "datasets": project_dir / "procdata",
         "results": project_dir / "results" / "4_paclitaxel",
         "figures": project_dir / "figures_tables" / "figures_main",
+        "figures_supp": project_dir / "figures_tables" / "figures_supp",
+        "tables": project_dir / "figures_tables" / "tables",
     }
 
     paths["proc"].mkdir(parents=True, exist_ok=True)
     paths["results"].mkdir(parents=True, exist_ok=True)
     paths["figures"].mkdir(parents=True, exist_ok=True)
+    paths["figures_supp"].mkdir(parents=True, exist_ok=True)
+    paths["tables"].mkdir(parents=True, exist_ok=True)
 
     return paths

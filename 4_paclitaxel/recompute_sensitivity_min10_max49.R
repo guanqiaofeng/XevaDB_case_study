@@ -44,7 +44,7 @@ RES_MEASURE <- c("slope", "angle", "mRECIST")
 MIN_TIME <- 10
 MAX_TIME <- 49
 
-raw_path <- "../rawdata/uhn_breast/UHN_Breast_XevaSet_v2025.rds"
+raw_path <- "../rawdata/uhn_breast/UHN_Cescon_Breast_DrugResponse_2025_v1.rds"
 output_dir <- "../results/4_paclitaxel"
 if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
 
