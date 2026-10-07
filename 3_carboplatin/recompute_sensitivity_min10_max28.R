@@ -17,7 +17,7 @@
 # a real finding.
 #
 # Window choice (max.time=28): see window_confound_sweep.R / the
-# "Window-choice justification" cells in 3-cohort_comparision.ipynb. McGill's
+# "Window-choice justification" cells in 3-cohort_comparison.ipynb. McGill's
 # median treatment-arm slope, swept over candidate max.time in weekly steps,
 # bottoms out (deepest, least regrowth-contaminated response) at max.time=28
 # and erodes back toward "non-responding" at wider windows -- 28 is the
@@ -69,4 +69,4 @@ recompute_and_save <- function(rds_path, cohort_name) {
 }
 
 recompute_and_save("../rawdata/mcgill_breast/Xeva_McGill.rds", "McGill")
-recompute_and_save("../rawdata/uhn_breast/UHN_Breast_XevaSet_v2025.rds", "UHN")
+recompute_and_save("../rawdata/uhn_breast/UHN_Cescon_Breast_DrugResponse_2025_v1.rds", "UHN")

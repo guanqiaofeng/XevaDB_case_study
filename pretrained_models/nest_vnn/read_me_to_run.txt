@@ -1,3 +1,5 @@
+# nest_env/ is not tracked in git (gitignored). Recreate it with:
+#   python3.9 -m venv nest_env && source nest_env/bin/activate && pip install -r requirements_predict.txt
 source nest_env/bin/activate
 
 for i in 1 2 3 4 5

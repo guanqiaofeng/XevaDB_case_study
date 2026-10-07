@@ -42,4 +42,4 @@ mcgill_batches <- read.delim(file.path(output_dir, "McGill_cisplatin_models.tsv"
 uhn_batches <- read.delim(file.path(output_dir, "UHN_carboplatin_models.tsv"))$batch.name
 
 run_cohort("../rawdata/mcgill_breast/Xeva_McGill.rds", "McGill", mcgill_batches)
-run_cohort("../rawdata/uhn_breast/UHN_Breast_XevaSet_v2025.rds", "UHN", uhn_batches)
+run_cohort("../rawdata/uhn_breast/UHN_Cescon_Breast_DrugResponse_2025_v1.rds", "UHN", uhn_batches)

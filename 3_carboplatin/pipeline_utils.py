@@ -40,12 +40,30 @@ def make_case3_paths(project_dir=None):
         "proc": project_dir / "results" / "3_carboplatin",
         "results": project_dir / "results" / "3_carboplatin",
         "figures": project_dir / "figures_tables" / "figures_main",
+        "figures_supp": project_dir / "figures_tables" / "figures_supp",
+        "tables": project_dir / "figures_tables" / "tables",
     }
 
     paths["proc"].mkdir(parents=True, exist_ok=True)
     paths["results"].mkdir(parents=True, exist_ok=True)
+    paths["figures_supp"].mkdir(parents=True, exist_ok=True)
+    paths["tables"].mkdir(parents=True, exist_ok=True)
 
     return paths
+
+
+# Batch-level mRECIST via majority vote across a batch's treatment-arm mice,
+# ties broken toward the more resistant call. Shared by notebooks 1, 2, and 3.
+MRECIST_WORST_FIRST = ["PD", "SD", "PR", "CR"]
+
+
+def majority_vote_mrecist(values):
+    counts = values.dropna().value_counts()
+    if counts.empty:
+        return None
+    top_count = counts.max()
+    tied = counts[counts == top_count].index
+    return next(r for r in MRECIST_WORST_FIRST if r in tied)
 
 
 def binarize_mutation_inclusive(val):
