@@ -1,5 +1,6 @@
 # XevaDB_case_study
 
+## Overview
 Reproducible pipeline for four PDX pharmacogenomic case studies built on
 **XevaDB**, a standardized resource integrating four PDX cohorts (McGill
 breast, UHN breast, UHN lung, PDXE pan-cancer):
@@ -20,9 +21,7 @@ If you use this code or XevaDB, please cite:
 > modeling in patient-derived xenografts," *[Journal]*, [year]. DOI: [pending].
 
 A versioned snapshot of this repository will be archived on Zenodo upon
-acceptance (DOI: pending) so the exact code used for the published results
-remains citable and immutable, independent of this GitHub repo's ongoing
-history.
+acceptance (DOI: pending).
 
 ## Repository layout
 
@@ -63,19 +62,10 @@ exact notebook run order and figure/table mapping.
 
 Two separate environments are required:
 
-- **`requirements.txt`** — everything except the ResNet18 notebook.
-  Verified against Python 3.9.6.
-- **`requirements-resnet.txt`** — `2_drugSensitivity/3-ml_resnet18.ipynb`
-  only (newer `torch`/`torchvision`/core-package versions; keep in its own
-  kernel, do not install alongside `requirements.txt`).
-
-R scripts (data extraction, case studies 1/3/4's response-window helpers)
-need R with the `Xeva` package, plus `limma` (GSEA ranking) and `dplyr`/
-`ggplot2`.
-
-`3_carboplatin/4-nestvnn_modeling.ipynb` additionally needs the pretrained
-NeST-VNN ensemble's own virtualenv — see
-`pretrained_models/nest_vnn/read_me_to_run.txt`.
+- **`requirements.txt`** — everything except the ResNet18 notebook. Verified against Python 3.9.6.
+- **`requirements-resnet.txt`** — `2_drugSensitivity/3-ml_resnet18.ipynb` only (newer `torch`/`torchvision`/core-package versions; keep in its own kernel, do not install alongside `requirements.txt`).
+- R scripts (data extraction, case studies 1/3/4's response-window helpers) need R with the `Xeva` package, plus `limma` (GSEA ranking) and `dplyr`/`ggplot2`.
+- `3_carboplatin/4-nestvnn_modeling.ipynb` additionally needs the pretrained NeST-VNN ensemble's own virtualenv — see `pretrained_models/nest_vnn/read_me_to_run.txt`.
 
 ## Reproduction order
 
@@ -96,10 +86,8 @@ NeST-VNN ensemble's own virtualenv — see
 
 ## License
 
-[License to be added — MIT is the common choice for academic code repos
-and is recommended here; let us know if you'd like a different one.]
+MIT
 
 ## Contact
 
-For questions about this repository, please open a GitHub issue or
-contact the corresponding author.
+For questions about this repository, please open a GitHub issue or contact Guanqiao Feng (guanqiao.feng@uhn.ca).
