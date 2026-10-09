@@ -1,4 +1,4 @@
-### PDXE pan-cancer XevaSet -- image manifest for case study 4
+### PDXE pan-cancer XevaSet -- image manifest for case study 2
 # - read in xevaset of PDXE located in ../rawdata/pdxe
 # - restrict to control+treatment batches with a non-missing model-level mRECIST call
 # - stratified sample of n_figures batches: all eligible CR/PR retained, SD capped
