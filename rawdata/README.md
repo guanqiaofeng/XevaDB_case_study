@@ -15,7 +15,7 @@ Extracted into `procdata/<cohort>/` by the matching script in
 | mcgill_breast/ | McGill breast PDX cohort | [McGill_Breast_v2](https://www.orcestra.ca/xevaset/6a19deaf6bbfd95deb76d216) | [https://doi.org/10.5281/zenodo.20447111](https://doi.org/10.5281/zenodo.20447111) | 3 | Xeva_McGill.rds | 
 | uhn_breast/ | UHN breast PDX cohort | [UHN_Breast_v1](https://orcestra.ca/xevaset/6abe5faca5cd60d97f7278ca) | [https://zenodo.org/records/23045950](https://zenodo.org/records/23045950) | 1/3/4 | UHN_Cescon_Breast_DrugResponse_2025_v1.rds |
 | uhn_lung/ | UHN lung PDX cohort | [UHN_Lung_v1](https://orcestra.ca/xevaset/6abd09115ba06cb2f6aaab4c) | [https://zenodo.org/records/22757395](https://zenodo.org/records/22757395) | 1 | UHN_Tsao_Lung_DrugResponse_2022_v1.rds |
-| pdxe/ | PDXE pan-cancer PDX cohort | [PDXE_v1](https://www.orcestra.ca/xevaset/5ff4bfe7dcd1230de0416499)| [https://zenodo.org/records/4302463](https://zenodo.org/records/4302463) | 2 |Xeva_PDXE.rds | 
+| pdxe/ | PDXE pan-cancer PDX cohort | [PDXE_v1](https://www.orcestra.ca/xevaset/5ff4bfe7dcd1230de0416499)| [https://zenodo.org/records/4302463](https://zenodo.org/records/4302463) | 2 | Xeva_PDXE.rds | 
 
 ## Other raw inputs
 
