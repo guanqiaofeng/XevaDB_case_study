@@ -1,13 +1,14 @@
 # 1_doublingRate/ — Case study 1: transcriptomic modeling of intrinsic growth kinetics
 
 Estimates model-level doubling time from control-arm tumour-volume curves in
-the McGill/UHN breast and UHN lung cohorts, then asks whether RNA-seq can
+the UHN breast and UHN lung cohorts, then asks whether RNA-seq can
 classify the fastest- vs. slowest-growing tertile (ElasticNet, Random
 Forest, Lassoed Forest; repeated CV). Maps to **Figure 2** and
 **Supplemental Figure 1**.
 
-Environment: `../requirements.txt`. `compute_limma_ranking.R` needs R with
-`limma`.
+- **Environment**: `../requirements.txt`. `compute_limma_ranking.R` needs R with `limma`.
+- **Inputs**: `../procdata/uhn_breast` and `../procdata/uhn_lung`.
+- **Outputs**: `../results/1_doublingRate` and `../figures_tables/`.
 
 ## Run order
 
@@ -37,16 +38,3 @@ than tuned per model. `1-lassoedforest_hvg_grid_{breast,lung}.py` run the
 `N_HVG × max_depth × min_samples_leaf` grid search feeding
 `2-hvg_selection_justification.ipynb`'s evidence plots → **Supplemental
 Figure 1c/d**.
-
-## Notes
-
-- `pipeline_utils.py`'s `run_growth_ml_pipeline()` is the shared
-  implementation behind both `3-*_ml_modeling.py` scripts; most
-  `results/1_doublingRate/*.csv` filenames are built dynamically from its
-  `cohort` argument (`f"growth_ml_config_{cohort}.json"` etc.), not literal
-  strings in the calling scripts.
-- MAX_DAY (35-day follow-up cutoff), MIN_POINTS, and MIN_R2 are justified by
-  the confound/sensitivity diagnostics in step 1's notebooks (Supp Fig 1a/b)
-  the same way case studies 3 and 4 justify their own response windows —
-  characterizing the data's own confound structure, not maximizing
-  downstream performance.
