@@ -5,11 +5,11 @@ Forest on the same task: sorting PDXE tumour-volume growth curves into 5
 ordinal drug-response categories, against a 3-expert consensus ground
 truth. Maps to **Figure 3** and **Supplemental Figure 2**.
 
-- **Environment**: two separate ones — `../requirements.txt` (RandomForest +
-  tabular notebooks) and `../requirements-resnet.txt` (`3-ml_resnet18.ipynb`,
-  needs `torch`/`torchvision`; keep in its own kernel, do not merge).
-- **Inputs**: `../rawdata/expert_rating`, `../procdata/pdxe/csv`, and
-  `../procdata/pdxe/images`.
+- **Environment**: two separate ones
+  
+    - `../requirements.txt` (RandomForest + tabular notebooks), and
+    - `../requirements-resnet.txt` (`3-ml_resnet18.ipynb`, needs `torch`/`torchvision`; keep in its own kernel, do not merge).
+- **Inputs**: `../rawdata/expert_rating`, `../procdata/pdxe/`.
 - **Outputs**: `../results/2_drugSensitivity` and `../figures_tables/`.
 
 ## Run order
@@ -24,18 +24,3 @@ truth. Maps to **Figure 3** and **Supplemental Figure 2**.
 
 `1` and `2` are independent of each other; both must finish before `3`/`4`;
 `5` needs both `3` and `4`.
-
-## Notes
-
-- **13 engineered features**, not more: `batch_TGI` was dropped from
-  `4-ml_randomforest.ipynb`'s feature set because `Xeva::TGI()` errors on
-  any batch with zero in-window data points on either arm (same failure
-  mode as case studies 3/4's response-window recomputation) — not worked
-  around, just excluded.
-- `2-image_preprocessing.ipynb` reads raw images from
-  `procdata/pdxe/images/` (via `paths["datasets"] / "images"`) — the same
-  location `0_xevaset_extraction/2-pdxe_image_manifest_extraction.R`
-  writes to.
-- ResNet18 and Random Forest are evaluated on the **same** 5 outer folds
-  (assigned once in step 1), so their pooled confusion matrices and
-  per-class F1 in step 5 are directly comparable.
