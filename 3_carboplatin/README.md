@@ -7,10 +7,14 @@ n=36) — and validates its predictions against each cohort's own
 growth-curve response label. Maps to **Figure 4** and **Supplemental
 Figure 3**.
 
-Environment: `../requirements.txt` for the notebooks; the modeling step
-also needs the separate `pretrained_models/nest_vnn/nest_env/` virtualenv
-(see that folder's own `read_me_to_run.txt`) and R (`recompute_sensitivity_min10_max28.R`,
-`window_confound_sweep.R`) with the `Xeva` package.
+- **Environment**: `../requirements.txt` for the notebooks; the modeling
+  step also needs the separate `pretrained_models/nest_vnn/nest_env/`
+  virtualenv (see that folder's own `read_me_to_run.txt`) and R
+  (`recompute_sensitivity_min10_max28.R`, `window_confound_sweep.R`) with
+  the `Xeva` package.
+- **Inputs**: `../procdata/mcgill_breast`, `../procdata/uhn_breast`, and
+  the pretrained ensemble in `../pretrained_models/nest_vnn/`.
+- **Outputs**: `../results/3_carboplatin` and `../figures_tables/`.
 
 ## Run order
 

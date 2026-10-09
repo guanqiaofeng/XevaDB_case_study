@@ -6,8 +6,11 @@ early-fusion, and late-fusion (stacking) classifiers, then externally
 validates the top RNA pathway findings against the I-SPY2 clinical trial's
 paclitaxel control arm. Maps to **Figure 5** and **Supplemental Figure 4**.
 
-Environment: `../requirements.txt`, plus R (`Xeva`, `limma`) for the
-helper scripts and `gseapy` for GSEA.
+- **Environment**: `../requirements.txt`, plus R (`Xeva`, `limma`) for the
+  helper scripts and `gseapy` for GSEA.
+- **Inputs**: `../procdata/uhn_breast` and
+  `../rawdata/I-SPY2_clinical_trial`.
+- **Outputs**: `../results/4_paclitaxel` and `../figures_tables/`.
 
 ## Run order
 
