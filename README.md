@@ -2,17 +2,19 @@
 
 Reproducible pipeline for four PDX pharmacogenomic case studies built on
 **XevaDB**, a standardized resource integrating four PDX cohorts (McGill
-breast, UHN breast, UHN lung, PDXE pan-cancer): growth-kinetics modeling,
-image-based drug-response classification, cell-line-to-PDX transfer
-learning, and multi-omics paclitaxel response prediction.
+breast, UHN breast, UHN lung, PDXE pan-cancer): 
+1. growth-kinetics modeling,
+2. image-based drug-response classification,
+3. cell-line-to-PDX transfer learning, and
+4. multi-omics paclitaxel response prediction.
 
 ## Repository layout
 
 ```
-rawdata/              Raw, unmodified source XevaSets + external data — see rawdata/README.md
-procdata/              Flat per-cohort tables extracted from rawdata/   — see procdata/README.md
-0_xevaset_extraction/  Extraction scripts: rawdata/ -> procdata/, + Figure 1
-1_doublingRate/        Case study 1: growth-kinetics modeling         (Figure 2, Supp Fig 1)
+rawdata/                Raw, unmodified source XevaSets + external data — see rawdata/README.md
+procdata/               Flat per-cohort tables extracted from rawdata/   — see procdata/README.md
+0_xevaset_extraction/   Extraction scripts: rawdata/ -> procdata/, + Figure 1
+1_doublingRate/         Case study 1: growth-kinetics modeling         (Figure 2, Supp Fig 1)
 2_drugSensitivity/      Case study 2: image-based response classification (Figure 3, Supp Fig 2)
 3_carboplatin/          Case study 3: cross-platform NeST-VNN validation   (Figure 4, Supp Fig 3)
 4_paclitaxel/           Case study 4: multi-omics paclitaxel prediction    (Figure 5, Supp Fig 4)
@@ -21,7 +23,7 @@ figures_tables/         Manuscript figures/tables (submission masters) — see f
 pretrained_models/      Pretrained NeST-VNN ensemble (external, used by case study 3)
 ```
 
-Each of `1_doublingRate/` … `4_paclitaxel/` has its own README with the
+Each of `1_doublingRate/`, `2_drugSensitivity/`, `3_carboplatin/`, and `4_paclitaxel/` has its own README with the
 exact notebook run order and figure/table mapping.
 
 ## Environment setup
@@ -48,11 +50,7 @@ NeST-VNN ensemble's own virtualenv — see
    from `procdata/`, not `rawdata/`.
 2. **`1_doublingRate/`, `2_drugSensitivity/`, `3_carboplatin/`,
    `4_paclitaxel/`** — independent of each other and of execution order;
-   each reads only from `procdata/`/`rawdata/` and its own case folder.
    Within each, follow that folder's own README for notebook order.
-
-Final figures/tables are read from `results/` into `figures_tables/` by
-each case study's own later notebooks (not a separate aggregation step).
 
 ## Case study summary
 
