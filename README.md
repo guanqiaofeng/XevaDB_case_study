@@ -13,12 +13,14 @@ This repository accompanies the manuscript **"XevaDB enables AI-driven
 longitudinal pharmacogenomic modeling in patient-derived xenografts"**
 (citation and DOI to be added upon publication).
 
+The repository reproduces all analyses, intermediate results, figures, supplementary figures, and supplementary tables reported in the manuscript.
+
 ## Citation
 
 If you use this code or XevaDB, please cite:
 
-> [Author list], "XevaDB enables AI-driven longitudinal pharmacogenomic
-> modeling in patient-derived xenografts," *[Journal]*, [year]. DOI: [pending].
+> Feng G., Boccalon M., Tran M.C.A., et al., "XevaDB enables AI-driven longitudinal pharmacogenomic
+> modeling in patient-derived xenografts," (under review)
 
 A versioned snapshot of this repository will be archived on Zenodo upon
 acceptance (DOI: pending).
@@ -48,7 +50,7 @@ exact notebook run order and figure/table mapping.
 - **Python**: 3.9.6, two separate environments (see below).
 - **Expected runtime**:
     -  most notebooks complete in a few minutes.
-    -  The slowest steps are `3-ml_resnet18.ipynb` and `4_paclitaxel/2-ML.ipynb`'s repeated cross-validation with nested grid search and stacking.
+    -  The slowest steps are `2_drugSensitivity/3-ml_resnet18.ipynb` and `4_paclitaxel/2-ML.ipynb`'s repeated cross-validation with nested grid search and stacking.
         - up to ~30 minutes on a standard workstation.
   
 ## Environment setup
@@ -57,12 +59,25 @@ Two separate environments are required:
 
 - **`requirements.txt`** — everything except the ResNet18 notebook.
 - **`requirements-resnet.txt`** — ResNet18 notebook (`2_drugSensitivity/3-ml_resnet18.ipynb`)
-- **pretrained model** `3_carboplatin/4-nestvnn_modeling.ipynb` additionally needs the pretrained [NeST-VNN ensemble](https://github.com/idekerlab/nest_vnn)'s own virtual env — see `pretrained_models/nest_vnn/read_me_to_run.txt`.
+- **pretrained model** `3_carboplatin/4-nestvnn_modeling.ipynb` additionally needs the pretrained [NeST-VNN](https://github.com/idekerlab/nest_vnn) ensemble's own virtual env — see `pretrained_models/nest_vnn/read_me_to_run.txt`.
+
+## Reproducibility
+The repository contains:
+
+- raw input datasets and download instructions
+- processed datasets
+- intermediate results
+- trained models
+- manuscript figures
+- supplementary figures
+- supplementary tables
+  
+Running the workflows in the order described below reproduces all manuscript results.
 
 ## Reproduction order
 
 1. **Download Public Datasets**
-   - Download public available datasets, gitrepo, manuscript and supplemental tables. See readme in `rawdata/` for guide.
+   - Download the required public datasets and reference files. See `rawdata/README.md`.
 2. **Data Extraction**
    - Essential step to extract flat table and generate images from the downloaded **XevaSet** objects
    - `rawdata/`(input) -- `0_xevaset_extraction/`(code) --> `procdata/`(output)
@@ -72,8 +87,8 @@ Two separate environments are required:
      - `2_drugSensitivity/`
      - `3_carboplatin/`
      - `4_paclitaxel/`
-   - Case study is independent of each other and of execution order
-   - within each, follow that folder's own README for notebook order
+   - The four case studies are independent and may be run in any order.
+   - Within each case study, follow that folder's own README for notebook order.
 
 ## Case study summary
 
@@ -86,7 +101,7 @@ Two separate environments are required:
 
 ## License
 
-MIT
+This repository is distributed under the MIT License. See the LICENSE file for details.
 
 ## Contact
 
