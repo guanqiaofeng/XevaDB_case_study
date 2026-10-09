@@ -9,6 +9,8 @@ breast, UHN breast, UHN lung, PDXE pan-cancer):
 3. cell-line-to-PDX transfer learning, and
 4. multi-omics paclitaxel response prediction.
 
+![workflow diagram](figures_tables/figures_main/figure1a_study_summary.png)
+
 This repository accompanies the manuscript **"XevaDB enables AI-driven
 longitudinal pharmacogenomic modeling in patient-derived xenografts"**
 (citation and DOI to be added upon publication).
