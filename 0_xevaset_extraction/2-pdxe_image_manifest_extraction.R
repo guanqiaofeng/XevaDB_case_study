@@ -10,7 +10,7 @@
 # - TGI is dropped: Xeva's TGI() errors on any batch with no data points in
 #   [10, 50] on one arm, which occurs for several batches in the full PDXE set.
 # - render one tumor-volume plot per sampled batch and convert PNG -> WebP
-# - output images and manifest.csv under ../procdata/pdxe
+# - output images and manifest.csv under ../procdata/pdxe/images
 # - Requires the cwebp CLI (https://developers.google.com/speed/webp/docs/cwebp)
 #   on PATH for the PNG -> WebP conversion step.
 
@@ -20,7 +20,7 @@ library(ggplot2)
 
 # ---- paths ----
 xset_path  <- "../rawdata/pdxe/Xeva_PDXE.rds"
-output_dir <- "../procdata/pdxe"
+output_dir <- "../procdata/pdxe/images"
 n_figures  <- 1300
 
 # Plotting limits

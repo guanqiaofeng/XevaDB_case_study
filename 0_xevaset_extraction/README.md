@@ -14,7 +14,7 @@ is a Python notebook (`pandas`, `matplotlib`, `seaborn`; see
 | Script | Reads | Writes |
 |---|---|---|
 | `1-pdxe_tables_extraction.R` | `rawdata/pdxe/Xeva_PDXE.rds` | `procdata/pdxe/csv/` (models, expDesign, modToBiobaseMap, experiment, drug) |
-| `2-pdxe_image_manifest_extraction.R` | `rawdata/pdxe/Xeva_PDXE.rds` | `procdata/pdxe/*.webp` + `manifest.csv` — case study 2's rendered tumour-volume images |
+| `2-pdxe_image_manifest_extraction.R` | `rawdata/pdxe/Xeva_PDXE.rds` | `procdata/pdxe/images/` (`*.webp` + `manifest.csv`) — case study 2's rendered tumour-volume images |
 | `3-mcgill_breast_extraction.R` | `rawdata/mcgill_breast/Xeva_McGill.rds` | `procdata/mcgill_breast/` |
 | `4-uhn_breast_extraction.R` | `rawdata/uhn_breast/UHN_Cescon_Breast_DrugResponse_2025_v1.rds` | `procdata/uhn_breast/` |
 | `5-uhn_lung_extraction.R` | `rawdata/uhn_lung/UHN_Tsao_Lung_DrugResponse_2022_v1.rds` | `procdata/uhn_lung/` |
