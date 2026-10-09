@@ -33,22 +33,3 @@ Order: `window_confound_sweep.R` informs the window choice baked into
 `recompute_sensitivity_min10_max49.R`, called from `1`; then `1 → 2 → 3`;
 `4` only needs `2`'s GSEA output (via `3`'s GSEA cell) and the raw
 `rawdata/I-SPY2_clinical_trial/` files.
-
-## Notes
-
-- **Primary endpoint**: fixed `slope.treatment < 0` cutoff (Sensitive) vs.
-  `>= 0` (Resistant) — matches case study 3's convention exactly, not a
-  median/distribution-derived split. mRECIST is kept only as a reference/QC
-  column (`feature_sets.add_binary_response`).
-- **Multiple-comparisons correction**: Benjamini-Hochberg FDR across all 10
-  model/omics/analysis combinations tested in `2-ML.ipynb` (5 categories ×
-  2 models, collapsing early/late fusion's single category each).
-- **AIMS, not genefu PAM50**, for intrinsic subtyping: there is no
-  clinical ER/PR/HER2 annotation anywhere in the UHN breast XevaSet, and
-  AIMS is a single-sample rank-based classifier that doesn't need a
-  reference cohort to normalize against — a better fit for PDX RNA-seq
-  with no matched normal panel.
-- I-SPY2 source files (`rawdata/I-SPY2_clinical_trial/mmc{2,3,4}.xlsx`) are
-  saved as Strict Open XML Spreadsheets; `4-ispy2_validation.ipynb`'s
-  `read_strict_ooxml_excel()` patches the namespace in-memory before
-  handing the bytes to pandas — the files on disk are never modified.
