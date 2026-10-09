@@ -10,12 +10,12 @@ used as-is by one or more case studies.
 Extracted into `procdata/<cohort>/` by the matching script in
 `0_xevaset_extraction/`.
 
-| Folder | File | Cohort |
-|---|---|---|
-| `mcgill_breast/` | `Xeva_McGill.rds` | McGill breast PDX cohort |
-| `uhn_breast/` | `UHN_Cescon_Breast_DrugResponse_2025_v1.rds` | UHN breast PDX cohort |
-| `uhn_lung/` | `UHN_Tsao_Lung_DrugResponse_2022_v1.rds` | UHN lung PDX cohort |
-| `pdxe/` | `Xeva_PDXE.rds` | PDXE pan-cancer PDX cohort |
+| Folder | Cohort | Orcestra Download Link | Zenodo Download Link | Case Study | File |
+|---|---|---|---|---|---|
+| mcgill_breast/ | McGill breast PDX cohort | [McGill_Breast_v2](https://www.orcestra.ca/xevaset/6a19deaf6bbfd95deb76d216) | [https://doi.org/10.5281/zenodo.20447111](https://doi.org/10.5281/zenodo.20447111) | 3 | Xeva_McGill.rds | 
+| uhn_breast/ | UHN breast PDX cohort | [UHN_Breast_v1](https://orcestra.ca/xevaset/6abe5faca5cd60d97f7278ca) | [https://zenodo.org/records/23045950](https://zenodo.org/records/23045950) | 1/3/4 | UHN_Cescon_Breast_DrugResponse_2025_v1.rds |
+| uhn_lung/ | UHN lung PDX cohort | [UHN_Lung_v1](https://orcestra.ca/xevaset/6abd09115ba06cb2f6aaab4c) | [https://zenodo.org/records/22757395](https://zenodo.org/records/22757395) | 1 | UHN_Tsao_Lung_DrugResponse_2022_v1.rds |
+| pdxe/ | PDXE pan-cancer PDX cohort | [PDXE_v1](https://www.orcestra.ca/xevaset/5ff4bfe7dcd1230de0416499)| [https://zenodo.org/records/4302463](https://zenodo.org/records/4302463) | 2 |Xeva_PDXE.rds | 
 
 ## Other raw inputs
 
@@ -26,8 +26,7 @@ Extracted into `procdata/<cohort>/` by the matching script in
   study 2's ground-truth labels.
 - **`nestvnn_gene_list/gene2ind.txt`** — the 718-gene panel NeST-VNN was
   trained on (tab-separated index + gene symbol). Used by case study 3 to
-  build its mutation/CNV input matrices; referenced by case study 4 only
-  for a diagnostic gene-overlap count, not as a modeling input.
+  build its mutation/CNV input matrices.
 - **`I-SPY2_clinical_trial/`** — supplementary data from the I-SPY2-990
   Data Resource (Wolf et al. 2022, *Cancer Cell* 40:609-629,
   [doi:10.1016/j.ccell.2022.05.005](https://doi.org/10.1016/j.ccell.2022.05.005)),
