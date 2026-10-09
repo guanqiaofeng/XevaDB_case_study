@@ -6,8 +6,6 @@ classify the fastest- vs. slowest-growing tertile (ElasticNet, Random
 Forest, Lassoed Forest; repeated CV). Maps to **Figure 2** and
 **Supplemental Figure 1**.
 
-![workflow diagram](figures_tables/figures_main/figure2a_case1_summary.png)
-
 - **Environment**: `../requirements.txt`. `compute_limma_ranking.R` needs R with `limma`.
 - **Inputs**: `../procdata/uhn_breast` and `../procdata/uhn_lung`.
 - **Outputs**: `../results/1_doublingRate` and `../figures_tables/`.
