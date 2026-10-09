@@ -2,11 +2,27 @@
 
 Reproducible pipeline for four PDX pharmacogenomic case studies built on
 **XevaDB**, a standardized resource integrating four PDX cohorts (McGill
-breast, UHN breast, UHN lung, PDXE pan-cancer): 
+breast, UHN breast, UHN lung, PDXE pan-cancer):
 1. growth-kinetics modeling,
 2. image-based drug-response classification,
 3. cell-line-to-PDX transfer learning, and
 4. multi-omics paclitaxel response prediction.
+
+This repository accompanies the manuscript **"XevaDB enables AI-driven
+longitudinal pharmacogenomic modeling in patient-derived xenografts"**
+(citation and DOI to be added upon publication).
+
+## Citation
+
+If you use this code or XevaDB, please cite:
+
+> [Author list], "XevaDB enables AI-driven longitudinal pharmacogenomic
+> modeling in patient-derived xenografts," *[Journal]*, [year]. DOI: [pending].
+
+A versioned snapshot of this repository will be archived on Zenodo upon
+acceptance (DOI: pending) so the exact code used for the published results
+remains citable and immutable, independent of this GitHub repo's ongoing
+history.
 
 ## Repository layout
 
@@ -25,6 +41,23 @@ pretrained_models/      Pretrained NeST-VNN ensemble (external, used by case stu
 
 Each of `1_doublingRate/`, `2_drugSensitivity/`, `3_carboplatin/`, and `4_paclitaxel/` has its own README with the
 exact notebook run order and figure/table mapping.
+
+## System requirements
+
+- **OS**: developed and tested on macOS (Darwin); no OS-specific
+  dependencies are used, so Linux should work identically. Not tested on
+  Windows.
+- **R**: 4.4.2, with the `Xeva` package (v1.22.1 at time of writing),
+  `limma`, `dplyr`, `ggplot2`.
+- **Python**: 3.9.6, two separate environments (see below).
+- **Hardware**: no GPU is required. `2_drugSensitivity/3-ml_resnet18.ipynb`
+  uses a GPU automatically if available (CUDA or Apple MPS) and otherwise
+  falls back to CPU, just slower. No other step benefits from a GPU.
+- **Expected runtime**: most notebooks complete in a few minutes. The
+  slowest steps are `3-ml_resnet18.ipynb` (faster with a GPU) and
+  `4_paclitaxel/2-ML.ipynb`'s repeated cross-validation with nested grid
+  search and stacking (up to ~30 minutes on a standard workstation). These
+  are approximate, not formally benchmarked.
 
 ## Environment setup
 
@@ -49,8 +82,8 @@ NeST-VNN ensemble's own virtualenv — see
 1. **`0_xevaset_extraction/`** — must run first; every case study reads
    from `procdata/`, not `rawdata/`.
 2. **`1_doublingRate/`, `2_drugSensitivity/`, `3_carboplatin/`,
-   `4_paclitaxel/`** — independent of each other and of execution order;
-   Within each, follow that folder's own README for notebook order.
+   `4_paclitaxel/`** — independent of each other and of execution order,
+   within each, follow that folder's own README for notebook order.
 
 ## Case study summary
 
@@ -60,3 +93,13 @@ NeST-VNN ensemble's own virtualenv — see
 | 2 | `2_drugSensitivity/` | Can tumour-volume curve images classify drug response as well as engineered features? | ResNet18 vs. Random Forest |
 | 3 | `3_carboplatin/` | Does a cell-line-pretrained NeST-VNN ensemble transfer to independent PDX cohorts? | Pretrained NeST-VNN (cisplatin) |
 | 4 | `4_paclitaxel/` | Does multi-omics fusion improve paclitaxel response prediction, and does it validate externally? | Random Forest / Logistic L2, single/early/late fusion |
+
+## License
+
+[License to be added — MIT is the common choice for academic code repos
+and is recommended here; let us know if you'd like a different one.]
+
+## Contact
+
+For questions about this repository, please open a GitHub issue or
+contact the corresponding author.
