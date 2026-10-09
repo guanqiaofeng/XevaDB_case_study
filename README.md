@@ -27,6 +27,14 @@ If you use this code or XevaDB, please cite:
 A versioned snapshot of this repository will be archived on Zenodo upon
 acceptance (DOI: pending).
 
+## Cloning this repository
+
+This repository's git history is large. To get just the current snapshot instead:
+
+```bash
+git clone --depth 1 git@github.com:bhklab/XevaDB_case_study.git
+```
+
 ## Repository layout
 
 ```
