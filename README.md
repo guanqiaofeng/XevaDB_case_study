@@ -45,7 +45,7 @@ exact notebook run order and figure/table mapping.
 
 ## System requirements
 
-- **OS**: developed and tested on macOS (Darwin).
+- **OS**: developed and tested on macOS (Darwin). No GPU required to run the pipeline.
 - `R` (v4.4.2), `Xeva` (v1.22.1), `limma` (v3.62.2), `dplyr`(v1.1.4), `ggplot2`(v4.0.1).
 - **Python**: 3.9.6, two separate environments (see below).
 - **Expected runtime**:
