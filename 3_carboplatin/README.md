@@ -7,11 +7,12 @@ n=36) — and validates its predictions against each cohort's own
 growth-curve response label. Maps to **Figure 4** and **Supplemental
 Figure 3**.
 
-- **Environment**: `../requirements.txt` for the notebooks; the modeling
-  step also needs the separate `pretrained_models/nest_vnn/nest_env/`
-  virtualenv (see that folder's own `read_me_to_run.txt`) and R
-  (`recompute_sensitivity_min10_max28.R`, `window_confound_sweep.R`) with
-  the `Xeva` package.
+- **Environment**:
+
+   - `../requirements.txt` for the notebooks;
+   - the modeling step also needs the separate `pretrained_models/nest_vnn/nest_env/` virtualenv (see that folder's own `read_me_to_run.txt`),
+   - and R (`recompute_sensitivity_min10_max28.R`, `window_confound_sweep.R`) with the `Xeva` package.
+     
 - **Inputs**: `../procdata/mcgill_breast`, `../procdata/uhn_breast`, and
   the pretrained ensemble in `../pretrained_models/nest_vnn/`.
 - **Outputs**: `../results/3_carboplatin` and `../figures_tables/`.
@@ -31,22 +32,3 @@ Figure 3**.
 The two `recompute_sensitivity_*`/`window_confound_sweep.R` scripts must run
 before `1`/`2`; `1` and `2` are independent of each other; `3` needs both;
 `4` needs `3`; `5` needs `4`.
-
-## Notes
-
-- **Response window (10–28 days)** is fixed by `window_confound_sweep.R`'s
-  own diagnostic — the deepest (most extreme median response) point in a
-  14–56 day sweep — not by whichever window maximizes downstream AUROC.
-  Case study 4 reuses this exact methodology (its own sweep, different
-  drug) but not this window's value.
-- **TGI is dropped**, not recomputed, for the same reason as case study 2:
-  `Xeva::TGI()` errors on any batch with zero in-window data points on one
-  arm within the chosen window.
-- `4-nestvnn_modeling.ipynb` only ever uses the **cisplatin** pretrained
-  ensemble — the other 7 drug-specific ensembles bundled in
-  `pretrained_models/nest_vnn/pretrained_models/` are gitignored and unused
-  here.
-- Bootstrap CIs/p-values in step 5 are seeded (`seed=0`), so a rerun should
-  reproduce exactly — any drift traces back to the NeST-VNN ensemble
-  inference step (`4-nestvnn_modeling.ipynb`) upstream, not the bootstrap
-  itself.
