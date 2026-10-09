@@ -1,0 +1,70 @@
+Gene	Function
+ABCB1	Drug efflux transporter; major mediator of taxane resistance via P-glycoprotein
+ABCC1	ATP-binding cassette transporter involved in multidrug resistance
+ABCC2	Drug efflux transporter associated with chemotherapy resistance
+ABCC3	ABC transporter involved in xenobiotic/drug transport
+ABCC10	Transporter implicated in taxane efflux and resistance
+ABCG2	Breast cancer resistance protein; drug efflux transporter
+AKT1	PI3K/AKT survival signaling; may protect cells from taxane-induced apoptosis
+AKT2	AKT pathway kinase involved in survival and therapy resistance
+AKT3	AKT pathway kinase with roles in growth and survival signaling
+AURKA	Mitotic kinase regulating spindle assembly and chromosome segregation
+AURKB	Chromosomal passenger kinase regulating mitosis and cytokinesis
+BAK1	Pro-apoptotic BCL2-family protein involved in mitochondrial apoptosis
+BAX	Pro-apoptotic BCL2-family protein promoting taxane-induced apoptosis
+BCL2	Anti-apoptotic protein; may reduce paclitaxel-induced cell death
+BCL2L1	Anti-apoptotic BCL-XL; promotes survival after mitotic stress
+BUB1	Spindle assembly checkpoint kinase
+BUB1B	Spindle checkpoint regulator also known as BUBR1
+BUB3	Spindle assembly checkpoint component
+CASP3	Executioner caspase mediating apoptosis
+CASP7	Executioner caspase involved in apoptotic cell death
+CASP8	Initiator caspase linking death receptor signaling to apoptosis
+CASP9	Initiator caspase in mitochondrial apoptosis
+CCNB1	Cyclin B1; controls G2/M transition with CDK1
+CCNB2	Cyclin B2; regulates mitotic entry and progression
+CDC20	APC/C activator controlling metaphase-anaphase transition
+CDH1	Epithelial marker; loss associated with EMT and therapy resistance
+CDK1	Core mitotic kinase controlling G2/M progression
+CENPA	Centromere histone variant required for chromosome segregation
+CENPE	Kinetochore motor protein involved in spindle checkpoint control
+CENPF	Centromere-associated protein involved in mitosis
+CYP2C8	Major paclitaxel-metabolizing enzyme
+CYP3A4	Paclitaxel-metabolizing enzyme in xenobiotic metabolism
+CYP3A5	CYP3A family enzyme involved in taxane metabolism
+ERBB2	HER2 receptor tyrosine kinase; breast cancer therapy-relevant signaling
+ESR1	Estrogen receptor alpha; breast cancer subtype and therapy response marker
+FOXM1	Mitotic transcription factor associated with proliferation and taxane resistance
+KIF11	Mitotic kinesin required for bipolar spindle formation
+KIF20A	Mitotic kinesin involved in cytokinesis and proliferation
+KIF23	Kinesin involved in cytokinesis
+KIF2C	Mitotic kinesin/MCAK involved in microtubule depolymerization
+MAD1L1	Spindle assembly checkpoint regulator
+MAD2L1	Spindle assembly checkpoint regulator
+MDM2	Negative regulator of TP53-mediated apoptosis
+MYC	Oncogenic transcription factor controlling proliferation and cell cycle programs
+NDC80	Kinetochore complex component required for chromosome alignment
+PIK3CA	PI3K pathway oncogene involved in survival signaling
+PLK1	Mitotic kinase regulating spindle function and cell-cycle progression
+PTEN	Negative regulator of PI3K/AKT signaling
+RB1	Cell-cycle tumor suppressor controlling E2F activity
+SLCO1B3	Drug uptake transporter implicated in taxane transport
+SNAI1	EMT transcription factor associated with drug resistance
+SNAI2	EMT transcription factor associated with invasive/resistant phenotypes
+TP53	Tumor suppressor regulating DNA damage response, mitotic stress, and apoptosis
+TUBA1A	Alpha-tubulin component of microtubules
+TUBA1B	Alpha-tubulin component of microtubules
+TUBA1C	Alpha-tubulin component of microtubules
+TUBA3C	Alpha-tubulin family member
+TUBA4A	Alpha-tubulin family member involved in microtubule structure
+TUBB	Beta-tubulin; direct microtubule target class relevant to paclitaxel action
+TUBB2A	Beta-tubulin isoform involved in microtubule structure
+TUBB2B	Beta-tubulin isoform involved in microtubule dynamics
+TUBB3	Beta-III tubulin; widely linked to taxane resistance
+TUBB4A	Beta-tubulin isoform involved in microtubule structure
+TUBB4B	Beta-tubulin isoform involved in microtubule structure
+TUBB6	Beta-tubulin isoform involved in microtubule structure
+TWIST1	EMT transcription factor associated with invasion and chemotherapy resistance
+VIM	Mesenchymal marker associated with EMT and drug resistance
+ZEB1	EMT transcription factor associated with therapy resistance
+ZEB2	EMT transcription factor associated with therapy resistance
