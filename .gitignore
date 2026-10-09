@@ -8,6 +8,11 @@ rawdata/images/*.png
 .Rproj.user/
 .RData
 
+# manuscript figures/tables
+figures_tables/*.pdf
+figures_tables/*.pptx
+figures_tables/*.xlsx
+
 # Python bytecode / notebook checkpoints
 __pycache__/
 *.pyc
